@@ -252,6 +252,9 @@
     <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.DetalleReserva.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.ReporteReservasAnio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CanchitaWS\Transaccion.disco" />
     <None Include="Service References\CanchitaWS\configuration91.svcinfo" />
     <None Include="Service References\CanchitaWS\configuration.svcinfo" />
@@ -271,6 +274,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginClientController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ReservaClientController.cs" />
     <Compile Include="Controllers\ReservaController.cs" />
     <Compile Include="Controllers\SedeClientController.cs" />
@@ -351,6 +355,7 @@
     <Content Include="Views\Admin\CerrarSesion.cshtml" />
     <Content Include="Views\Admin\RecuperarAccXEmail.cshtml" />
     <Content Include="Views\Shared\_Recuperaradmin.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

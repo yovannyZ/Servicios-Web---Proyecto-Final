@@ -1,0 +1,79 @@
+﻿@model List<AppClient.CanchitaWS.ReporteReservasAnio>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmind.cshtml";
+}
+
+<div class="content">
+
+
+
+    @using (Html.BeginForm("Index", "Report", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div style="background: #b2ebf2; padding:5px;">
+            <h4 class="center-align">Reporte Ingresos por Mes</h4>
+        </div>
+         <div class="row">
+              <div class="input-field col l5 offset-l2" >
+                   <input type="text" name="anio" id="anio" />
+                   <label for="anio">Ingrese el Año (Ejm: 2016)</label>
+              </div>
+             <div class="input-field col l5">
+                 <button type="submit" class="waves-effect waves-light btn">Ver Reporte</button>
+             </div>
+         </div>
+            
+
+    }
+
+
+
+
+    @if (@Model != null)
+    {
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          @using System.Web.Script.Serialization
+
+            var lista =@Html.Raw(Json.Encode(Model));
+
+
+            var dataarray=[["Element", "Ventas S/.", { role: "style" }]];
+            lista.forEach(function cargarCombo2(value,index){
+                dataarray.push([value.Mes, value.Monto, "color: #76A7FA"]);
+            });
+
+            google.charts.load("current", { packages: ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable(dataarray);
+
+                var view = new google.visualization.DataView(data);
+                view.setColumns([0, 1,
+                                 {
+                                     calc: "stringify",
+                                     sourceColumn: 1,
+                                     type: "string",
+                                     role: "annotation"
+                                 },
+                                 2]);
+
+                var options = {
+                    title: "",
+                    width: 1000,
+                    height: 400,
+                    bar: { groupWidth: "95%" },
+                    legend: { position: "none" }
+
+                };
+                var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+                chart.draw(view, options);
+            }
+        </script>
+        <div id="columnchart_values" style="width: 1000px; height: 500px;"></div>
+        <hr />
+        <div>
+            <a href="/Report/ExportToExcel">Export a exel</a>
+        </div>
+    }
+</div>

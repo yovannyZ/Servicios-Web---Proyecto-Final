@@ -19,11 +19,20 @@ namespace Canchita.Service
         private TarifaDAO tarifaDAO;
         private ReservaDAO reservaDAO;
         private DetalleReservaDAO detalleReservaDAO;
-
         private TarjetaDAO tarjetaDAO;
         private PagoDAO pagoDAO;
+        private ReportesDAO reportesDAO;
 
 
+        private ReportesDAO ReportesDAO
+        {
+            get
+            {
+                if (reportesDAO == null)
+                    reportesDAO = new ReportesDAO();
+                return reportesDAO;
+            }
+        }
         private TarjetaDAO TARJETADAO
         {
             get
@@ -250,6 +259,11 @@ namespace Canchita.Service
         {
             return ReservaDAO.eliminarReserva(idReserva);
         }
+        public List<Reserva> listaParaEliminar()
+        {
+            return ReservaDAO.listaParaEliminar();
+        }
+
         #endregion
 
         #region . TARJETA .
@@ -394,20 +408,14 @@ namespace Canchita.Service
         }
         #endregion
 
+        #region .REPORTES.
 
-
-
-
-
-
-
-
-
-
-
-        public List<Reserva> listaParaEliminar()
+        public  List<ReporteReservasAnio> ReservasxAnio(string anio, int idSede)
         {
-            return ReservaDAO.listaParaEliminar();
+            return ReportesDAO.ReservasXAnio(anio, idSede);
         }
+
+        #endregion
+      
     }
 }

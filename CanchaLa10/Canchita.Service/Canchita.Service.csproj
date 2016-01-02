@@ -67,6 +67,7 @@
     <Compile Include="Data\DBHelper.cs" />
     <Compile Include="Data\DetalleReservaDAO.cs" />
     <Compile Include="Data\PagoDAO.cs" />
+    <Compile Include="Data\ReportesDAO.cs" />
     <Compile Include="Data\ReservaDAO.cs" />
     <Compile Include="Data\SedeDAO.cs" />
     <Compile Include="Data\TarifaDAO.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Modelo\DetalleReserva.cs" />
     <Compile Include="Modelo\DetalleReservaCompletoxUsuario.cs" />
     <Compile Include="Modelo\Pago.cs" />
+    <Compile Include="Modelo\ReporteReservasAnio.cs" />
     <Compile Include="Modelo\Reserva.cs" />
     <Compile Include="Modelo\Sede.cs" />
     <Compile Include="Modelo\Tarifa.cs" />

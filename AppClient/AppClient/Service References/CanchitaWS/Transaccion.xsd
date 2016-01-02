@@ -44,6 +44,7 @@
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Monto" type="xs:double" />
       <xs:element minOccurs="0" name="campo" nillable="true" type="tns:Campo" />
+      <xs:element minOccurs="0" name="diferencia" type="xs:double" />
       <xs:element minOccurs="0" name="fechaOperacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="usuario" nillable="true" type="tns:Usuario" />
     </xs:sequence>
@@ -153,4 +154,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DetalleReservaCompletoxUsuario" nillable="true" type="tns:DetalleReservaCompletoxUsuario" />
+  <xs:complexType name="ArrayOfReporteReservasAnio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReporteReservasAnio" nillable="true" type="tns:ReporteReservasAnio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReporteReservasAnio" nillable="true" type="tns:ArrayOfReporteReservasAnio" />
+  <xs:complexType name="ReporteReservasAnio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Monto" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReporteReservasAnio" nillable="true" type="tns:ReporteReservasAnio" />
 </xs:schema>

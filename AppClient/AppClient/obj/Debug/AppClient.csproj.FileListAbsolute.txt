@@ -99,11 +99,6 @@ C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient
 C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.csprojResolveAssemblyReference.cache
 C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.dll
 C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.pdb
-C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\bin\AppClient.dll.config
-C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\bin\AppClient.dll
-C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\bin\AppClient.pdb
-C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.dll
-C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.pdb
 C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\AppClient\AppClient\bin\AppClient.dll.config
 C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\AppClient\AppClient\bin\AppClient.dll
 C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\AppClient\AppClient\bin\AppClient.pdb
@@ -116,3 +111,8 @@ C:\Users\Yovanny\Desktop\Revision 1\Servicios-Web---Proyecto-Final\AppClient\App
 C:\Users\Yovanny\Desktop\Revision 1\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.csprojResolveAssemblyReference.cache
 C:\Users\Yovanny\Desktop\Revision 1\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.dll
 C:\Users\Yovanny\Desktop\Revision 1\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.pdb
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\bin\AppClient.dll.config
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\bin\AppClient.dll
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\bin\AppClient.pdb
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.dll
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.pdb

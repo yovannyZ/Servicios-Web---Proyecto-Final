@@ -158,5 +158,10 @@ namespace Canchita.Service
          [OperationContract]
          bool eliminarDetalleReserva(int idReserva);
         #endregion
+
+         #region .REPORTES.
+         [OperationContract]
+         List<ReporteReservasAnio> ReservasxAnio(string anio, int idSede);
+         #endregion
     }
 }
