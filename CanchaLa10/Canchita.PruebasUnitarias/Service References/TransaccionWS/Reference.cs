@@ -211,6 +211,12 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/Agregar", ReplyAction="http://tempuri.org/ITransaccion/AgregarResponse")]
         System.Threading.Tasks.Task<bool> AgregarAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/Listar", ReplyAction="http://tempuri.org/ITransaccion/ListarResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario> Listar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/Listar", ReplyAction="http://tempuri.org/ITransaccion/ListarResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario>> ListarAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -246,6 +252,14 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         public System.Threading.Tasks.Task<bool> AgregarAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
             return base.Channel.AgregarAsync(usuario);
+        }
+        
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario> Listar() {
+            return base.Channel.Listar();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario>> ListarAsync() {
+            return base.Channel.ListarAsync();
         }
     }
 }

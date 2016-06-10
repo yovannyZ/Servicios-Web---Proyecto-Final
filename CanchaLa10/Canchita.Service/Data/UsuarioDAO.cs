@@ -10,29 +10,58 @@ namespace Canchita.Service.Data
 {
     public class UsuarioDAO
     {
-        string cadenaConexion = "server=(local);DataBase=reservabd;user=sa;password=Developer2016";
+       
 
         public bool Agregar(Usuario usuario)
         {
-
             bool exito = false;
-            using (SqlConnection cn = new SqlConnection(cadenaConexion))
-            {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Usuario  VALUES(@pr1,@pr2,@pr3,@pr4,@pr5,@pr6,@pr7,@pr8,@pr9)", cn);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@pr1", usuario.Nombres);
-                cmd.Parameters.AddWithValue("@pr2", usuario.ApPaterno);
-                cmd.Parameters.AddWithValue("@pr3", usuario.ApMaterno);
-                cmd.Parameters.AddWithValue("@pr4", usuario.Dni);
-                cmd.Parameters.AddWithValue("@pr5", usuario.Email);
-                cmd.Parameters.AddWithValue("@pr6", usuario.Telefono);
-                cmd.Parameters.AddWithValue("@pr7", usuario.TipoUsuario);
-                cmd.Parameters.AddWithValue("@pr8", usuario.Username);
-                cmd.Parameters.AddWithValue("@pr9", usuario.Clave);
-                exito = cmd.ExecuteNonQuery() > 0;
-            }
+            string query = "INSERT INTO USUARIO  VALUES(@pr1,@pr2,@pr3,@pr4,@pr5,@pr6,@pr7,@pr8,@pr9)";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@pr1",usuario.Nombres),
+                 DBHelper.MakeParam("@pr2",usuario.ApPaterno),
+                 DBHelper.MakeParam("@pr3",usuario.ApMaterno),
+                 DBHelper.MakeParam("@pr4",usuario.Dni),
+                 DBHelper.MakeParam("@pr5",usuario.Email),
+                 DBHelper.MakeParam("@pr6",usuario.Telefono),
+                 DBHelper.MakeParam("@pr7",usuario.TipoUsuario),
+                 DBHelper.MakeParam("@pr8",usuario.Username),
+                 DBHelper.MakeParam("@pr9",usuario.Clave)
+
+             };
+            exito = DBHelper.ExecuteNonQuery(query, dbParams)>0;
             return exito;
+        }
+
+        public List<Usuario> ListarUsuarios()
+        {
+           
+            List<Usuario> lista= new List<Usuario>();
+            string query = "SELECT * FROM Usuario";
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query)) { 
+            if (lector != null && lector.HasRows)
+                {
+                    Usuario usuario;
+                    while (lector.Read())
+                    {
+                        usuario = new Usuario();
+                        usuario.Id = Convert.ToInt32(lector["idUsuario"]);
+                        usuario.Nombres = Convert.ToString(lector["Nombres"]);
+                        usuario.ApPaterno = Convert.ToString(lector["apPaterno"]);
+                        usuario.ApMaterno = Convert.ToString(lector["apMaterno"]);
+                        usuario.Dni = Convert.ToString(lector["DNI"]);
+                        usuario.Email = Convert.ToString(lector["EMail"]);
+                        usuario.TipoUsuario = Convert.ToString(lector["TipoUsuario"]);
+                        usuario.Username = Convert.ToString(lector["username"]);
+                        usuario.Clave = Convert.ToString(lector["clave"]);
+                        usuario.Telefono = Convert.ToString(lector["Telefono"]);
+                        lista.Add(usuario);
+                    }
+                }
+            }
+
+            return lista;
         }
     }
 }

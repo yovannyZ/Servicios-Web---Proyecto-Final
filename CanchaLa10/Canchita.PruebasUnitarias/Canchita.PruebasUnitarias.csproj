@@ -66,6 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TransaccionWS\Transaccion.wsdl" />
     <None Include="Service References\TransaccionWS\Transaccion.xsd">
       <SubType>Designer</SubType>

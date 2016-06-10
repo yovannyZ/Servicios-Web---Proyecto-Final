@@ -4,3 +4,9 @@ C:\Users\Yovanny\Documents\Visual Studio 2013\Projects\CanchaLa10\Canchita.Prueb
 C:\Users\Yovanny\Documents\Visual Studio 2013\Projects\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.csprojResolveAssemblyReference.cache
 C:\Users\Yovanny\Documents\Visual Studio 2013\Projects\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.dll
 C:\Users\Yovanny\Documents\Visual Studio 2013\Projects\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.pdb
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\bin\Debug\Canchita.PruebasUnitarias.dll.config
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\bin\Debug\Canchita.PruebasUnitarias.dll
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\bin\Debug\Canchita.PruebasUnitarias.pdb
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.csprojResolveAssemblyReference.cache
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.dll
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.pdb

@@ -28,5 +28,11 @@ namespace Canchita.Service
         {
             return UsuarioDAO.Agregar(usuario);
         }
+
+
+        public List<Usuario> Listar()
+        {
+            return UsuarioDAO.ListarUsuarios();
+        }
     }
 }

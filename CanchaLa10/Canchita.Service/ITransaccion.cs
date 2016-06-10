@@ -14,5 +14,8 @@ namespace Canchita.Service
     {
         [OperationContract]
         bool Agregar(Usuario usuario);
+
+        [OperationContract]
+        List<Usuario> Listar();
     }
 }
