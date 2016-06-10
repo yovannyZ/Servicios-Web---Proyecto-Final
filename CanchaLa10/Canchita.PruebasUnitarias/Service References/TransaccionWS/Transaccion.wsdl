@@ -13,6 +13,12 @@
   <wsdl:message name="ITransaccion_Agregar_OutputMessage">
     <wsdl:part name="parameters" element="tns:AgregarResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarResponse" />
+  </wsdl:message>
   <wsdl:message name="ITransaccion_Listar_InputMessage">
     <wsdl:part name="parameters" element="tns:Listar" />
   </wsdl:message>
@@ -24,6 +30,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/Agregar" message="tns:ITransaccion_Agregar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/AgregarResponse" message="tns:ITransaccion_Agregar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/Actualizar" message="tns:ITransaccion_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ActualizarResponse" message="tns:ITransaccion_Actualizar_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Listar">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/Listar" message="tns:ITransaccion_Listar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ListarResponse" message="tns:ITransaccion_Listar_OutputMessage" />
@@ -33,6 +43,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Agregar">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/Agregar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/Actualizar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

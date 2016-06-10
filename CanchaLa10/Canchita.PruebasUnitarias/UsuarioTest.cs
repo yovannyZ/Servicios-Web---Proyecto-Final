@@ -9,6 +9,7 @@ namespace Canchita.PruebasUnitarias
     public class UsuarioTest
     {
         TransaccionClient proxy = new TransaccionClient();
+
         [TestMethod]
         public void AgregarUsuario()
         {
@@ -27,6 +28,27 @@ namespace Canchita.PruebasUnitarias
 
            
             Assert.IsTrue(proxy.Agregar(usuario));
+        }
+
+        [TestMethod]
+        public void ActulizarUsuario()
+        {
+            Usuario usuario = new Usuario()
+            {
+                Id=3,
+                Nombres = "Yovanny Zeballos",
+                ApPaterno = "Zeballos",
+                ApMaterno = "Medina",
+                Dni = "70123395",
+                Email = "yovanny_jzm@hotmail.com",
+                Telefono = "943823186",
+                TipoUsuario = "Administrador",
+                Username = "Zeballos",
+                Clave = "123"
+            };
+
+
+            Assert.IsTrue(proxy.Actualizar(usuario));
         }
 
          [TestMethod]

@@ -15,6 +15,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Actualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CanchaLa10.Service.Modelo" minOccurs="0" name="usuario" nillable="true" type="q2:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizarResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Listar">
     <xs:complexType>
       <xs:sequence />
@@ -23,7 +37,7 @@
   <xs:element name="ListarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CanchaLa10.Service.Modelo" minOccurs="0" name="ListarResult" nillable="true" type="q2:ArrayOfUsuario" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CanchaLa10.Service.Modelo" minOccurs="0" name="ListarResult" nillable="true" type="q3:ArrayOfUsuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

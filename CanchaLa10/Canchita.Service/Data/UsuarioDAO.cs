@@ -34,6 +34,36 @@ namespace Canchita.Service.Data
             return exito;
         }
 
+        public bool Actualizar(Usuario usuario)
+        {
+            bool exito = false;
+            string query = "UPDATE USUARIO SET Nombres=@pr1,"+
+                                                   "apPaterno=@pr2,"+
+                                                   "apMaterno=@pr3,"+
+                                                   "DNI=@pr4,"+
+                                                   "EMail=@pr5,"+
+                                                   "Telefono=@pr6,"+
+                                                   "TipoUsuario=@pr7,"+
+                                                   "username=@pr8,"+
+                                                   "clave=@pr9 where idUsuario=@pr10 ";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@pr1",usuario.Nombres),
+                 DBHelper.MakeParam("@pr2",usuario.ApPaterno),
+                 DBHelper.MakeParam("@pr3",usuario.ApMaterno),
+                 DBHelper.MakeParam("@pr4",usuario.Dni),
+                 DBHelper.MakeParam("@pr5",usuario.Email),
+                 DBHelper.MakeParam("@pr6",usuario.Telefono),
+                 DBHelper.MakeParam("@pr7",usuario.TipoUsuario),
+                 DBHelper.MakeParam("@pr8",usuario.Username),
+                 DBHelper.MakeParam("@pr9",usuario.Clave),
+                 DBHelper.MakeParam("@pr10",usuario.Id)
+
+             };
+            exito = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
+            return exito;
+        }
         public List<Usuario> ListarUsuarios()
         {
            

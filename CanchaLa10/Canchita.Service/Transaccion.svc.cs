@@ -34,5 +34,11 @@ namespace Canchita.Service
         {
             return UsuarioDAO.ListarUsuarios();
         }
+
+
+        public bool Actualizar(Usuario usuario)
+        {
+            return UsuarioDAO.Actualizar(usuario);
+        }
     }
 }
