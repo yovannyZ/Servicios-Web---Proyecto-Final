@@ -15,7 +15,7 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Usuario", Namespace="http://schemas.datacontract.org/2004/07/CanchaLa10.Service.Modelo")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Usuario", Namespace="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo")]
     [System.SerializableAttribute()]
     public partial class Usuario : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -202,27 +202,580 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Tarifa", Namespace="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo")]
+    [System.SerializableAttribute()]
+    public partial class Tarifa : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool CheckedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HoraFinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HoraInicioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PrecioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Checked {
+            get {
+                return this.CheckedField;
+            }
+            set {
+                if ((this.CheckedField.Equals(value) != true)) {
+                    this.CheckedField = value;
+                    this.RaisePropertyChanged("Checked");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HoraFin {
+            get {
+                return this.HoraFinField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HoraFinField, value) != true)) {
+                    this.HoraFinField = value;
+                    this.RaisePropertyChanged("HoraFin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HoraInicio {
+            get {
+                return this.HoraInicioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HoraInicioField, value) != true)) {
+                    this.HoraInicioField = value;
+                    this.RaisePropertyChanged("HoraInicio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Precio {
+            get {
+                return this.PrecioField;
+            }
+            set {
+                if ((this.PrecioField.Equals(value) != true)) {
+                    this.PrecioField = value;
+                    this.RaisePropertyChanged("Precio");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Reserva", Namespace="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo")]
+    [System.SerializableAttribute()]
+    public partial class Reserva : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FechaReservaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MontoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Canchita.PruebasUnitarias.TransaccionWS.Campo campoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Canchita.PruebasUnitarias.TransaccionWS.Usuario usuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FechaReserva {
+            get {
+                return this.FechaReservaField;
+            }
+            set {
+                if ((this.FechaReservaField.Equals(value) != true)) {
+                    this.FechaReservaField = value;
+                    this.RaisePropertyChanged("FechaReserva");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Monto {
+            get {
+                return this.MontoField;
+            }
+            set {
+                if ((this.MontoField.Equals(value) != true)) {
+                    this.MontoField = value;
+                    this.RaisePropertyChanged("Monto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Canchita.PruebasUnitarias.TransaccionWS.Campo campo {
+            get {
+                return this.campoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.campoField, value) != true)) {
+                    this.campoField = value;
+                    this.RaisePropertyChanged("campo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario {
+            get {
+                return this.usuarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.usuarioField, value) != true)) {
+                    this.usuarioField = value;
+                    this.RaisePropertyChanged("usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Campo", Namespace="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo")]
+    [System.SerializableAttribute()]
+    public partial class Campo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Canchita.PruebasUnitarias.TransaccionWS.Sede SedeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Canchita.PruebasUnitarias.TransaccionWS.Sede Sede {
+            get {
+                return this.SedeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SedeField, value) != true)) {
+                    this.SedeField = value;
+                    this.RaisePropertyChanged("Sede");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Sede", Namespace="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo")]
+    [System.SerializableAttribute()]
+    public partial class Sede : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DireccionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Direccion {
+            get {
+                return this.DireccionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DireccionField, value) != true)) {
+                    this.DireccionField = value;
+                    this.RaisePropertyChanged("Direccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DetalleReserva", Namespace="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo")]
+    [System.SerializableAttribute()]
+    public partial class DetalleReserva : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HoraFinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HoraInicioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PrecioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Canchita.PruebasUnitarias.TransaccionWS.Reserva ReservaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Canchita.PruebasUnitarias.TransaccionWS.Tarifa TarifaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HoraFin {
+            get {
+                return this.HoraFinField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HoraFinField, value) != true)) {
+                    this.HoraFinField = value;
+                    this.RaisePropertyChanged("HoraFin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HoraInicio {
+            get {
+                return this.HoraInicioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HoraInicioField, value) != true)) {
+                    this.HoraInicioField = value;
+                    this.RaisePropertyChanged("HoraInicio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Precio {
+            get {
+                return this.PrecioField;
+            }
+            set {
+                if ((this.PrecioField.Equals(value) != true)) {
+                    this.PrecioField = value;
+                    this.RaisePropertyChanged("Precio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Canchita.PruebasUnitarias.TransaccionWS.Reserva Reserva {
+            get {
+                return this.ReservaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReservaField, value) != true)) {
+                    this.ReservaField = value;
+                    this.RaisePropertyChanged("Reserva");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Canchita.PruebasUnitarias.TransaccionWS.Tarifa Tarifa {
+            get {
+                return this.TarifaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TarifaField, value) != true)) {
+                    this.TarifaField = value;
+                    this.RaisePropertyChanged("Tarifa");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TransaccionWS.ITransaccion")]
     public interface ITransaccion {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/Agregar", ReplyAction="http://tempuri.org/ITransaccion/AgregarResponse")]
-        bool Agregar(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarUsuario", ReplyAction="http://tempuri.org/ITransaccion/AgregarUsuarioResponse")]
+        bool AgregarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/Agregar", ReplyAction="http://tempuri.org/ITransaccion/AgregarResponse")]
-        System.Threading.Tasks.Task<bool> AgregarAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarUsuario", ReplyAction="http://tempuri.org/ITransaccion/AgregarUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> AgregarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/Actualizar", ReplyAction="http://tempuri.org/ITransaccion/ActualizarResponse")]
-        bool Actualizar(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ActualizarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ActualizarUsuarioResponse")]
+        bool ActualizarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/Actualizar", ReplyAction="http://tempuri.org/ITransaccion/ActualizarResponse")]
-        System.Threading.Tasks.Task<bool> ActualizarAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ActualizarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ActualizarUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> ActualizarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/Listar", ReplyAction="http://tempuri.org/ITransaccion/ListarResponse")]
-        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario> Listar();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ListarUsuarioResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario> ListarUsuario();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/Listar", ReplyAction="http://tempuri.org/ITransaccion/ListarResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario>> ListarAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ListarUsuarioResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario>> ListarUsuarioAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifas", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ListarTarifas(System.DateTime fechaReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifas", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa>> ListarTarifasAsync(System.DateTime fechaReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarReserva", ReplyAction="http://tempuri.org/ITransaccion/AgregarReservaResponse")]
+        bool AgregarReserva(Canchita.PruebasUnitarias.TransaccionWS.Reserva reserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarReserva", ReplyAction="http://tempuri.org/ITransaccion/AgregarReservaResponse")]
+        System.Threading.Tasks.Task<bool> AgregarReservaAsync(Canchita.PruebasUnitarias.TransaccionWS.Reserva reserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarDetalleReserva", ReplyAction="http://tempuri.org/ITransaccion/AgregarDetalleReservaResponse")]
+        bool AgregarDetalleReserva(Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva dtReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarDetalleReserva", ReplyAction="http://tempuri.org/ITransaccion/AgregarDetalleReservaResponse")]
+        System.Threading.Tasks.Task<bool> AgregarDetalleReservaAsync(Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva dtReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerIdUltimaReserva", ReplyAction="http://tempuri.org/ITransaccion/ObtenerIdUltimaReservaResponse")]
+        int ObtenerIdUltimaReserva();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerIdUltimaReserva", ReplyAction="http://tempuri.org/ITransaccion/ObtenerIdUltimaReservaResponse")]
+        System.Threading.Tasks.Task<int> ObtenerIdUltimaReservaAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -252,28 +805,60 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
                 base(binding, remoteAddress) {
         }
         
-        public bool Agregar(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
-            return base.Channel.Agregar(usuario);
+        public bool AgregarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.AgregarUsuario(usuario);
         }
         
-        public System.Threading.Tasks.Task<bool> AgregarAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
-            return base.Channel.AgregarAsync(usuario);
+        public System.Threading.Tasks.Task<bool> AgregarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.AgregarUsuarioAsync(usuario);
         }
         
-        public bool Actualizar(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
-            return base.Channel.Actualizar(usuario);
+        public bool ActualizarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.ActualizarUsuario(usuario);
         }
         
-        public System.Threading.Tasks.Task<bool> ActualizarAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
-            return base.Channel.ActualizarAsync(usuario);
+        public System.Threading.Tasks.Task<bool> ActualizarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.ActualizarUsuarioAsync(usuario);
         }
         
-        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario> Listar() {
-            return base.Channel.Listar();
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario> ListarUsuario() {
+            return base.Channel.ListarUsuario();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario>> ListarAsync() {
-            return base.Channel.ListarAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario>> ListarUsuarioAsync() {
+            return base.Channel.ListarUsuarioAsync();
+        }
+        
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ListarTarifas(System.DateTime fechaReserva) {
+            return base.Channel.ListarTarifas(fechaReserva);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa>> ListarTarifasAsync(System.DateTime fechaReserva) {
+            return base.Channel.ListarTarifasAsync(fechaReserva);
+        }
+        
+        public bool AgregarReserva(Canchita.PruebasUnitarias.TransaccionWS.Reserva reserva) {
+            return base.Channel.AgregarReserva(reserva);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AgregarReservaAsync(Canchita.PruebasUnitarias.TransaccionWS.Reserva reserva) {
+            return base.Channel.AgregarReservaAsync(reserva);
+        }
+        
+        public bool AgregarDetalleReserva(Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva dtReserva) {
+            return base.Channel.AgregarDetalleReserva(dtReserva);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AgregarDetalleReservaAsync(Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva dtReserva) {
+            return base.Channel.AgregarDetalleReservaAsync(dtReserva);
+        }
+        
+        public int ObtenerIdUltimaReserva() {
+            return base.Channel.ObtenerIdUltimaReserva();
+        }
+        
+        public System.Threading.Tasks.Task<int> ObtenerIdUltimaReservaAsync() {
+            return base.Channel.ObtenerIdUltimaReservaAsync();
         }
     }
 }

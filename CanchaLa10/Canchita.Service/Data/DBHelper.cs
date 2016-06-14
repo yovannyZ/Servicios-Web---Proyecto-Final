@@ -49,5 +49,36 @@ namespace Canchita.Service.Data
             dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
             return dr;
         }
+
+        public static SqlDataReader ExecuteDataReader(string query,SqlParameter[] parametros)
+        {
+            SqlDataReader dr;
+
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(query, cn);
+            cmd.CommandType = CommandType.Text;
+            if (parametros != null)
+            {
+                foreach (SqlParameter parametro in parametros)
+                {
+                    cmd.Parameters.Add(parametro);
+                }
+            }
+            dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            return dr;
+        }
+
+        public static object ExecuteScalar(string query)
+        {
+            using (SqlConnection cn = new SqlConnection(cadenaConexion))
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.Text;
+                return cmd.ExecuteScalar();
+
+            }
+        }
     }
 }

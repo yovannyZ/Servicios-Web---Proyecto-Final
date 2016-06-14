@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CanchaLa10.Service.Modelo
+namespace Canchita.Service.Modelo
 {
     public class Usuario
     {

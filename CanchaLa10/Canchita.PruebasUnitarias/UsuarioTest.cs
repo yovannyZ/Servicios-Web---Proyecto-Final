@@ -27,7 +27,7 @@ namespace Canchita.PruebasUnitarias
             };
 
            
-            Assert.IsTrue(proxy.Agregar(usuario));
+            Assert.IsTrue(proxy.AgregarUsuario(usuario));
         }
 
         [TestMethod]
@@ -48,14 +48,14 @@ namespace Canchita.PruebasUnitarias
             };
 
 
-            Assert.IsTrue(proxy.Actualizar(usuario));
+            Assert.IsTrue(proxy.ActualizarUsuario(usuario));
         }
 
          [TestMethod]
         public void ListarUsuarios()
         {
             List<Usuario> lista = new List<Usuario>();
-            lista = proxy.Listar();
+            lista = proxy.ListarUsuario();
             Assert.IsNotNull(lista);
 
         }

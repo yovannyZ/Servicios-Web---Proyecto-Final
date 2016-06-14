@@ -1,4 +1,4 @@
-﻿using CanchaLa10.Service.Modelo;
+﻿using Canchita.Service.Modelo;
 using Canchita.Service.Data;
 using System;
 using System.Collections.Generic;
@@ -14,6 +14,9 @@ namespace Canchita.Service
     public class Transaccion : ITransaccion
     {
         private UsuarioDAO usuarioDAO;
+        private TarifaDAO tarifaDAO;
+        private ReservaDAO reservaDAO;
+        private DetalleReservaDAO detalleReservaDAO;
         private UsuarioDAO UsuarioDAO
         {
             get
@@ -23,22 +26,74 @@ namespace Canchita.Service
                 return usuarioDAO;
             }
         }
+        private TarifaDAO TarifaDAO
+        {
+            get
+            {
+                if (tarifaDAO == null)
+                    tarifaDAO = new TarifaDAO();
+                return tarifaDAO;
+            }
+        }
+        private ReservaDAO ReservaDAO
+        {
+            get
+            {
+                if (reservaDAO == null)
+                    reservaDAO = new ReservaDAO();
+                return reservaDAO;
+            }
+        }
 
-        public bool Agregar(Usuario usuario)
+        private DetalleReservaDAO DetalleReservaDAO
+        {
+            get
+            {
+                if (detalleReservaDAO == null)
+                    detalleReservaDAO = new DetalleReservaDAO();
+                return detalleReservaDAO;
+            }
+        }
+
+        public bool AgregarUsuario(Usuario usuario)
         {
             return UsuarioDAO.Agregar(usuario);
         }
 
 
-        public List<Usuario> Listar()
+        public List<Usuario> ListarUsuario()
         {
             return UsuarioDAO.ListarUsuarios();
         }
 
 
-        public bool Actualizar(Usuario usuario)
+        public bool ActualizarUsuario(Usuario usuario)
         {
             return UsuarioDAO.Actualizar(usuario);
+        }
+
+
+        public List<Tarifa> ListarTarifas(DateTime fechaReserva)
+        {
+            return TarifaDAO.Listar(fechaReserva);
+        }
+
+
+        public bool AgregarReserva(Reserva reserva)
+        {
+            return ReservaDAO.Agregar(reserva);
+        }
+
+
+        public bool AgregarDetalleReserva(DetalleReserva dtReserva)
+        {
+            return DetalleReservaDAO.Agregar(dtReserva);
+        }
+
+
+        public int ObtenerIdUltimaReserva()
+        {
+            return ReservaDAO.ObtenerIdUltimaReserva();
         }
     }
 }

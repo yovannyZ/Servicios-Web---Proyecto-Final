@@ -4,45 +4,85 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:1557/Transaccion.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:1557/Transaccion.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:1557/Transaccion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CanchaLa10.Service.Modelo" />
+      <xsd:import schemaLocation="http://localhost:1557/Transaccion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ITransaccion_Agregar_InputMessage">
-    <wsdl:part name="parameters" element="tns:Agregar" />
+  <wsdl:message name="ITransaccion_AgregarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarUsuario" />
   </wsdl:message>
-  <wsdl:message name="ITransaccion_Agregar_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AgregarResponse" />
+  <wsdl:message name="ITransaccion_AgregarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarUsuarioResponse" />
   </wsdl:message>
-  <wsdl:message name="ITransaccion_Actualizar_InputMessage">
-    <wsdl:part name="parameters" element="tns:Actualizar" />
+  <wsdl:message name="ITransaccion_ActualizarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuario" />
   </wsdl:message>
-  <wsdl:message name="ITransaccion_Actualizar_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ActualizarResponse" />
+  <wsdl:message name="ITransaccion_ActualizarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuarioResponse" />
   </wsdl:message>
-  <wsdl:message name="ITransaccion_Listar_InputMessage">
-    <wsdl:part name="parameters" element="tns:Listar" />
+  <wsdl:message name="ITransaccion_ListarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarUsuario" />
   </wsdl:message>
-  <wsdl:message name="ITransaccion_Listar_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListarResponse" />
+  <wsdl:message name="ITransaccion_ListarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ListarTarifas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTarifas" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ListarTarifas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTarifasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_AgregarReserva_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarReserva" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_AgregarReserva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarReservaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_AgregarDetalleReserva_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarDetalleReserva" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_AgregarDetalleReserva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarDetalleReservaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ObtenerIdUltimaReserva_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerIdUltimaReserva" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ObtenerIdUltimaReserva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerIdUltimaReservaResponse" />
   </wsdl:message>
   <wsdl:portType name="ITransaccion">
-    <wsdl:operation name="Agregar">
-      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/Agregar" message="tns:ITransaccion_Agregar_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/AgregarResponse" message="tns:ITransaccion_Agregar_OutputMessage" />
+    <wsdl:operation name="AgregarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarUsuario" message="tns:ITransaccion_AgregarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/AgregarUsuarioResponse" message="tns:ITransaccion_AgregarUsuario_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Actualizar">
-      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/Actualizar" message="tns:ITransaccion_Actualizar_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ActualizarResponse" message="tns:ITransaccion_Actualizar_OutputMessage" />
+    <wsdl:operation name="ActualizarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ActualizarUsuario" message="tns:ITransaccion_ActualizarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ActualizarUsuarioResponse" message="tns:ITransaccion_ActualizarUsuario_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Listar">
-      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/Listar" message="tns:ITransaccion_Listar_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ListarResponse" message="tns:ITransaccion_Listar_OutputMessage" />
+    <wsdl:operation name="ListarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ListarUsuario" message="tns:ITransaccion_ListarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ListarUsuarioResponse" message="tns:ITransaccion_ListarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTarifas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ListarTarifas" message="tns:ITransaccion_ListarTarifas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ListarTarifasResponse" message="tns:ITransaccion_ListarTarifas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarReserva">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarReserva" message="tns:ITransaccion_AgregarReserva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/AgregarReservaResponse" message="tns:ITransaccion_AgregarReserva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarDetalleReserva">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarDetalleReserva" message="tns:ITransaccion_AgregarDetalleReserva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/AgregarDetalleReservaResponse" message="tns:ITransaccion_AgregarDetalleReserva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIdUltimaReserva">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ObtenerIdUltimaReserva" message="tns:ITransaccion_ObtenerIdUltimaReserva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ObtenerIdUltimaReservaResponse" message="tns:ITransaccion_ObtenerIdUltimaReserva_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITransaccion" type="tns:ITransaccion">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Agregar">
-      <soap:operation soapAction="http://tempuri.org/ITransaccion/Agregar" style="document" />
+    <wsdl:operation name="AgregarUsuario">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/AgregarUsuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -50,8 +90,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Actualizar">
-      <soap:operation soapAction="http://tempuri.org/ITransaccion/Actualizar" style="document" />
+    <wsdl:operation name="ActualizarUsuario">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ActualizarUsuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -59,8 +99,44 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Listar">
-      <soap:operation soapAction="http://tempuri.org/ITransaccion/Listar" style="document" />
+    <wsdl:operation name="ListarUsuario">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ListarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTarifas">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ListarTarifas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarReserva">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/AgregarReserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarDetalleReserva">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/AgregarDetalleReserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIdUltimaReserva">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ObtenerIdUltimaReserva" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

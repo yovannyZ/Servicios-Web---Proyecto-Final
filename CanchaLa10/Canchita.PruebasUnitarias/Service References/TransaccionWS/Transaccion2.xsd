@@ -1,43 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:1557/Transaccion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CanchaLa10.Service.Modelo" />
-  <xs:element name="Agregar">
+  <xs:import schemaLocation="http://localhost:1557/Transaccion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" />
+  <xs:element name="AgregarUsuario">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CanchaLa10.Service.Modelo" minOccurs="0" name="usuario" nillable="true" type="q1:Usuario" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="usuario" nillable="true" type="q1:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AgregarResponse">
+  <xs:element name="AgregarUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="AgregarResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="AgregarUsuarioResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Actualizar">
+  <xs:element name="ActualizarUsuario">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CanchaLa10.Service.Modelo" minOccurs="0" name="usuario" nillable="true" type="q2:Usuario" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="usuario" nillable="true" type="q2:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ActualizarResponse">
+  <xs:element name="ActualizarUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ActualizarResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ActualizarUsuarioResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Listar">
+  <xs:element name="ListarUsuario">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="ListarResponse">
+  <xs:element name="ListarUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CanchaLa10.Service.Modelo" minOccurs="0" name="ListarResult" nillable="true" type="q3:ArrayOfUsuario" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="ListarUsuarioResult" nillable="true" type="q3:ArrayOfUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTarifas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fechaReserva" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTarifasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="ListarTarifasResult" nillable="true" type="q4:ArrayOfTarifa" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarReserva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="reserva" nillable="true" type="q5:Reserva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarReservaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AgregarReservaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarDetalleReserva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="dtReserva" nillable="true" type="q6:DetalleReserva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarDetalleReservaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AgregarDetalleReservaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerIdUltimaReserva">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerIdUltimaReservaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerIdUltimaReservaResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

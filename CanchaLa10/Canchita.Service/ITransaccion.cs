@@ -1,4 +1,4 @@
-﻿using CanchaLa10.Service.Modelo;
+﻿using Canchita.Service.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +13,25 @@ namespace Canchita.Service
     public interface ITransaccion
     {
         [OperationContract]
-        bool Agregar(Usuario usuario);
+        bool AgregarUsuario(Usuario usuario);
 
         [OperationContract]
-        bool Actualizar(Usuario usuario);
+        bool ActualizarUsuario(Usuario usuario);
 
         [OperationContract]
-        List<Usuario> Listar();
+        List<Usuario> ListarUsuario();
+        
+        [OperationContract]
+        List<Tarifa> ListarTarifas(DateTime fechaReserva);
+
+        [OperationContract]
+        bool AgregarReserva(Reserva reserva);
+
+        [OperationContract]
+        bool AgregarDetalleReserva(DetalleReserva dtReserva);
+
+        [OperationContract]
+        int ObtenerIdUltimaReserva();
+
     }
 }

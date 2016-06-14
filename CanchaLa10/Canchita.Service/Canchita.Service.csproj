@@ -64,8 +64,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DBHelper.cs" />
+    <Compile Include="Data\DetalleReservaDAO.cs" />
+    <Compile Include="Data\ReservaDAO.cs" />
+    <Compile Include="Data\TarifaDAO.cs" />
     <Compile Include="Data\UsuarioDAO.cs" />
     <Compile Include="ITransaccion.cs" />
+    <Compile Include="Modelo\Campo.cs" />
+    <Compile Include="Modelo\DetalleReserva.cs" />
+    <Compile Include="Modelo\Reserva.cs" />
+    <Compile Include="Modelo\Sede.cs" />
+    <Compile Include="Modelo\Tarifa.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transaccion.svc.cs">

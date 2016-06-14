@@ -53,11 +53,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ReservaTest.cs" />
     <Compile Include="Service References\TransaccionWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="TarifaTest.cs" />
+    <Compile Include="DetalleReservaTest.cs" />
     <Compile Include="UsuarioTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,6 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Tarifa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

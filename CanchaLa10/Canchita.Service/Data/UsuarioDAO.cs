@@ -1,4 +1,5 @@
-﻿using CanchaLa10.Service.Modelo;
+﻿
+using Canchita.Service.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data;
