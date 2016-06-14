@@ -776,6 +776,12 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerIdUltimaReserva", ReplyAction="http://tempuri.org/ITransaccion/ObtenerIdUltimaReservaResponse")]
         System.Threading.Tasks.Task<int> ObtenerIdUltimaReservaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ValidarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ValidarUsuarioResponse")]
+        bool ValidarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ValidarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ValidarUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -859,6 +865,14 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         public System.Threading.Tasks.Task<int> ObtenerIdUltimaReservaAsync() {
             return base.Channel.ObtenerIdUltimaReservaAsync();
+        }
+        
+        public bool ValidarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.ValidarUsuario(usuario);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.ValidarUsuarioAsync(usuario);
         }
     }
 }

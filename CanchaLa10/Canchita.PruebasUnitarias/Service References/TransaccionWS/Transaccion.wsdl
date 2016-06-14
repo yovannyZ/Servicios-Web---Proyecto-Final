@@ -49,6 +49,12 @@
   <wsdl:message name="ITransaccion_ObtenerIdUltimaReserva_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerIdUltimaReservaResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_ValidarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ValidarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioResponse" />
+  </wsdl:message>
   <wsdl:portType name="ITransaccion">
     <wsdl:operation name="AgregarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarUsuario" message="tns:ITransaccion_AgregarUsuario_InputMessage" />
@@ -77,6 +83,10 @@
     <wsdl:operation name="ObtenerIdUltimaReserva">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ObtenerIdUltimaReserva" message="tns:ITransaccion_ObtenerIdUltimaReserva_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ObtenerIdUltimaReservaResponse" message="tns:ITransaccion_ObtenerIdUltimaReserva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ValidarUsuario" message="tns:ITransaccion_ValidarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ValidarUsuarioResponse" message="tns:ITransaccion_ValidarUsuario_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITransaccion" type="tns:ITransaccion">
@@ -137,6 +147,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerIdUltimaReserva">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/ObtenerIdUltimaReserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ValidarUsuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

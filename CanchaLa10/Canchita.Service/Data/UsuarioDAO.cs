@@ -12,7 +12,6 @@ namespace Canchita.Service.Data
     public class UsuarioDAO
     {
        
-
         public bool Agregar(Usuario usuario)
         {
             bool exito = false;
@@ -93,6 +92,39 @@ namespace Canchita.Service.Data
             }
 
             return lista;
+        }
+
+        public Usuario ObtenerUsuario(string username)
+        {
+            Usuario usuario = new Usuario();
+            string query = "SELECT * FROM USUARIO WHERE USERNAME=@pr1";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@pr1",username)
+             };
+
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query,dbParams))
+            {
+                if (lector != null && lector.HasRows)
+                {
+                    
+                    while (lector.Read())
+                    {
+                        usuario.Id = Convert.ToInt32(lector["idUsuario"]);
+                        usuario.Nombres = Convert.ToString(lector["Nombres"]);
+                        usuario.ApPaterno = Convert.ToString(lector["apPaterno"]);
+                        usuario.ApMaterno = Convert.ToString(lector["apMaterno"]);
+                        usuario.Dni = Convert.ToString(lector["DNI"]);
+                        usuario.Email = Convert.ToString(lector["EMail"]);
+                        usuario.TipoUsuario = Convert.ToString(lector["TipoUsuario"]);
+                        usuario.Username = Convert.ToString(lector["username"]);
+                        usuario.Clave = Convert.ToString(lector["clave"]);
+                        usuario.Telefono = Convert.ToString(lector["Telefono"]);
+                    }
+                }
+            }
+            return usuario;
         }
     }
 }

@@ -60,6 +60,19 @@ namespace Canchita.Service
             return UsuarioDAO.Agregar(usuario);
         }
 
+        public bool ValidarUsuario(Usuario usuario)
+        {
+            bool isValid = false;
+            var usu = UsuarioDAO.ObtenerUsuario(usuario.Username);
+            if (usu != null)
+            {
+                if (usu.Clave.Equals(usuario.Clave))
+                {
+                    isValid = true;
+                }
+            }
+            return isValid;
+        }
 
         public List<Usuario> ListarUsuario()
         {
@@ -95,5 +108,8 @@ namespace Canchita.Service
         {
             return ReservaDAO.ObtenerIdUltimaReserva();
         }
+
+
+       
     }
 }

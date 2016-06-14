@@ -33,5 +33,8 @@ namespace Canchita.Service
         [OperationContract]
         int ObtenerIdUltimaReserva();
 
+        [OperationContract]
+        bool ValidarUsuario(Usuario usuario);
+
     }
 }

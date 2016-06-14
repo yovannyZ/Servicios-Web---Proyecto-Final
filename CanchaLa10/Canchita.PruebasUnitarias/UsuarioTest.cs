@@ -59,5 +59,17 @@ namespace Canchita.PruebasUnitarias
             Assert.IsNotNull(lista);
 
         }
+
+         [TestMethod]
+         public void ValidarUsuario()
+         {
+             Usuario usuario = new Usuario()
+             {
+                 Username = "zeballos",
+                 Clave = "123"
+             };
+
+             Assert.IsTrue(proxy.ValidarUsuario(usuario));
+         }
     }
 }
