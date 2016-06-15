@@ -36,5 +36,20 @@ namespace Canchita.Service
         [OperationContract]
         bool ValidarUsuario(Usuario usuario);
 
+        [OperationContract]
+        bool AgregarSede(Sede sede);
+
+        [OperationContract]
+        bool ActualizarSede(Sede sede);
+
+        [OperationContract]
+        List<Sede> ListarSede();
+
+        [OperationContract]
+        bool EliminarSede(Sede sede);
+
+
+
+
     }
 }

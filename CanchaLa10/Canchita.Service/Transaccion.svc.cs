@@ -17,6 +17,19 @@ namespace Canchita.Service
         private TarifaDAO tarifaDAO;
         private ReservaDAO reservaDAO;
         private DetalleReservaDAO detalleReservaDAO;
+        private SedeDAO sedeDAO;
+
+        private SedeDAO SedeDAO
+        {
+            get
+            {
+                if (sedeDAO == null)
+                    sedeDAO = new SedeDAO();
+                return sedeDAO;
+            }
+        }
+        
+
         private UsuarioDAO UsuarioDAO
         {
             get
@@ -110,6 +123,24 @@ namespace Canchita.Service
         }
 
 
-       
+        public bool AgregarSede(Sede sede)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ActualizarSede(Sede sede)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Sede> ListarSede()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool EliminarSede(Sede sede)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

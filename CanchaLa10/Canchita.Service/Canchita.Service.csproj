@@ -66,6 +66,7 @@
     <Compile Include="Data\DBHelper.cs" />
     <Compile Include="Data\DetalleReservaDAO.cs" />
     <Compile Include="Data\ReservaDAO.cs" />
+    <Compile Include="Data\SedeDAO.cs" />
     <Compile Include="Data\TarifaDAO.cs" />
     <Compile Include="Data\UsuarioDAO.cs" />
     <Compile Include="ITransaccion.cs" />
