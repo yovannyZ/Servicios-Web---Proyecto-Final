@@ -9,7 +9,7 @@ namespace Canchita.Service.Data
 {
     public class DBHelper
     {
-        private static string cadenaConexion = "server=(local);DataBase=reservabd;user=sa;password=Developer2016";
+        private static string cadenaConexion = "server=(local);DataBase=reservabd;user=sa;password=123";
         public static SqlParameter MakeParam(string paramName,object objValue)
         {
             SqlParameter param;

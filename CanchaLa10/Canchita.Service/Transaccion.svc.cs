@@ -18,6 +18,17 @@ namespace Canchita.Service
         private ReservaDAO reservaDAO;
         private DetalleReservaDAO detalleReservaDAO;
         private SedeDAO sedeDAO;
+        private CampoDAO campoDAO;
+
+        private CampoDAO CampoDAO
+        {
+            get
+            {
+                if(campoDAO== null)
+                    campoDAO= new CampoDAO();
+                return campoDAO;
+            }
+        }
 
         private SedeDAO SedeDAO
         {
@@ -125,22 +136,43 @@ namespace Canchita.Service
 
         public bool AgregarSede(Sede sede)
         {
-            throw new NotImplementedException();
+            return SedeDAO.Agregar(sede);
         }
 
         public bool ActualizarSede(Sede sede)
         {
-            throw new NotImplementedException();
+            return SedeDAO.Actualizar(sede);
         }
 
-        public List<Sede> ListarSede()
+        public List<Sede> ListarSedes()
         {
-            throw new NotImplementedException();
+            return SedeDAO.ListarSedes();
         }
 
         public bool EliminarSede(Sede sede)
         {
-            throw new NotImplementedException();
+            return SedeDAO.Eliminar(sede);
+        }
+
+
+        public bool AgregarCampo(Campo campo)
+        {
+            return CampoDAO.Agregar(campo);
+        }
+
+        public bool ActualizarCampo(Campo campo)
+        {
+            return CampoDAO.Actualizar(campo);
+        }
+
+        public List<Campo> ListarCampos()
+        {
+            return CampoDAO.ListarCampos();
+        }
+
+        public bool EliminarCampo(Campo campo)
+        {
+            return CampoDAO.Eliminar(campo);
         }
     }
 }

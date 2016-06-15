@@ -76,4 +76,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DetalleReserva" nillable="true" type="tns:DetalleReserva" />
+  <xs:complexType name="ArrayOfSede">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sede" nillable="true" type="tns:Sede" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSede" nillable="true" type="tns:ArrayOfSede" />
+  <xs:complexType name="ArrayOfCampo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Campo" nillable="true" type="tns:Campo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCampo" nillable="true" type="tns:ArrayOfCampo" />
 </xs:schema>

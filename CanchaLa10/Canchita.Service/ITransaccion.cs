@@ -43,12 +43,22 @@ namespace Canchita.Service
         bool ActualizarSede(Sede sede);
 
         [OperationContract]
-        List<Sede> ListarSede();
+        List<Sede> ListarSedes();
 
         [OperationContract]
         bool EliminarSede(Sede sede);
 
+        [OperationContract]
+        bool AgregarCampo(Campo campo);
 
+        [OperationContract]
+        bool ActualizarCampo(Campo campo);
+
+        [OperationContract]
+        List<Campo> ListarCampos();
+
+        [OperationContract]
+        bool EliminarCampo(Campo campo);
 
 
     }

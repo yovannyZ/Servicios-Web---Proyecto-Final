@@ -53,7 +53,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CampoTest.cs" />
     <Compile Include="ReservaTest.cs" />
+    <Compile Include="SedeTest.cs" />
     <Compile Include="Service References\TransaccionWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Campo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Sede.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Tarifa.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

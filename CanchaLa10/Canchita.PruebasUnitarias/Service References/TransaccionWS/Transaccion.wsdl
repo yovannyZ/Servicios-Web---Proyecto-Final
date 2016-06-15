@@ -55,6 +55,54 @@
   <wsdl:message name="ITransaccion_ValidarUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidarUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_AgregarSede_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarSede" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_AgregarSede_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarSedeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ActualizarSede_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSede" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ActualizarSede_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSedeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ListarSedes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSedes" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ListarSedes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSedesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_EliminarSede_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarSede" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_EliminarSede_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarSedeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_AgregarCampo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarCampo" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_AgregarCampo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarCampoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ActualizarCampo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCampo" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ActualizarCampo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCampoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ListarCampos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCampos" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ListarCampos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCamposResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_EliminarCampo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCampo" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_EliminarCampo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCampoResponse" />
+  </wsdl:message>
   <wsdl:portType name="ITransaccion">
     <wsdl:operation name="AgregarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarUsuario" message="tns:ITransaccion_AgregarUsuario_InputMessage" />
@@ -87,6 +135,38 @@
     <wsdl:operation name="ValidarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ValidarUsuario" message="tns:ITransaccion_ValidarUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ValidarUsuarioResponse" message="tns:ITransaccion_ValidarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarSede">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarSede" message="tns:ITransaccion_AgregarSede_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/AgregarSedeResponse" message="tns:ITransaccion_AgregarSede_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSede">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ActualizarSede" message="tns:ITransaccion_ActualizarSede_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ActualizarSedeResponse" message="tns:ITransaccion_ActualizarSede_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarSedes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ListarSedes" message="tns:ITransaccion_ListarSedes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ListarSedesResponse" message="tns:ITransaccion_ListarSedes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSede">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/EliminarSede" message="tns:ITransaccion_EliminarSede_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/EliminarSedeResponse" message="tns:ITransaccion_EliminarSede_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCampo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarCampo" message="tns:ITransaccion_AgregarCampo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/AgregarCampoResponse" message="tns:ITransaccion_AgregarCampo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCampo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ActualizarCampo" message="tns:ITransaccion_ActualizarCampo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ActualizarCampoResponse" message="tns:ITransaccion_ActualizarCampo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCampos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ListarCampos" message="tns:ITransaccion_ListarCampos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ListarCamposResponse" message="tns:ITransaccion_ListarCampos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCampo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/EliminarCampo" message="tns:ITransaccion_EliminarCampo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/EliminarCampoResponse" message="tns:ITransaccion_EliminarCampo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITransaccion" type="tns:ITransaccion">
@@ -156,6 +236,78 @@
     </wsdl:operation>
     <wsdl:operation name="ValidarUsuario">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarSede">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/AgregarSede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSede">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ActualizarSede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarSedes">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ListarSedes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSede">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/EliminarSede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCampo">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/AgregarCampo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCampo">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ActualizarCampo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCampos">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ListarCampos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCampo">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/EliminarCampo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
