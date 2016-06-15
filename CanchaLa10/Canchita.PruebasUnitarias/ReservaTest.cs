@@ -33,5 +33,13 @@ namespace Canchita.PruebasUnitarias
             int idreserva = proxy.ObtenerIdUltimaReserva();
             Assert.IsTrue(idreserva > 0);
         }
+
+        [TestMethod]
+        public void retornarMonto()
+        {   
+            int idRes=10;
+            double monto = proxy.retornarMontoReserva(idRes);
+            Assert.IsNotNull(monto);
+        }
     }
 }

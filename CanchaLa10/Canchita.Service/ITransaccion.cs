@@ -35,8 +35,33 @@ namespace Canchita.Service
 
         [OperationContract]
         bool ValidarUsuario(Usuario usuario);
+        
+        [OperationContract]
+        bool crearTarjetas(Tarjeta tarjeta);
+        [OperationContract]
+        bool abonarSaldo(Tarjeta tarjeta);
 
         [OperationContract]
+        List<Tarjeta> listarTarjetas();
+        [OperationContract]
+        List<Tarjeta> ObtenerTarjetasXUsuario( int id);
+        [OperationContract]
+        Tarjeta obtenerTarjeta(string  idTarjeta);
+
+        [OperationContract]
+
+        double retornarMontoReserva(int idReserva);
+        [OperationContract]
+        bool pagarReservaCTarjeta(Pago pago,string nroTarjeta,int idReserva);
+
+
+
+        [OperationContract]
+        List<Pago> listarPagosPendientes();
+
+        [OperationContract]
+        List<Pago> listarPagosCancelados();
+
         bool AgregarSede(Sede sede);
 
         [OperationContract]
@@ -59,7 +84,6 @@ namespace Canchita.Service
 
         [OperationContract]
         bool EliminarCampo(Campo campo);
-
 
     }
 }

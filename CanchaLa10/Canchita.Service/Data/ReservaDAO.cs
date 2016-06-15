@@ -33,5 +33,27 @@ namespace Canchita.Service.Data
             idReserva = Convert.ToInt32(DBHelper.ExecuteScalar(query));
             return idReserva;
         }
+
+        public double retornarmonto(int idReserva)
+        {
+            double monto=0;
+             string query = "SELECT monto From Reserva WHERE idReserva=@idR";
+             SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@idR",idReserva)
+             };
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query, dbParams))
+            {
+                if (lector != null && lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                      monto=double.Parse(lector["monto"].ToString());                        
+                    }
+                }
+            }
+
+            return monto ;
+        }
     }
 }

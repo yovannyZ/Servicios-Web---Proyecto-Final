@@ -17,6 +17,31 @@ namespace Canchita.Service
         private TarifaDAO tarifaDAO;
         private ReservaDAO reservaDAO;
         private DetalleReservaDAO detalleReservaDAO;
+
+        private TarjetaDAO tarjetaDAO;
+        private PagoDAO pagoDAO;
+
+
+        private TarjetaDAO TARJETADAO
+        {
+            get
+            {
+                if (tarjetaDAO == null)
+                    tarjetaDAO = new TarjetaDAO();
+                return tarjetaDAO;
+            }
+        }
+
+        private PagoDAO PAGODAO
+        {
+            get
+            {
+                if (pagoDAO == null)
+                    pagoDAO = new PagoDAO();
+                return pagoDAO;
+            }
+        }
+
         private SedeDAO sedeDAO;
         private CampoDAO campoDAO;
 
@@ -40,6 +65,7 @@ namespace Canchita.Service
             }
         }
         
+
 
         private UsuarioDAO UsuarioDAO
         {
@@ -133,6 +159,57 @@ namespace Canchita.Service
             return ReservaDAO.ObtenerIdUltimaReserva();
         }
 
+        public bool crearTarjetas(Tarjeta tarjeta)
+        {
+            return TARJETADAO.crearTarjeta(tarjeta);
+        }
+
+
+        public bool abonarSaldo(Tarjeta tarjeta)
+        {
+            return TARJETADAO.abonarSaldo(tarjeta);
+        }
+
+
+        public List<Tarjeta> listarTarjetas()
+        {
+            return TARJETADAO.listarTarjetas();
+        }
+
+
+
+        public List<Tarjeta> ObtenerTarjetasXUsuario(int id)
+        {
+            return TARJETADAO.ObtenerTarjetasXUsuario(id);
+        }
+
+
+        public Tarjeta obtenerTarjeta(string idTarjeta)
+        {
+            return TARJETADAO.obtenerTarjeta(idTarjeta);
+        }
+
+
+        public double retornarMontoReserva(int idReserva)
+        {
+            return ReservaDAO.retornarmonto(idReserva);
+        }
+
+
+        public bool pagarReservaCTarjeta(Pago pago, string nroTarjeta, int idReserva)
+        {
+            return PAGODAO.pagarcTarjeta(pago,nroTarjeta,idReserva);
+        }
+
+
+        public List<Pago> listarPagosPendientes()
+        {
+            return PAGODAO.listarPagosPendientes();
+        }
+
+        public List<Pago> listarPagosCancelados()
+        {
+            return PAGODAO.listarPagosCancelados();
 
         public bool AgregarSede(Sede sede)
         {
@@ -173,6 +250,7 @@ namespace Canchita.Service
         public bool EliminarCampo(Campo campo)
         {
             return CampoDAO.Eliminar(campo);
+
         }
     }
 }
