@@ -41,6 +41,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ValidarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="usuario" nillable="true" type="q4:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidarUsuarioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ListarTarifas">
     <xs:complexType>
       <xs:sequence>
@@ -51,15 +65,15 @@
   <xs:element name="ListarTarifasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="ListarTarifasResult" nillable="true" type="q4:ArrayOfTarifa" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="ListarTarifasResult" nillable="true" type="q5:ArrayOfTarifa" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AgregarReserva">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="reserva" nillable="true" type="q5:Reserva" />
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="listaDetalle" nillable="true" type="q6:ArrayOfDetalleReserva" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="reserva" nillable="true" type="q6:Reserva" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="listaDetalle" nillable="true" type="q7:ArrayOfDetalleReserva" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -70,17 +84,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ValidarUsuario">
+  <xs:element name="retornarMontoReserva">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="usuario" nillable="true" type="q7:Usuario" />
+        <xs:element minOccurs="0" name="idReserva" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ValidarUsuarioResponse">
+  <xs:element name="retornarMontoReservaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ValidarUsuarioResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="retornarMontoReservaResult" type="xs:double" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -149,20 +163,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="obtenerTarjetaResult" nillable="true" type="q12:Tarjeta" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="retornarMontoReserva">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idReserva" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="retornarMontoReservaResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="retornarMontoReservaResult" type="xs:double" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

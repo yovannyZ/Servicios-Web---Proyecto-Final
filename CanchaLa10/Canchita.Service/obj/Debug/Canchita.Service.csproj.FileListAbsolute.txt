@@ -27,3 +27,9 @@ C:\Users\Yovanny\Documents\Servicios-Web---Proyecto-Final-Desarrollo\Servicios-W
 C:\Users\Yovanny\Documents\Servicios-Web---Proyecto-Final-Desarrollo\Servicios-Web---Proyecto-Final-Desarrollo\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
 C:\Users\Yovanny\Documents\Servicios-Web---Proyecto-Final-Desarrollo\Servicios-Web---Proyecto-Final-Desarrollo\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
 C:\Users\Yovanny\Documents\Servicios-Web---Proyecto-Final-Desarrollo\Servicios-Web---Proyecto-Final-Desarrollo\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb
+C:\Users\Yovanny\Documents\GitHub\Sistema-final\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll.config
+C:\Users\Yovanny\Documents\GitHub\Sistema-final\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll
+C:\Users\Yovanny\Documents\GitHub\Sistema-final\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.pdb
+C:\Users\Yovanny\Documents\GitHub\Sistema-final\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
+C:\Users\Yovanny\Documents\GitHub\Sistema-final\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
+C:\Users\Yovanny\Documents\GitHub\Sistema-final\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb

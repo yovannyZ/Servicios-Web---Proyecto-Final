@@ -12,6 +12,7 @@ namespace Canchita.Service
     [ServiceContract]
     public interface ITransaccion
     {
+        #region . USUARIO .
         [OperationContract]
         bool AgregarUsuario(Usuario usuario);
 
@@ -20,16 +21,24 @@ namespace Canchita.Service
 
         [OperationContract]
         List<Usuario> ListarUsuario();
-        
-        [OperationContract]
-        List<Tarifa> ListarTarifas(DateTime fechaReserva);
-
-        [OperationContract]
-        bool AgregarReserva(Reserva reserva, List<DetalleReserva> listaDetalle);
-
         [OperationContract]
         bool ValidarUsuario(Usuario usuario);
-        
+        #endregion
+
+        #region . TARIFA .
+        [OperationContract]
+        List<Tarifa> ListarTarifas(DateTime fechaReserva);
+        #endregion
+
+        #region . RESERVA .
+        [OperationContract]
+        bool AgregarReserva(Reserva reserva, List<DetalleReserva> listaDetalle);
+        [OperationContract]
+        double retornarMontoReserva(int idReserva);
+        #endregion
+
+        #region . TARJETA .
+
         [OperationContract]
         bool crearTarjetas(Tarjeta tarjeta);
         [OperationContract]
@@ -41,10 +50,9 @@ namespace Canchita.Service
         List<Tarjeta> ObtenerTarjetasXUsuario( int id);
         [OperationContract]
         Tarjeta obtenerTarjeta(string  idTarjeta);
+        #endregion
 
-        [OperationContract]
-        double retornarMontoReserva(int idReserva);
-
+        #region . PAGO .
         [OperationContract]
         bool pagarReservaCTarjeta(Pago pago,string nroTarjeta,int idReserva);
 
@@ -53,7 +61,9 @@ namespace Canchita.Service
 
         [OperationContract]
         List<Pago> listarPagosCancelados();
+        #endregion
 
+        #region . SEDE .
         [OperationContract]
         bool AgregarSede(Sede sede);
 
@@ -65,7 +75,9 @@ namespace Canchita.Service
 
         [OperationContract]
         bool EliminarSede(Sede sede);
+        #endregion
 
+        #region . CAMPO .
         [OperationContract]
         bool AgregarCampo(Campo campo);
 
@@ -77,6 +89,6 @@ namespace Canchita.Service
 
         [OperationContract]
         bool EliminarCampo(Campo campo);
-
+        #endregion
     }
 }

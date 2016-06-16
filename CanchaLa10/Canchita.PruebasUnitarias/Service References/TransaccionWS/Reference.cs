@@ -971,6 +971,12 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ListarUsuarioResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario>> ListarUsuarioAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ValidarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ValidarUsuarioResponse")]
+        bool ValidarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ValidarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ValidarUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifas", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasResponse")]
         System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ListarTarifas(System.DateTime fechaReserva);
         
@@ -983,11 +989,11 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarReserva", ReplyAction="http://tempuri.org/ITransaccion/AgregarReservaResponse")]
         System.Threading.Tasks.Task<bool> AgregarReservaAsync(Canchita.PruebasUnitarias.TransaccionWS.Reserva reserva, System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva> listaDetalle);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ValidarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ValidarUsuarioResponse")]
-        bool ValidarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/retornarMontoReserva", ReplyAction="http://tempuri.org/ITransaccion/retornarMontoReservaResponse")]
+        double retornarMontoReserva(int idReserva);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ValidarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ValidarUsuarioResponse")]
-        System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/retornarMontoReserva", ReplyAction="http://tempuri.org/ITransaccion/retornarMontoReservaResponse")]
+        System.Threading.Tasks.Task<double> retornarMontoReservaAsync(int idReserva);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/crearTarjetas", ReplyAction="http://tempuri.org/ITransaccion/crearTarjetasResponse")]
         bool crearTarjetas(Canchita.PruebasUnitarias.TransaccionWS.Tarjeta tarjeta);
@@ -1018,12 +1024,6 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/obtenerTarjeta", ReplyAction="http://tempuri.org/ITransaccion/obtenerTarjetaResponse")]
         System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Tarjeta> obtenerTarjetaAsync(string idTarjeta);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/retornarMontoReserva", ReplyAction="http://tempuri.org/ITransaccion/retornarMontoReservaResponse")]
-        double retornarMontoReserva(int idReserva);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/retornarMontoReserva", ReplyAction="http://tempuri.org/ITransaccion/retornarMontoReservaResponse")]
-        System.Threading.Tasks.Task<double> retornarMontoReservaAsync(int idReserva);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/pagarReservaCTarjeta", ReplyAction="http://tempuri.org/ITransaccion/pagarReservaCTarjetaResponse")]
         bool pagarReservaCTarjeta(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, string nroTarjeta, int idReserva);
@@ -1143,6 +1143,14 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
             return base.Channel.ListarUsuarioAsync();
         }
         
+        public bool ValidarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.ValidarUsuario(usuario);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.ValidarUsuarioAsync(usuario);
+        }
+        
         public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ListarTarifas(System.DateTime fechaReserva) {
             return base.Channel.ListarTarifas(fechaReserva);
         }
@@ -1159,12 +1167,12 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
             return base.Channel.AgregarReservaAsync(reserva, listaDetalle);
         }
         
-        public bool ValidarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
-            return base.Channel.ValidarUsuario(usuario);
+        public double retornarMontoReserva(int idReserva) {
+            return base.Channel.retornarMontoReserva(idReserva);
         }
         
-        public System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
-            return base.Channel.ValidarUsuarioAsync(usuario);
+        public System.Threading.Tasks.Task<double> retornarMontoReservaAsync(int idReserva) {
+            return base.Channel.retornarMontoReservaAsync(idReserva);
         }
         
         public bool crearTarjetas(Canchita.PruebasUnitarias.TransaccionWS.Tarjeta tarjeta) {
@@ -1205,14 +1213,6 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         public System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Tarjeta> obtenerTarjetaAsync(string idTarjeta) {
             return base.Channel.obtenerTarjetaAsync(idTarjeta);
-        }
-        
-        public double retornarMontoReserva(int idReserva) {
-            return base.Channel.retornarMontoReserva(idReserva);
-        }
-        
-        public System.Threading.Tasks.Task<double> retornarMontoReservaAsync(int idReserva) {
-            return base.Channel.retornarMontoReservaAsync(idReserva);
         }
         
         public bool pagarReservaCTarjeta(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, string nroTarjeta, int idReserva) {

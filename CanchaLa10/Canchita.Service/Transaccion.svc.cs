@@ -13,6 +13,8 @@ namespace Canchita.Service
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Transaccion.svc o Transaccion.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Transaccion : ITransaccion
     {
+
+        #region . DAO .
         private UsuarioDAO usuarioDAO;
         private TarifaDAO tarifaDAO;
         private ReservaDAO reservaDAO;
@@ -104,7 +106,9 @@ namespace Canchita.Service
                 return detalleReservaDAO;
             }
         }
+        #endregion
 
+        #region . USUARIO .
         public bool AgregarUsuario(Usuario usuario)
         {
             return UsuarioDAO.Agregar(usuario);
@@ -134,13 +138,16 @@ namespace Canchita.Service
         {
             return UsuarioDAO.Actualizar(usuario);
         }
+        #endregion
 
-
+        #region . TARIFA .
         public List<Tarifa> ListarTarifas(DateTime fechaReserva)
         {
             return TarifaDAO.Listar(fechaReserva);
         }
+        #endregion
 
+        #region . RESERVA .
         public bool AgregarReserva(Reserva reserva, List<DetalleReserva> listaDetalle)
         {
             bool exito = false;
@@ -156,8 +163,13 @@ namespace Canchita.Service
             }
             return exito;
         }
+        public double retornarMontoReserva(int idReserva)
+        {
+            return ReservaDAO.retornarmonto(idReserva);
+        }
+        #endregion
 
-
+        #region . TARJETA .
         public bool crearTarjetas(Tarjeta tarjeta)
         {
             return TARJETADAO.crearTarjeta(tarjeta);
@@ -175,8 +187,6 @@ namespace Canchita.Service
             return TARJETADAO.listarTarjetas();
         }
 
-
-
         public List<Tarjeta> ObtenerTarjetasXUsuario(int id)
         {
             return TARJETADAO.ObtenerTarjetasXUsuario(id);
@@ -187,19 +197,13 @@ namespace Canchita.Service
         {
             return TARJETADAO.obtenerTarjeta(idTarjeta);
         }
+        #endregion
 
-
-        public double retornarMontoReserva(int idReserva)
-        {
-            return ReservaDAO.retornarmonto(idReserva);
-        }
-
-
+        #region . PAGO .
         public bool pagarReservaCTarjeta(Pago pago, string nroTarjeta, int idReserva)
         {
             return PAGODAO.pagarcTarjeta(pago,nroTarjeta,idReserva);
         }
-
 
         public List<Pago> listarPagosPendientes()
         {
@@ -210,7 +214,9 @@ namespace Canchita.Service
         {
             return PAGODAO.listarPagosCancelados();
         }
+        #endregion
 
+        #region . SEDE .
         public bool AgregarSede(Sede sede)
         {
             return SedeDAO.Agregar(sede);
@@ -230,8 +236,9 @@ namespace Canchita.Service
         {
             return SedeDAO.Eliminar(sede);
         }
+        #endregion
 
-
+        #region . CAMPO .
         public bool AgregarCampo(Campo campo)
         {
             return CampoDAO.Agregar(campo);
@@ -253,7 +260,7 @@ namespace Canchita.Service
 
         }
 
+        #endregion
 
-       
     }
 }
