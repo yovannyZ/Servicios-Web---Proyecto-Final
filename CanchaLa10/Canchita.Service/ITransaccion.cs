@@ -49,12 +49,10 @@ namespace Canchita.Service
         Tarjeta obtenerTarjeta(string  idTarjeta);
 
         [OperationContract]
-
         double retornarMontoReserva(int idReserva);
+
         [OperationContract]
         bool pagarReservaCTarjeta(Pago pago,string nroTarjeta,int idReserva);
-
-
 
         [OperationContract]
         List<Pago> listarPagosPendientes();
@@ -62,6 +60,7 @@ namespace Canchita.Service
         [OperationContract]
         List<Pago> listarPagosCancelados();
 
+        [OperationContract]
         bool AgregarSede(Sede sede);
 
         [OperationContract]

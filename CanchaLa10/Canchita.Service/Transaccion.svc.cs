@@ -210,6 +210,7 @@ namespace Canchita.Service
         public List<Pago> listarPagosCancelados()
         {
             return PAGODAO.listarPagosCancelados();
+        }
 
         public bool AgregarSede(Sede sede)
         {

@@ -12,7 +12,7 @@ namespace Canchita.Service.Data
 
         private static string cadenaConexion = "server=(local);DataBase=reservabd;user=sa;password=BaseDeDatos2015";
 
-        private static string cadenaConexion = "server=(local);DataBase=reservabd;user=sa;password=123";
+       
 
         public static SqlParameter MakeParam(string paramName,object objValue)
         {

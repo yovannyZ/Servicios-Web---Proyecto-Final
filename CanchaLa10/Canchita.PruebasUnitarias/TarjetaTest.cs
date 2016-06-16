@@ -28,7 +28,7 @@ namespace Canchita.PruebasUnitarias
         {
             Tarjeta tarjeta = new Tarjeta();
             tarjeta.idTarjeta = "1941250003";
-            tarjeta.saldo = 50.0;
+            tarjeta.saldo = 150.0;
 
             Assert.IsTrue(proxy.abonarSaldo(tarjeta));
          

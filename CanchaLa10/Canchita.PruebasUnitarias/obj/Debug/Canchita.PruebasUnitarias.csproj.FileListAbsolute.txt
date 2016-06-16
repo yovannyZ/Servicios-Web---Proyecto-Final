@@ -15,3 +15,9 @@ C:\Users\Riki\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchit
 C:\Users\Riki\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\bin\Debug\Canchita.PruebasUnitarias.pdb
 C:\Users\Riki\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.dll
 C:\Users\Riki\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.pdb
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final-Desarrollo\Servicios-Web---Proyecto-Final-Desarrollo\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final-Desarrollo\Servicios-Web---Proyecto-Final-Desarrollo\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.dll
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final-Desarrollo\Servicios-Web---Proyecto-Final-Desarrollo\CanchaLa10\Canchita.PruebasUnitarias\bin\Debug\Canchita.PruebasUnitarias.dll.config
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final-Desarrollo\Servicios-Web---Proyecto-Final-Desarrollo\CanchaLa10\Canchita.PruebasUnitarias\bin\Debug\Canchita.PruebasUnitarias.dll
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final-Desarrollo\Servicios-Web---Proyecto-Final-Desarrollo\CanchaLa10\Canchita.PruebasUnitarias\bin\Debug\Canchita.PruebasUnitarias.pdb
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final-Desarrollo\Servicios-Web---Proyecto-Final-Desarrollo\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.pdb

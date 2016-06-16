@@ -62,6 +62,7 @@ namespace Canchita.Service.Data
         public List<Campo> ListarCampos()
         {
             List<Campo> lista = new List<Campo>();
+            Sede sede = new Sede();
 
             string query = "SELECT * FROM Campo";
             using (SqlDataReader lector = DBHelper.ExecuteDataReader(query))
@@ -75,7 +76,8 @@ namespace Canchita.Service.Data
                         campo.Id = Convert.ToInt32(lector["idCampo"]);
                         campo.Descripcion = Convert.ToString(lector["Descripcion"]);
                         campo.Estado = Convert.ToString(lector["Estado"]);
-                        campo.Sede.Id = Convert.ToInt32(lector["idSede"]);
+                        sede.Id = Convert.ToInt32(lector["idSede"]);
+                        campo.Sede = sede;
 
                         lista.Add(campo);
                     }

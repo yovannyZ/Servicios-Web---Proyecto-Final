@@ -121,6 +121,50 @@ namespace Canchita.Service.Data
             return lista;
         }
 
+        public int retornaidReserva(string nropago)
+        {
+            int idReserva = 0;
+            string query = "SELECT idReserva From Pago WHERE nroPago=@nroPa";
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@nroPa",nropago)
+             };
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query, dbParams))
+            {
+                if (lector != null && lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        idReserva = int.Parse(lector["idReserva"].ToString());
+                    }
+                }
+            }
 
+            return idReserva;
+        }
+
+        public bool pagarEfectivo(string nropago)
+        {
+            bool resul = false;
+            int idReservaUp = retornaidReserva(nropago);
+            bool exito = false;
+            string query = "update Pago set estado='Cancelado' where nroPago=@pnroPago";
+            SqlParameter[] dbParam = new SqlParameter[]
+                      {                                     
+                        DBHelper.MakeParam("@pnroPago",nropago)
+                      };
+            exito = DBHelper.ExecuteNonQuery(query, dbParam) > 0;
+            if (exito)
+            {
+                string queryReserva = "update Reserva set estado='Cancelado' where idReserva=@pidReser";
+                SqlParameter[] dbP = new SqlParameter[]
+                 {                                     
+                   DBHelper.MakeParam("@pidReser",idReservaUp)
+                 };
+                resul = DBHelper.ExecuteNonQuery(queryReserva, dbP) > 0;
+            }
+
+            return resul;
+        }
     }
 }

@@ -76,6 +76,38 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DetalleReserva" nillable="true" type="tns:DetalleReserva" />
+  <xs:complexType name="Tarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaVencimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="idTarjeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="saldo" type="xs:double" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="tns:Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tarjeta" nillable="true" type="tns:Tarjeta" />
+  <xs:complexType name="ArrayOfTarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tarjeta" nillable="true" type="tns:Tarjeta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTarjeta" nillable="true" type="tns:ArrayOfTarjeta" />
+  <xs:complexType name="Pago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idReserva" nillable="true" type="tns:Reserva" />
+      <xs:element minOccurs="0" name="monto" type="xs:double" />
+      <xs:element minOccurs="0" name="nroPago" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pago" nillable="true" type="tns:Pago" />
+  <xs:complexType name="ArrayOfPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pago" nillable="true" type="tns:Pago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPago" nillable="true" type="tns:ArrayOfPago" />
   <xs:complexType name="ArrayOfSede">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Sede" nillable="true" type="tns:Sede" />

@@ -55,6 +55,60 @@
   <wsdl:message name="ITransaccion_ValidarUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidarUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_crearTarjetas_InputMessage">
+    <wsdl:part name="parameters" element="tns:crearTarjetas" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_crearTarjetas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:crearTarjetasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_abonarSaldo_InputMessage">
+    <wsdl:part name="parameters" element="tns:abonarSaldo" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_abonarSaldo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:abonarSaldoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_listarTarjetas_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarTarjetas" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_listarTarjetas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarTarjetasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ObtenerTarjetasXUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTarjetasXUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ObtenerTarjetasXUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTarjetasXUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_obtenerTarjeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_obtenerTarjeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_retornarMontoReserva_InputMessage">
+    <wsdl:part name="parameters" element="tns:retornarMontoReserva" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_retornarMontoReserva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:retornarMontoReservaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_pagarReservaCTarjeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:pagarReservaCTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_pagarReservaCTarjeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:pagarReservaCTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_listarPagosPendientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarPagosPendientes" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_listarPagosPendientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarPagosPendientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_listarPagosCancelados_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarPagosCancelados" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_listarPagosCancelados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarPagosCanceladosResponse" />
+  </wsdl:message>
   <wsdl:message name="ITransaccion_AgregarSede_InputMessage">
     <wsdl:part name="parameters" element="tns:AgregarSede" />
   </wsdl:message>
@@ -135,6 +189,42 @@
     <wsdl:operation name="ValidarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ValidarUsuario" message="tns:ITransaccion_ValidarUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ValidarUsuarioResponse" message="tns:ITransaccion_ValidarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="crearTarjetas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/crearTarjetas" message="tns:ITransaccion_crearTarjetas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/crearTarjetasResponse" message="tns:ITransaccion_crearTarjetas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="abonarSaldo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/abonarSaldo" message="tns:ITransaccion_abonarSaldo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/abonarSaldoResponse" message="tns:ITransaccion_abonarSaldo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarTarjetas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/listarTarjetas" message="tns:ITransaccion_listarTarjetas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/listarTarjetasResponse" message="tns:ITransaccion_listarTarjetas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTarjetasXUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ObtenerTarjetasXUsuario" message="tns:ITransaccion_ObtenerTarjetasXUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ObtenerTarjetasXUsuarioResponse" message="tns:ITransaccion_ObtenerTarjetasXUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTarjeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/obtenerTarjeta" message="tns:ITransaccion_obtenerTarjeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/obtenerTarjetaResponse" message="tns:ITransaccion_obtenerTarjeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarMontoReserva">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/retornarMontoReserva" message="tns:ITransaccion_retornarMontoReserva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/retornarMontoReservaResponse" message="tns:ITransaccion_retornarMontoReserva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="pagarReservaCTarjeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/pagarReservaCTarjeta" message="tns:ITransaccion_pagarReservaCTarjeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/pagarReservaCTarjetaResponse" message="tns:ITransaccion_pagarReservaCTarjeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPagosPendientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/listarPagosPendientes" message="tns:ITransaccion_listarPagosPendientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/listarPagosPendientesResponse" message="tns:ITransaccion_listarPagosPendientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPagosCancelados">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/listarPagosCancelados" message="tns:ITransaccion_listarPagosCancelados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/listarPagosCanceladosResponse" message="tns:ITransaccion_listarPagosCancelados_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AgregarSede">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarSede" message="tns:ITransaccion_AgregarSede_InputMessage" />
@@ -236,6 +326,87 @@
     </wsdl:operation>
     <wsdl:operation name="ValidarUsuario">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearTarjetas">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/crearTarjetas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="abonarSaldo">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/abonarSaldo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTarjetas">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/listarTarjetas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTarjetasXUsuario">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ObtenerTarjetasXUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTarjeta">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/obtenerTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarMontoReserva">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/retornarMontoReserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pagarReservaCTarjeta">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/pagarReservaCTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPagosPendientes">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/listarPagosPendientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPagosCancelados">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/listarPagosCancelados" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

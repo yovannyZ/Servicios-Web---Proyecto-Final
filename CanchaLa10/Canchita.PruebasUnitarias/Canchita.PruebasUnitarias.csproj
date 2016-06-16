@@ -54,6 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CampoTest.cs" />
+    <Compile Include="PagoTest.cs" />
     <Compile Include="ReservaTest.cs" />
     <Compile Include="SedeTest.cs" />
     <Compile Include="Service References\TransaccionWS\Reference.cs">
@@ -63,6 +64,7 @@
     </Compile>
     <Compile Include="TarifaTest.cs" />
     <Compile Include="DetalleReservaTest.cs" />
+    <Compile Include="TarjetaTest.cs" />
     <Compile Include="UsuarioTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,10 +76,16 @@
     <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Campo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Pago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Sede.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Tarifa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Tarjeta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Usuario.datasource">
