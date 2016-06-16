@@ -15,7 +15,7 @@ namespace Canchita.PruebasUnitarias
         {
             DateTime dia =  DateTime.Today;
             List<Tarifa> lista = proxy.ListarTarifas(dia);
-            Assert.IsNotNull(lista);
+            Assert.IsTrue(lista.Count > 0);
         }
     }
 }

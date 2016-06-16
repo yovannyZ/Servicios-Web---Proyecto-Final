@@ -12,7 +12,7 @@ namespace Canchita.PruebasUnitarias
         {
 
             string idTarjeta = "1941250003";
-            int idReserva = 1;
+            int idReserva = 33;
             Pago pago = new Pago();
             pago.nroPago = "P0001";
 
@@ -24,14 +24,14 @@ namespace Canchita.PruebasUnitarias
         public void listarPendientes()
         {
             var lista = proxy.listarPagosPendientes();
-            Assert.IsNotNull(lista);
+            Assert.IsTrue(lista.Count>0);
         }
 
         [TestMethod]
         public void listarCancelados()
         {
             var lista = proxy.listarPagosCancelados();
-            Assert.IsNotNull(lista);
+            Assert.IsTrue(lista.Count>0);
         }
 
     }

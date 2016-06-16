@@ -67,7 +67,7 @@ namespace Canchita.Service.Data
         public List<Tarjeta> ObtenerTarjetasXUsuario(int idUsuario)
         {
             Tarjeta tarje = new Tarjeta();
-            List<Tarjeta> lista = new List<Tarjeta>();
+            List<Tarjeta> lista = null;
             Usuario usuario = new Usuario();
             string query = "SELECT * FROM Tarjeta WHERE idUsuario=@idUsu and estado='Disponible'";
 
@@ -80,7 +80,7 @@ namespace Canchita.Service.Data
             {
                 if (lector != null && lector.HasRows)
                 {
-
+                    lista = new List<Tarjeta>();
                     while (lector.Read())
                     {
                         
@@ -102,7 +102,7 @@ namespace Canchita.Service.Data
 
         public Tarjeta obtenerTarjeta(string idTarjeta)
         {
-            Tarjeta tarje = new Tarjeta();            
+            Tarjeta tarje = null;          
             Usuario usuario = new Usuario();
             string query = "SELECT * FROM Tarjeta WHERE idTarjeta=@idT and estado='Disponible'";
 
@@ -117,6 +117,7 @@ namespace Canchita.Service.Data
                 {
                     while (lector.Read())
                     {
+                        tarje = new Tarjeta();
                         tarje.idTarjeta = lector["idTarjeta"].ToString();
                         tarje.saldo = double.Parse(lector["saldo"].ToString());
                         tarje.estado = lector["estado"].ToString();

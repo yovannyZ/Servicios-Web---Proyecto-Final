@@ -15,14 +15,14 @@ namespace Canchita.PruebasUnitarias
         {
             Usuario usuario = new Usuario()
             {
-                Nombres = "Yovanny Jhon",
-                ApPaterno = "Zeballos",
-                ApMaterno = "Medina",
-                Dni = "70123395",
-                Email = "yovanny_jzm@hotmail.com",
+                Nombres = "Armando",
+                ApPaterno = "Carbajal",
+                ApMaterno = "Carbajal",
+                Dni = "70123394",
+                Email = "Armandez@hotmail.com",
                 Telefono = "943823186",
                 TipoUsuario = "Administrador",
-                Username = "yovannyZeballos",
+                Username = "acarbajal",
                 Clave = "123"
             };
 
@@ -35,16 +35,16 @@ namespace Canchita.PruebasUnitarias
         {
             Usuario usuario = new Usuario()
             {
-                Id=3,
-                Nombres = "Yovanny Zeballos",
-                ApPaterno = "Zeballos",
-                ApMaterno = "Medina",
-                Dni = "70123395",
-                Email = "yovanny_jzm@hotmail.com",
+                Id=10,
+                Nombres = "Armando",
+                ApPaterno = "Carbajal",
+                ApMaterno = "Carbajal",
+                Dni = "70123394",
+                Email = "Armandez@hotmail.com",
                 Telefono = "943823186",
                 TipoUsuario = "Administrador",
-                Username = "Zeballos",
-                Clave = "123"
+                Username = "acarbajal",
+                Clave = "321"
             };
 
 
@@ -56,7 +56,7 @@ namespace Canchita.PruebasUnitarias
         {
             List<Usuario> lista = new List<Usuario>();
             lista = proxy.ListarUsuario();
-            Assert.IsNotNull(lista);
+            Assert.IsTrue(lista.Count > 0);
 
         }
 
@@ -65,8 +65,8 @@ namespace Canchita.PruebasUnitarias
          {
              Usuario usuario = new Usuario()
              {
-                 Username = "zeballos",
-                 Clave = "123"
+                 Username = "acarbajal",
+                 Clave = "321"
              };
 
              Assert.IsTrue(proxy.ValidarUsuario(usuario));

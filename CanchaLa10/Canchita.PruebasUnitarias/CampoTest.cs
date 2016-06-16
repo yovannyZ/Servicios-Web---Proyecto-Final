@@ -18,7 +18,7 @@ namespace Canchita.PruebasUnitarias
         [TestMethod]
         public void AgregarCampo()
         {
-            Sede sede = new Sede() { Id = 3 };
+            Sede sede = new Sede() { Id = 2 };
             Campo campo = new Campo(){
                 Descripcion = "campo 7 jugadores",
                 Estado= "Disponible",
@@ -34,7 +34,7 @@ namespace Canchita.PruebasUnitarias
             Sede sede = new Sede() { Id = 1 };
             Campo campo = new Campo()
             {
-                Id= 3,
+                Id= 1,
                 Descripcion = "campo 10 jugadores",
                 Estado = "Disponible",
                 Sede = sede
@@ -49,7 +49,7 @@ namespace Canchita.PruebasUnitarias
         {
             Campo campo = new Campo()
             {
-                Id = 3
+                Id = 1
             };
             Assert.IsTrue(proxy.EliminarCampo(campo));
 
@@ -60,7 +60,7 @@ namespace Canchita.PruebasUnitarias
         {
             List<Campo> lista = new List<Campo>();
             lista = proxy.ListarCampos();
-            Assert.IsNotNull(lista);
+            Assert.IsTrue(lista.Count > 0);
         }
 
     }

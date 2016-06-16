@@ -19,8 +19,8 @@ namespace Canchita.PruebasUnitarias
         {
             Sede sede = new Sede()
             {
-                Descripcion= "Sede Lince",
-                Direccion= "av. lince 345",
+                Descripcion= "Sede Surco",
+                Direccion= "av. surco 345",
                 Estado="Disponible"
 
             };
@@ -49,7 +49,7 @@ namespace Canchita.PruebasUnitarias
         {
             Sede sede = new Sede()
             {
-                Id = 2
+                Id = 3
             };
             Assert.IsTrue(proxy.EliminarSede(sede));
         }
@@ -59,7 +59,7 @@ namespace Canchita.PruebasUnitarias
         {
             List<Sede> lista = new List<Sede>();
             lista = proxy.ListarSedes();
-            Assert.IsNotNull(lista);
+            Assert.IsTrue(lista.Count>0);
         }
 
     }

@@ -59,6 +59,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="reserva" nillable="true" type="q5:Reserva" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="listaDetalle" nillable="true" type="q6:ArrayOfDetalleReserva" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -66,32 +67,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AgregarReservaResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AgregarDetalleReserva">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="dtReserva" nillable="true" type="q6:DetalleReserva" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AgregarDetalleReservaResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AgregarDetalleReservaResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ObtenerIdUltimaReserva">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ObtenerIdUltimaReservaResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ObtenerIdUltimaReservaResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

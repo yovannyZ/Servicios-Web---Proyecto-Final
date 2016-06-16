@@ -141,23 +141,22 @@ namespace Canchita.Service
             return TarifaDAO.Listar(fechaReserva);
         }
 
-
-        public bool AgregarReserva(Reserva reserva)
+        public bool AgregarReserva(Reserva reserva, List<DetalleReserva> listaDetalle)
         {
-            return ReservaDAO.Agregar(reserva);
+            bool exito = false;
+            if (ReservaDAO.Agregar(reserva))
+            {
+                reserva.Id = ReservaDAO.ObtenerIdUltimaReserva();
+                foreach (var detalle in listaDetalle)
+                {
+                    detalle.Reserva = reserva;
+                    DetalleReservaDAO.Agregar(detalle);
+                }
+                exito = true;
+            }
+            return exito;
         }
 
-
-        public bool AgregarDetalleReserva(DetalleReserva dtReserva)
-        {
-            return DetalleReservaDAO.Agregar(dtReserva);
-        }
-
-
-        public int ObtenerIdUltimaReserva()
-        {
-            return ReservaDAO.ObtenerIdUltimaReserva();
-        }
 
         public bool crearTarjetas(Tarjeta tarjeta)
         {
@@ -253,5 +252,8 @@ namespace Canchita.Service
             return CampoDAO.Eliminar(campo);
 
         }
+
+
+       
     }
 }

@@ -15,31 +15,29 @@ namespace Canchita.PruebasUnitarias
         public void Agregar()
         {
        
+            Tarifa tarifa = new Tarifa { Id = 3 };
+            DetalleReserva dt = new DetalleReserva
+            {
+                Tarifa = tarifa,
+                HoraInicio = "10:00",
+                HoraFin = "11:00",
+                Precio = 80
+            };
+
+            List<DetalleReserva> detalles = new List<DetalleReserva>();
+            detalles.Add(dt);
+
             Campo campo = new Campo { Id = 1 };
-            Usuario usuario = new Usuario { Id = 3};
+            Usuario usuario = new Usuario { Id = 8 };
             DateTime dia = DateTime.Today;
             Reserva reserva = new Reserva();
             reserva.FechaReserva = dia;
-            reserva.campo= campo;
+            reserva.campo = campo;
             reserva.usuario = usuario;
             reserva.Estado = "Pendiente";
             reserva.Monto = 80;
-            Assert.IsTrue(proxy.AgregarReserva(reserva));
+            Assert.IsTrue(proxy.AgregarReserva(reserva, detalles));
         }
-
-        [TestMethod]
-        public void ObtenerIdUltimaReserva()
-        {
-            int idreserva = proxy.ObtenerIdUltimaReserva();
-            Assert.IsTrue(idreserva > 0);
-        }
-
-        [TestMethod]
-        public void retornarMonto()
-        {   
-            int idRes=10;
-            double monto = proxy.retornarMontoReserva(idRes);
-            Assert.IsNotNull(monto);
-        }
+       
     }
 }

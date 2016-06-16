@@ -66,6 +66,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Sede" nillable="true" type="tns:Sede" />
+  <xs:complexType name="ArrayOfDetalleReserva">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetalleReserva" nillable="true" type="tns:DetalleReserva" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetalleReserva" nillable="true" type="tns:ArrayOfDetalleReserva" />
   <xs:complexType name="DetalleReserva">
     <xs:sequence>
       <xs:element minOccurs="0" name="HoraFin" nillable="true" type="xs:string" />

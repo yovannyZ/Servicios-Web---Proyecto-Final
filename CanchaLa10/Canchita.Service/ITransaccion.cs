@@ -25,13 +25,7 @@ namespace Canchita.Service
         List<Tarifa> ListarTarifas(DateTime fechaReserva);
 
         [OperationContract]
-        bool AgregarReserva(Reserva reserva);
-
-        [OperationContract]
-        bool AgregarDetalleReserva(DetalleReserva dtReserva);
-
-        [OperationContract]
-        int ObtenerIdUltimaReserva();
+        bool AgregarReserva(Reserva reserva, List<DetalleReserva> listaDetalle);
 
         [OperationContract]
         bool ValidarUsuario(Usuario usuario);
