@@ -14,9 +14,9 @@ namespace Canchita.PruebasUnitarias
         public void crearTarjeta()
         {
            
-                Usuario usuario= new Usuario { Id = 8 };
+                Usuario usuario= new Usuario { Id = 4 };
                 Tarjeta tarjeta  = new Tarjeta();
-                tarjeta.idTarjeta = "1941250003";
+                tarjeta.idTarjeta = "1941250004";
                 tarjeta.fechaCreacion=DateTime.Parse("2016/05/01");
                 tarjeta.fechaVencimiento=DateTime.Parse("2020/05/01");
                 tarjeta.usuario = usuario;
@@ -27,8 +27,8 @@ namespace Canchita.PruebasUnitarias
         public void RecargarTarjeta()
         {
             Tarjeta tarjeta = new Tarjeta();
-            tarjeta.idTarjeta = "1941250003";
-            tarjeta.saldo = 50.0;
+            tarjeta.idTarjeta = "1941250004";
+            tarjeta.saldo = 530.0;
 
             Assert.IsTrue(proxy.abonarSaldo(tarjeta));
          

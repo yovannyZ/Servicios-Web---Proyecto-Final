@@ -33,3 +33,9 @@ C:\Users\Yovanny\Documents\GitHub\Sistema-final\Servicios-Web---Proyecto-Final\C
 C:\Users\Yovanny\Documents\GitHub\Sistema-final\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.csprojResolveAssemblyReference.cache
 C:\Users\Yovanny\Documents\GitHub\Sistema-final\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.dll
 C:\Users\Yovanny\Documents\GitHub\Sistema-final\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.pdb
+C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\bin\Debug\Canchita.PruebasUnitarias.dll.config
+C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\bin\Debug\Canchita.PruebasUnitarias.dll
+C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\bin\Debug\Canchita.PruebasUnitarias.pdb
+C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.dll
+C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.PruebasUnitarias\obj\Debug\Canchita.PruebasUnitarias.pdb
