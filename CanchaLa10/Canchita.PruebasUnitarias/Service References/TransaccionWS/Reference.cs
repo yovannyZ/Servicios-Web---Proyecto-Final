@@ -1043,6 +1043,18 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarPagosCancelados", ReplyAction="http://tempuri.org/ITransaccion/listarPagosCanceladosResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Pago>> listarPagosCanceladosAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/reservarPagoEfectivo", ReplyAction="http://tempuri.org/ITransaccion/reservarPagoEfectivoResponse")]
+        bool reservarPagoEfectivo(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, int idReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/reservarPagoEfectivo", ReplyAction="http://tempuri.org/ITransaccion/reservarPagoEfectivoResponse")]
+        System.Threading.Tasks.Task<bool> reservarPagoEfectivoAsync(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, int idReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/pagarReservaConEfectivo", ReplyAction="http://tempuri.org/ITransaccion/pagarReservaConEfectivoResponse")]
+        bool pagarReservaConEfectivo(string nroPago);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/pagarReservaConEfectivo", ReplyAction="http://tempuri.org/ITransaccion/pagarReservaConEfectivoResponse")]
+        System.Threading.Tasks.Task<bool> pagarReservaConEfectivoAsync(string nroPago);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarSede", ReplyAction="http://tempuri.org/ITransaccion/AgregarSedeResponse")]
         bool AgregarSede(Canchita.PruebasUnitarias.TransaccionWS.Sede sede);
         
@@ -1237,6 +1249,22 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Pago>> listarPagosCanceladosAsync() {
             return base.Channel.listarPagosCanceladosAsync();
+        }
+        
+        public bool reservarPagoEfectivo(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, int idReserva) {
+            return base.Channel.reservarPagoEfectivo(pago, idReserva);
+        }
+        
+        public System.Threading.Tasks.Task<bool> reservarPagoEfectivoAsync(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, int idReserva) {
+            return base.Channel.reservarPagoEfectivoAsync(pago, idReserva);
+        }
+        
+        public bool pagarReservaConEfectivo(string nroPago) {
+            return base.Channel.pagarReservaConEfectivo(nroPago);
+        }
+        
+        public System.Threading.Tasks.Task<bool> pagarReservaConEfectivoAsync(string nroPago) {
+            return base.Channel.pagarReservaConEfectivoAsync(nroPago);
         }
         
         public bool AgregarSede(Canchita.PruebasUnitarias.TransaccionWS.Sede sede) {

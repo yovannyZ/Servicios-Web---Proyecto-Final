@@ -67,5 +67,7 @@ namespace Canchita.Service.Data
             resul = DBHelper.ExecuteNonQuery(queryCancelarReserva, dbPa) > 0;
             return resul;
         }
+
+
     }
 }

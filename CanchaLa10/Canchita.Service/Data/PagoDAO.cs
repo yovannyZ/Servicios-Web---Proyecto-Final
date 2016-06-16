@@ -43,7 +43,7 @@ namespace Canchita.Service.Data
             return reserva;
         }
 
-        public bool reservarPagoEfectivo(Pago pago, string nroPago, int idReserva)
+        public bool reservarPagoEfectivo(Pago pago, int idReserva)
         {
             ReservaDAO reservadao = new ReservaDAO();
             double montoAPagar = reservadao.retornarmonto(idReserva);
@@ -51,7 +51,7 @@ namespace Canchita.Service.Data
             string query = "INSERT INTO Pago values(@p1,@p2,@p3,@p4)";            
             SqlParameter[] dbParams = new SqlParameter[]
                       {                
-                     DBHelper.MakeParam("@p1",nroPago),
+                     DBHelper.MakeParam("@p1",pago.nroPago),
                      DBHelper.MakeParam("@p2",montoAPagar),
                      DBHelper.MakeParam("@p3","Pendiente"),
                      DBHelper.MakeParam("@p4",idReserva)
@@ -130,8 +130,9 @@ namespace Canchita.Service.Data
             return idReserva;
         }
 
-        public bool pagarEfectivo(string nropago)
+        public bool pagarConEfectivo(string nropago)
         {
+            ReservaDAO reservadao = new ReservaDAO();
             bool resul = false;
             int idReservaUp = retornaidReserva(nropago);
             bool exito = false;
@@ -143,12 +144,8 @@ namespace Canchita.Service.Data
             exito = DBHelper.ExecuteNonQuery(query, dbParam) > 0;
             if (exito)
             {
-                string queryReserva = "update Reserva set estado='Cancelado' where idReserva=@pidReser";
-                SqlParameter[] dbP = new SqlParameter[]
-                 {                                     
-                   DBHelper.MakeParam("@pidReser",idReservaUp)
-                 };
-                resul = DBHelper.ExecuteNonQuery(queryReserva, dbP) > 0;
+                //Cancelar-Reserva.
+                resul = reservadao.cancelarReserva(idReservaUp);
             }
 
             return resul;
