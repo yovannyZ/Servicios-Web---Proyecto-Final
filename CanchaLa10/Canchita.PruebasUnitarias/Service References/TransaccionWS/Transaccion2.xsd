@@ -166,7 +166,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="pagarReservaCTarjeta">
+  <xs:element name="pagarReservaConTarjeta">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="pago" nillable="true" type="q13:Pago" />
@@ -175,10 +175,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="pagarReservaCTarjetaResponse">
+  <xs:element name="pagarReservaConTarjetaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="pagarReservaCTarjetaResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pagarReservaConTarjetaResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

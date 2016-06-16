@@ -54,7 +54,7 @@ namespace Canchita.Service
 
         #region . PAGO .
         [OperationContract]
-        bool pagarReservaCTarjeta(Pago pago,string nroTarjeta,int idReserva);
+        bool pagarReservaConTarjeta(Pago pago,string nroTarjeta,int idReserva);
 
         [OperationContract]
         List<Pago> listarPagosPendientes();

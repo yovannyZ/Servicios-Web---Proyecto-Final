@@ -200,9 +200,9 @@ namespace Canchita.Service
         #endregion
 
         #region . PAGO .
-        public bool pagarReservaCTarjeta(Pago pago, string nroTarjeta, int idReserva)
+        public bool pagarReservaConTarjeta(Pago pago, string nroTarjeta, int idReserva)
         {
-            return PAGODAO.pagarcTarjeta(pago,nroTarjeta,idReserva);
+            return PAGODAO.pagarconTarjeta(pago,nroTarjeta,idReserva);
         }
 
         public List<Pago> listarPagosPendientes()

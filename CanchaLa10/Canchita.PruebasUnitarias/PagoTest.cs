@@ -12,11 +12,11 @@ namespace Canchita.PruebasUnitarias
         {
 
             string idTarjeta = "1941250003";
-            int idReserva = 33;
+            int idReserva = 1;
             Pago pago = new Pago();
-            pago.nroPago = "P0001";
-
-            Assert.IsTrue(proxy.pagarReservaCTarjeta(pago,idTarjeta,idReserva));
+            pago.nroPago = "P0003";
+            
+            Assert.IsTrue(proxy.pagarReservaConTarjeta(pago,idTarjeta,idReserva));
         }
 
 

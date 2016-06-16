@@ -55,5 +55,17 @@ namespace Canchita.Service.Data
 
             return monto ;
         }
+
+        public bool cancelarReserva(int idReserva)
+        {
+            bool resul = false;
+            string queryCancelarReserva = "Update Reserva set estado='Cancelado' Where idReserva=@pIDReserva";
+            SqlParameter[] dbPa = new SqlParameter[]
+                      {                
+                     DBHelper.MakeParam("@pIDReserva",idReserva)
+                      };
+            resul = DBHelper.ExecuteNonQuery(queryCancelarReserva, dbPa) > 0;
+            return resul;
+        }
     }
 }

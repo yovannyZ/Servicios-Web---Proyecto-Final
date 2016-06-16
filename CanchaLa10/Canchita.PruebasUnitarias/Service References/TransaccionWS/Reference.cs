@@ -1025,11 +1025,11 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/obtenerTarjeta", ReplyAction="http://tempuri.org/ITransaccion/obtenerTarjetaResponse")]
         System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Tarjeta> obtenerTarjetaAsync(string idTarjeta);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/pagarReservaCTarjeta", ReplyAction="http://tempuri.org/ITransaccion/pagarReservaCTarjetaResponse")]
-        bool pagarReservaCTarjeta(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, string nroTarjeta, int idReserva);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/pagarReservaConTarjeta", ReplyAction="http://tempuri.org/ITransaccion/pagarReservaConTarjetaResponse")]
+        bool pagarReservaConTarjeta(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, string nroTarjeta, int idReserva);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/pagarReservaCTarjeta", ReplyAction="http://tempuri.org/ITransaccion/pagarReservaCTarjetaResponse")]
-        System.Threading.Tasks.Task<bool> pagarReservaCTarjetaAsync(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, string nroTarjeta, int idReserva);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/pagarReservaConTarjeta", ReplyAction="http://tempuri.org/ITransaccion/pagarReservaConTarjetaResponse")]
+        System.Threading.Tasks.Task<bool> pagarReservaConTarjetaAsync(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, string nroTarjeta, int idReserva);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarPagosPendientes", ReplyAction="http://tempuri.org/ITransaccion/listarPagosPendientesResponse")]
         System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Pago> listarPagosPendientes();
@@ -1215,12 +1215,12 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
             return base.Channel.obtenerTarjetaAsync(idTarjeta);
         }
         
-        public bool pagarReservaCTarjeta(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, string nroTarjeta, int idReserva) {
-            return base.Channel.pagarReservaCTarjeta(pago, nroTarjeta, idReserva);
+        public bool pagarReservaConTarjeta(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, string nroTarjeta, int idReserva) {
+            return base.Channel.pagarReservaConTarjeta(pago, nroTarjeta, idReserva);
         }
         
-        public System.Threading.Tasks.Task<bool> pagarReservaCTarjetaAsync(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, string nroTarjeta, int idReserva) {
-            return base.Channel.pagarReservaCTarjetaAsync(pago, nroTarjeta, idReserva);
+        public System.Threading.Tasks.Task<bool> pagarReservaConTarjetaAsync(Canchita.PruebasUnitarias.TransaccionWS.Pago pago, string nroTarjeta, int idReserva) {
+            return base.Channel.pagarReservaConTarjetaAsync(pago, nroTarjeta, idReserva);
         }
         
         public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Pago> listarPagosPendientes() {

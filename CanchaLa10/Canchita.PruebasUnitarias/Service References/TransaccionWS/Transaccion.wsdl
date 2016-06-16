@@ -79,11 +79,11 @@
   <wsdl:message name="ITransaccion_obtenerTarjeta_OutputMessage">
     <wsdl:part name="parameters" element="tns:obtenerTarjetaResponse" />
   </wsdl:message>
-  <wsdl:message name="ITransaccion_pagarReservaCTarjeta_InputMessage">
-    <wsdl:part name="parameters" element="tns:pagarReservaCTarjeta" />
+  <wsdl:message name="ITransaccion_pagarReservaConTarjeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:pagarReservaConTarjeta" />
   </wsdl:message>
-  <wsdl:message name="ITransaccion_pagarReservaCTarjeta_OutputMessage">
-    <wsdl:part name="parameters" element="tns:pagarReservaCTarjetaResponse" />
+  <wsdl:message name="ITransaccion_pagarReservaConTarjeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:pagarReservaConTarjetaResponse" />
   </wsdl:message>
   <wsdl:message name="ITransaccion_listarPagosPendientes_InputMessage">
     <wsdl:part name="parameters" element="tns:listarPagosPendientes" />
@@ -194,9 +194,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/obtenerTarjeta" message="tns:ITransaccion_obtenerTarjeta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/obtenerTarjetaResponse" message="tns:ITransaccion_obtenerTarjeta_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="pagarReservaCTarjeta">
-      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/pagarReservaCTarjeta" message="tns:ITransaccion_pagarReservaCTarjeta_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/pagarReservaCTarjetaResponse" message="tns:ITransaccion_pagarReservaCTarjeta_OutputMessage" />
+    <wsdl:operation name="pagarReservaConTarjeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/pagarReservaConTarjeta" message="tns:ITransaccion_pagarReservaConTarjeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/pagarReservaConTarjetaResponse" message="tns:ITransaccion_pagarReservaConTarjeta_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="listarPagosPendientes">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/listarPagosPendientes" message="tns:ITransaccion_listarPagosPendientes_InputMessage" />
@@ -349,8 +349,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="pagarReservaCTarjeta">
-      <soap:operation soapAction="http://tempuri.org/ITransaccion/pagarReservaCTarjeta" style="document" />
+    <wsdl:operation name="pagarReservaConTarjeta">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/pagarReservaConTarjeta" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
