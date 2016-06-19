@@ -14,11 +14,11 @@ namespace Canchita.PruebasUnitarias
         public void crearTarjeta()
         {
            
-                Usuario usuario= new Usuario { Id = 6 };
+                Usuario usuario= new Usuario { Id = 8 };
                 Tarjeta tarjeta  = new Tarjeta();
-                tarjeta.idTarjeta = "1941250005";
-                tarjeta.fechaCreacion=DateTime.Parse("2016/06/16");
-                tarjeta.fechaVencimiento=DateTime.Parse("2022/06/14");
+                tarjeta.idTarjeta = "1941250003";
+                tarjeta.fechaCreacion=DateTime.Parse("2016/05/01");
+                tarjeta.fechaVencimiento=DateTime.Parse("2020/05/01");
                 tarjeta.usuario = usuario;
                 Assert.IsTrue(proxy.crearTarjetas(tarjeta));                
         }
@@ -27,8 +27,8 @@ namespace Canchita.PruebasUnitarias
         public void RecargarTarjeta()
         {
             Tarjeta tarjeta = new Tarjeta();
-            tarjeta.idTarjeta = "1941250005";
-            tarjeta.saldo =1200.50;
+            tarjeta.idTarjeta = "1941250003";
+            tarjeta.saldo = 50.0;
 
             Assert.IsTrue(proxy.abonarSaldo(tarjeta));
          
@@ -45,7 +45,7 @@ namespace Canchita.PruebasUnitarias
         [TestMethod]
         public void obtenerTarjetasXUsuario()
         {
-            int idUsuario = 6;
+            int idUsuario = 8;
             var lista = proxy.ObtenerTarjetasXUsuario(idUsuario);
             Assert.IsNotNull(lista);
 
@@ -55,7 +55,7 @@ namespace Canchita.PruebasUnitarias
         [TestMethod]
         public void obtenerTarjeta()
         {
-            string idTarjeta = "1941250005";
+            string idTarjeta = "1941250003";
             var tarjeta = proxy.obtenerTarjeta(idTarjeta);
             Assert.IsNotNull(tarjeta);
 

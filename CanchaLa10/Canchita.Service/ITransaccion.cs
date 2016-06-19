@@ -54,17 +54,13 @@ namespace Canchita.Service
 
         #region . PAGO .
         [OperationContract]
-        bool pagarReservaConTarjeta(Pago pago,string nroTarjeta,int idReserva);
+        bool pagarReservaCTarjeta(Pago pago,string nroTarjeta,int idReserva);
 
         [OperationContract]
         List<Pago> listarPagosPendientes();
 
         [OperationContract]
         List<Pago> listarPagosCancelados();
-        [OperationContract]
-        bool reservarPagoEfectivo(Pago pago, int idReserva);
-        [OperationContract]
-        bool pagarReservaConEfectivo(string nroPago);
         #endregion
 
         #region . SEDE .

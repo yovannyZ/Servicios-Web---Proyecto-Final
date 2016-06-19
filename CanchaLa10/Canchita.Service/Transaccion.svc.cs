@@ -198,29 +198,22 @@ namespace Canchita.Service
             return TARJETADAO.obtenerTarjeta(idTarjeta);
         }
         #endregion
-        
+
         #region . PAGO .
-        public bool pagarReservaConTarjeta(Pago pago, string nroTarjeta, int idReserva)
+        public bool pagarReservaCTarjeta(Pago pago, string nroTarjeta, int idReserva)
         {
-            return PAGODAO.pagarconTarjeta(pago,nroTarjeta,idReserva);
+            return PAGODAO.pagarcTarjeta(pago,nroTarjeta,idReserva);
         }
+
         public List<Pago> listarPagosPendientes()
         {
             return PAGODAO.listarPagosPendientes();
         }
+
         public List<Pago> listarPagosCancelados()
         {
             return PAGODAO.listarPagosCancelados();
         }
-        public bool reservarPagoEfectivo(Pago pago, int idReserva)
-        {
-            return PAGODAO.reservarPagoEfectivo(pago,idReserva);
-        }
-        public bool pagarReservaConEfectivo(string nroPago)
-        {
-            return PAGODAO.pagarConEfectivo(nroPago);
-        }
-
         #endregion
 
         #region . SEDE .
