@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-
     <link href="~/content/materialize/css/myStyle.css" rel="stylesheet" type="text/css" />
-   
+    @RenderSection("Styles", false)
+    
     <style>
         .error{
             display:none;
@@ -22,7 +22,7 @@
     </script>
 </head>
 <body>
-    <div class="">
+    <div class="container">
         @RenderBody()
     </div>
     

@@ -117,6 +117,7 @@ namespace Canchita.Service
         public bool ValidarUsuario(Usuario usuario)
         {
             bool isValid = false;
+
             var usu = UsuarioDAO.ObtenerUsuario(usuario.Username);
             if (usu != null)
             {

@@ -96,7 +96,7 @@ namespace Canchita.Service.Data
 
         public Usuario ObtenerUsuario(string username)
         {
-            Usuario usuario = new Usuario();
+            Usuario usuario = null;
             string query = "SELECT * FROM USUARIO WHERE USERNAME=@pr1";
 
             SqlParameter[] dbParams = new SqlParameter[]
@@ -108,7 +108,7 @@ namespace Canchita.Service.Data
             {
                 if (lector != null && lector.HasRows)
                 {
-                    
+                    usuario = new Usuario();
                     while (lector.Read())
                     {
                         usuario.Id = Convert.ToInt32(lector["idUsuario"]);

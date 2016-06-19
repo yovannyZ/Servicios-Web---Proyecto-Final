@@ -40,6 +40,8 @@ namespace AppClient.Controllers
             {
                 sede.Imagen = null;
             }
+
+            sede.Estado = "Disponible";
             proxy.AgregarSede(sede);
             return RedirectToAction("Index");
         }

@@ -38,3 +38,9 @@ C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa1
 C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.pdb
 C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
 C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb
+D:\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll.config
+D:\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll
+D:\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.pdb
+D:\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
+D:\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
+D:\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb

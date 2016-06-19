@@ -82,6 +82,9 @@
     <Content Include="content\materialize\css\materialize.css" />
     <Content Include="content\materialize\css\materialize.min.css" />
     <Content Include="content\materialize\css\myStyle.css" />
+    <Content Include="content\materialize\css\page-center.css" />
+    <Content Include="content\materialize\css\prism.css" />
+    <Content Include="content\materialize\css\style.css" />
     <Content Include="content\materialize\font\material-design-icons\LICENSE.txt" />
     <None Include="content\materialize\js\jquery-2.1.4.intellisense.js" />
     <Content Include="content\materialize\js\jquery-2.1.4.js" />
@@ -142,6 +145,8 @@
     <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.eot" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="img\anyone.png" />
+    <Content Include="img\blue-user-icon.png" />
     <Content Include="img\fondo2.jpg" />
     <Content Include="img\loading42.gif" />
     <Content Include="img\logo-web.png" />
@@ -156,12 +161,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\materialize\materialize.js" />
     <Content Include="Scripts\materialize\materialize.min.js" />
-    <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.Tarifa.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.Usuario.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.Campo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -171,7 +170,13 @@
     <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.Sede.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.Tarifa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.Tarjeta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\CanchitaWS\Transaccion.disco" />
@@ -181,7 +186,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -189,7 +196,9 @@
     <Compile Include="Controllers\CampoClientController.cs" />
     <Compile Include="Controllers\CampoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginClientController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ReservaClientController.cs" />
     <Compile Include="Controllers\ReservaController.cs" />
     <Compile Include="Controllers\SedeClientController.cs" />
     <Compile Include="Controllers\SedeController.cs" />
@@ -206,16 +215,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <None Include="Service References\CanchitaWS\Transaccion.wsdl" />
-    <None Include="Service References\CanchitaWS\Transaccion.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CanchitaWS\Transaccion1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CanchitaWS\Transaccion2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -233,6 +232,17 @@
     <Content Include="Views\CampoClient\Index.cshtml" />
     <Content Include="Views\CampoClient\VerCalendario.cshtml" />
     <Content Include="Views\CampoClient\Disponibilidad.cshtml" />
+    <None Include="Service References\CanchitaWS\Transaccion.wsdl" />
+    <None Include="Service References\CanchitaWS\Transaccion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CanchitaWS\Transaccion1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CanchitaWS\Transaccion2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\LoginClient\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -243,6 +253,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\ReservaClient\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
