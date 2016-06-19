@@ -11,5 +11,6 @@ namespace Canchita.Service.Modelo
         public string Descripcion { get; set; }
         public string Estado { get; set; }
         public Sede Sede { get; set; }
+        public byte[] Imagen { get; set; }
     }
 }

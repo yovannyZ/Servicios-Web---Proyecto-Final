@@ -9,15 +9,16 @@ namespace Canchita.Service.Data
 {
     public class TarifaDAO
     {
-        public List<Tarifa> Listar(DateTime fechaReserva)
+        public List<Tarifa> Listar(DateTime fechaReserva, int idCampo)
         {
             List<Tarifa> lista = new List<Tarifa>();
             string query="SELECT * FROM tarifa WHERE horaInicio not in(SELECT  rt.horaInicio FROM Reserva_Tarifa rt"+
-                         " INNER JOIN Reserva r on rt.idRserva = r.idReserva where r.fechaReserva=@pr1)";
+                         " INNER JOIN Reserva r on rt.idRserva = r.idReserva where r.fechaReserva=@pr1 and r.idCampo=@pr2)";
 
             SqlParameter[] parametros = new SqlParameter[]
              {
-                 DBHelper.MakeParam("@pr1",fechaReserva)
+                 DBHelper.MakeParam("@pr1",fechaReserva),
+                 DBHelper.MakeParam("@pr2",idCampo)
              };
 
             using (SqlDataReader lector = DBHelper.ExecuteDataReader(query, parametros))

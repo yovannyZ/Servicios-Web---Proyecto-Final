@@ -141,9 +141,9 @@ namespace Canchita.Service
         #endregion
 
         #region . TARIFA .
-        public List<Tarifa> ListarTarifas(DateTime fechaReserva)
+        public List<Tarifa> ListarTarifas(DateTime fechaReserva, int idCampo)
         {
-            return TarifaDAO.Listar(fechaReserva);
+            return TarifaDAO.Listar(fechaReserva, idCampo);
         }
         #endregion
 
@@ -198,22 +198,29 @@ namespace Canchita.Service
             return TARJETADAO.obtenerTarjeta(idTarjeta);
         }
         #endregion
-
+        
         #region . PAGO .
-        public bool pagarReservaCTarjeta(Pago pago, string nroTarjeta, int idReserva)
+        public bool pagarReservaConTarjeta(Pago pago, string nroTarjeta, int idReserva)
         {
-            return PAGODAO.pagarcTarjeta(pago,nroTarjeta,idReserva);
+            return PAGODAO.pagarconTarjeta(pago,nroTarjeta,idReserva);
         }
-
         public List<Pago> listarPagosPendientes()
         {
             return PAGODAO.listarPagosPendientes();
         }
-
         public List<Pago> listarPagosCancelados()
         {
             return PAGODAO.listarPagosCancelados();
         }
+        public bool reservarPagoEfectivo(Pago pago, int idReserva)
+        {
+            return PAGODAO.reservarPagoEfectivo(pago,idReserva);
+        }
+        public bool pagarReservaConEfectivo(string nroPago)
+        {
+            return PAGODAO.pagarConEfectivo(nroPago);
+        }
+
         #endregion
 
         #region . SEDE .
@@ -235,6 +242,11 @@ namespace Canchita.Service
         public bool EliminarSede(Sede sede)
         {
             return SedeDAO.Eliminar(sede);
+        }
+
+        public Sede ObtenerSedeId(int idSede)
+        {
+            return SedeDAO.ObtenerSedeId(idSede);
         }
         #endregion
 
@@ -260,7 +272,18 @@ namespace Canchita.Service
 
         }
 
+        public List<Campo> ObtenerCamposXSede(int idSede)
+        {
+            return CampoDAO.ObtenerCamposXSede(idSede);
+        }
+
         #endregion
 
+
+
+
+
+
+       
     }
 }

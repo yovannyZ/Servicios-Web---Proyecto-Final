@@ -27,7 +27,7 @@ namespace Canchita.Service
 
         #region . TARIFA .
         [OperationContract]
-        List<Tarifa> ListarTarifas(DateTime fechaReserva);
+        List<Tarifa> ListarTarifas(DateTime fechaReserva, int idCampo);
         #endregion
 
         #region . RESERVA .
@@ -54,13 +54,17 @@ namespace Canchita.Service
 
         #region . PAGO .
         [OperationContract]
-        bool pagarReservaCTarjeta(Pago pago,string nroTarjeta,int idReserva);
+        bool pagarReservaConTarjeta(Pago pago,string nroTarjeta,int idReserva);
 
         [OperationContract]
         List<Pago> listarPagosPendientes();
 
         [OperationContract]
         List<Pago> listarPagosCancelados();
+        [OperationContract]
+        bool reservarPagoEfectivo(Pago pago, int idReserva);
+        [OperationContract]
+        bool pagarReservaConEfectivo(string nroPago);
         #endregion
 
         #region . SEDE .
@@ -75,6 +79,9 @@ namespace Canchita.Service
 
         [OperationContract]
         bool EliminarSede(Sede sede);
+
+        [OperationContract]
+        Sede ObtenerSedeId(int idSede);
         #endregion
 
         #region . CAMPO .
@@ -89,6 +96,9 @@ namespace Canchita.Service
 
         [OperationContract]
         bool EliminarCampo(Campo campo);
+
+        [OperationContract]
+        List<Campo> ObtenerCamposXSede(int idSede);
         #endregion
     }
 }

@@ -152,5 +152,18 @@ namespace Canchita.Service.Data
 
             return saldo;
         }
+
+        public bool quitarSaldo(double montoADescontar,string idTarjeta)
+        {
+            bool resul = false;
+            string querySaldo = "Update Tarjeta set saldo=saldo-@pmonto where idTarjeta=@pidT";
+            SqlParameter[] dbPara = new SqlParameter[]
+                 {                
+                     DBHelper.MakeParam("@pmonto",montoADescontar),
+                     DBHelper.MakeParam("@pidT",idTarjeta)
+                 };
+            resul = DBHelper.ExecuteNonQuery(querySaldo, dbPara) > 0;
+            return resul;
+        }
     }
 }
