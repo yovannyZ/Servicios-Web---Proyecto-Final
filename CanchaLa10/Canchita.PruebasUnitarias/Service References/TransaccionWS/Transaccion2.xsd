@@ -166,7 +166,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="pagarReservaCTarjeta">
+  <xs:element name="pagarReservaConTarjeta">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="pago" nillable="true" type="q13:Pago" />
@@ -175,10 +175,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="pagarReservaCTarjetaResponse">
+  <xs:element name="pagarReservaConTarjetaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="pagarReservaCTarjetaResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pagarReservaConTarjetaResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -206,10 +206,39 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="reservarPagoEfectivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="pago" nillable="true" type="q16:Pago" />
+        <xs:element minOccurs="0" name="idReserva" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="reservarPagoEfectivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reservarPagoEfectivoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pagarReservaConEfectivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nroPago" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pagarReservaConEfectivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pagarReservaConEfectivoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AgregarSede">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="sede" nillable="true" type="q16:Sede" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="sede" nillable="true" type="q17:Sede" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -223,7 +252,7 @@
   <xs:element name="ActualizarSede">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="sede" nillable="true" type="q17:Sede" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="sede" nillable="true" type="q18:Sede" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -242,14 +271,14 @@
   <xs:element name="ListarSedesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="ListarSedesResult" nillable="true" type="q18:ArrayOfSede" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="ListarSedesResult" nillable="true" type="q19:ArrayOfSede" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="EliminarSede">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="sede" nillable="true" type="q19:Sede" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="sede" nillable="true" type="q20:Sede" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -263,7 +292,7 @@
   <xs:element name="AgregarCampo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="campo" nillable="true" type="q20:Campo" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="campo" nillable="true" type="q21:Campo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -277,7 +306,7 @@
   <xs:element name="ActualizarCampo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="campo" nillable="true" type="q21:Campo" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="campo" nillable="true" type="q22:Campo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -296,14 +325,14 @@
   <xs:element name="ListarCamposResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="ListarCamposResult" nillable="true" type="q22:ArrayOfCampo" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="ListarCamposResult" nillable="true" type="q23:ArrayOfCampo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="EliminarCampo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="campo" nillable="true" type="q23:Campo" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="campo" nillable="true" type="q24:Campo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
