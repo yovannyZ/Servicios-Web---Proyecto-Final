@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canchita.Service", "Canchita.Service\Canchita.Service.csproj", "{37B53781-0061-4E83-906A-FAA70A083E05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canchita.PruebasUnitarias", "Canchita.PruebasUnitarias\Canchita.PruebasUnitarias.csproj", "{BCFC44AE-D436-4D63-A032-7E2E2C0F67FF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{37B53781-0061-4E83-906A-FAA70A083E05} = {37B53781-0061-4E83-906A-FAA70A083E05}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37B53781-0061-4E83-906A-FAA70A083E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B53781-0061-4E83-906A-FAA70A083E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B53781-0061-4E83-906A-FAA70A083E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B53781-0061-4E83-906A-FAA70A083E05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCFC44AE-D436-4D63-A032-7E2E2C0F67FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCFC44AE-D436-4D63-A032-7E2E2C0F67FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCFC44AE-D436-4D63-A032-7E2E2C0F67FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCFC44AE-D436-4D63-A032-7E2E2C0F67FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
