@@ -22,7 +22,7 @@
     </script>
 </head>
 <body>
-    <div class="container">
+    <div>
         @RenderBody()
     </div>
     
@@ -30,7 +30,7 @@
     <script src="~/content/materialize/js/jquery.unobtrusive-ajax.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-
+    @RenderSection("script", false)
     <script>
 
         $('.datepicker').pickadate({
@@ -60,7 +60,10 @@
 
         $(document).ready(function () {
             $('select').material_select();
+            $('.slider').slider({ full_width: false });
         });
+
+      
     </script>
 </body>
 </html>

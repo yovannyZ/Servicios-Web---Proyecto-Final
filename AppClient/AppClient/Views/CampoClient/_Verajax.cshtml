@@ -1,0 +1,51 @@
+﻿@model List<AppClient.CanchitaWS.Tarifa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Disponibilidad", "CampoClient", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+   
+    for (var i = 0; i < Model.Count(); i++)
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.HiddenFor(it => it[i].Id)
+                    @Html.HiddenFor(it => it[i].HoraInicio)
+                    @Html.HiddenFor(it => it[i].Precio)
+                    @Html.HiddenFor(it => it[i].HoraFin)
+                </td>
+
+                <td>
+                    <div class="borrarHidden">
+                        <div class="switch">
+                            <label>
+                                @Html.DisplayFor(it => it[i].HoraInicio)-@Html.DisplayFor(it => it[i].HoraFin)
+                                @Html.CheckBoxFor(it => it[i].Checked, new { @id = @Html.DisplayFor(it => it[i].HoraInicio) })
+                                <span class="lever"></span>
+
+                            </label>
+                        </div>
+
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+    }
+
+    <button class="btn waves-effect waves-light" type="submit" name="action">
+        Realizar reserva
+        <i class="material-icons right">send</i>
+    </button>
+
+}
+
+
+
+

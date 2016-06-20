@@ -22,7 +22,7 @@ namespace Canchita.Service
         [OperationContract]
         List<Usuario> ListarUsuario();
         [OperationContract]
-        bool ValidarUsuario(Usuario usuario);
+        Usuario ValidarUsuario(Usuario usuario);
         #endregion
 
         #region . TARIFA .
@@ -99,6 +99,8 @@ namespace Canchita.Service
 
         [OperationContract]
         List<Campo> ObtenerCamposXSede(int idSede);
+        [OperationContract]
+        Campo ObtenerCamposXId(int idCampo);
         #endregion
     }
 }

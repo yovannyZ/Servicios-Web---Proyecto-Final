@@ -243,6 +243,9 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\LoginClient\Login.cshtml" />
+    <Content Include="Views\ReservaClient\DetalleReserva.cshtml" />
+    <Content Include="Views\ReservaClient\CrearReserva.cshtml" />
+    <Content Include="Views\CampoClient\_Verajax.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -253,7 +256,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\ReservaClient\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

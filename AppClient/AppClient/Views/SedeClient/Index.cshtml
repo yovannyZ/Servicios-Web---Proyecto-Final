@@ -4,22 +4,16 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container">
+    <br />
+    <h5 class="center-align black-text" style=" letter-spacing: 2px; font-size: 1.8rem">-- SELECCIONE UNA SEDE --</h5>
 
-<h2>Index</h2>
+    <div class="slider">
+        <ul class="slides">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
-
-<div class=" row">
-
-    @foreach (var item in Model)
-    {
-
-        <div class="col m3">
-            <div class="card">
-                <div class="card-image">
+            @foreach (var item in Model)
+            {
+                <li>
                     @{ var imagen = string.Empty;
                      if (item.Imagen != null)
                      {
@@ -27,21 +21,15 @@
                          imagen = string.Format("data:image/jpg;base64,{0}", base64);
                      }
                     }
+                    <img src="@imagen"> <!-- random image -->
+                    <div class="caption center-align">
+                        <p class="grey-text text-lighten-4" style=" letter-spacing: 2px; font-size: 2.5rem; text-transform: uppercase;">@Html.DisplayFor(modelItem => item.Descripcion)</p>
+                        <p class="light grey-text text-lighten-5" style=" letter-spacing: 2px; font-size: 1.8rem; text-transform: uppercase;">@Html.DisplayFor(modelItem => item.Direccion)</p>
+                        @Html.ActionLink("Ver Campos", "Index", "CampoClient", new { idSede = item.Id }, new { @class = "waves-effect waves-light btn  orange lighten-2" })
+                    </div>
+                </li>
 
-                    <img width="350" height="250" src="@imagen" alt="No Hay" class="materialboxed" />
-                    <span class="card-title">@Html.DisplayFor(modelItem => item.Descripcion)</span>
-                </div>
-                <div class="card-content">
-                    <p>
-                        @Html.DisplayFor(modelItem => item.Direccion)
-                    </p>
-                </div>
-                <div class="card-action">
-                   @Html.ActionLink("Ver Campos", "Index", "CampoClient", new { idSede = item.Id },null)
-                </div>
-            </div>
-        </div>
-
-    }
-
+            }
+        </ul>
+    </div>
 </div>

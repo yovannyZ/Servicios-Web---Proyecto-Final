@@ -20,14 +20,9 @@ namespace AppClient.Controllers
         [HttpPost]
         public ActionResult Index(Usuario usuario)
         {
-            if (proxy.ValidarUsuario(usuario))
-            {
-                return RedirectToAction("Index","Reserva");
-            }
-            else
-            {
+            
                 return View();
-            }
+            
             
         }
 	}

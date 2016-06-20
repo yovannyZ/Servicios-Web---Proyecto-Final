@@ -20,9 +20,12 @@ namespace AppClient.Controllers
         [HttpPost]
         public ActionResult Login(Usuario usuario)
         {
-            if (proxy.ValidarUsuario(usuario))
+            usuario.TipoUsuario = "Cliente";
+            Usuario usuLogeado = proxy.ValidarUsuario(usuario);
+            if (usuLogeado!=null)
             {
-                Session["usuario"] = usuario;
+
+                Session["usuario"] = usuLogeado;
                 return RedirectToAction("DetalleReserva", "ReservaClient");
             }
             else

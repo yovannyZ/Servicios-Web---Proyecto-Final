@@ -169,6 +169,12 @@
   <wsdl:message name="ITransaccion_ObtenerCamposXSede_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerCamposXSedeResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_ObtenerCamposXId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCamposXId" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ObtenerCamposXId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCamposXIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="ITransaccion">
     <wsdl:operation name="AgregarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarUsuario" message="tns:ITransaccion_AgregarUsuario_InputMessage" />
@@ -277,6 +283,10 @@
     <wsdl:operation name="ObtenerCamposXSede">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ObtenerCamposXSede" message="tns:ITransaccion_ObtenerCamposXSede_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ObtenerCamposXSedeResponse" message="tns:ITransaccion_ObtenerCamposXSede_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCamposXId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ObtenerCamposXId" message="tns:ITransaccion_ObtenerCamposXId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ObtenerCamposXIdResponse" message="tns:ITransaccion_ObtenerCamposXId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITransaccion" type="tns:ITransaccion">
@@ -517,6 +527,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerCamposXSede">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/ObtenerCamposXSede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCamposXId">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ObtenerCamposXId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
