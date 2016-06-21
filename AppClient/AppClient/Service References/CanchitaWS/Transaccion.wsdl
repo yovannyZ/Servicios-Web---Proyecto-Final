@@ -49,6 +49,12 @@
   <wsdl:message name="ITransaccion_retornarMontoReserva_OutputMessage">
     <wsdl:part name="parameters" element="tns:retornarMontoReservaResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_obtenerUltimoIDReseva_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerUltimoIDReseva" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_obtenerUltimoIDReseva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerUltimoIDResevaResponse" />
+  </wsdl:message>
   <wsdl:message name="ITransaccion_crearTarjetas_InputMessage">
     <wsdl:part name="parameters" element="tns:crearTarjetas" />
   </wsdl:message>
@@ -204,6 +210,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/retornarMontoReserva" message="tns:ITransaccion_retornarMontoReserva_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/retornarMontoReservaResponse" message="tns:ITransaccion_retornarMontoReserva_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="obtenerUltimoIDReseva">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/obtenerUltimoIDReseva" message="tns:ITransaccion_obtenerUltimoIDReseva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/obtenerUltimoIDResevaResponse" message="tns:ITransaccion_obtenerUltimoIDReseva_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="crearTarjetas">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/crearTarjetas" message="tns:ITransaccion_crearTarjetas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/crearTarjetasResponse" message="tns:ITransaccion_crearTarjetas_OutputMessage" />
@@ -347,6 +357,15 @@
     </wsdl:operation>
     <wsdl:operation name="retornarMontoReserva">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/retornarMontoReserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerUltimoIDReseva">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/obtenerUltimoIDReseva" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

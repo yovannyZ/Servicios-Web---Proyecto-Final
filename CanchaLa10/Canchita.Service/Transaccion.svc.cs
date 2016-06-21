@@ -174,6 +174,11 @@ namespace Canchita.Service
         {
             return ReservaDAO.retornarmonto(idReserva);
         }
+
+        public int obtenerUltimoIDReseva()
+        {
+            return ReservaDAO.ObtenerIdUltimaReserva();
+        }
         #endregion
 
         #region . TARJETA .

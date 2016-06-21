@@ -79,6 +79,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\AppClient.dll" />
+    <Content Include="bin\AppClient.pdb" />
+    <Content Include="bin\es\System.Web.Helpers.resources.dll" />
+    <Content Include="bin\es\System.Web.Mvc.resources.dll" />
+    <Content Include="bin\es\System.Web.Razor.resources.dll" />
+    <Content Include="bin\es\System.Web.Webpages.Deployment.resources.dll" />
+    <Content Include="bin\es\System.Web.Webpages.Razor.resources.dll" />
+    <Content Include="bin\es\System.Web.Webpages.resources.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.Webpages.Deployment.dll" />
+    <Content Include="bin\System.Web.Webpages.Deployment.xml" />
+    <Content Include="bin\System.Web.Webpages.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.xml" />
+    <Content Include="bin\System.Web.Webpages.xml" />
     <Content Include="content\materialize\css\materialize.css" />
     <Content Include="content\materialize\css\materialize.min.css" />
     <Content Include="content\materialize\css\myStyle.css" />
@@ -86,6 +106,7 @@
     <Content Include="content\materialize\css\prism.css" />
     <Content Include="content\materialize\css\style.css" />
     <Content Include="content\materialize\font\material-design-icons\LICENSE.txt" />
+    <Content Include="bin\AppClient.dll.config" />
     <None Include="content\materialize\js\jquery-2.1.4.intellisense.js" />
     <Content Include="content\materialize\js\jquery-2.1.4.js" />
     <Content Include="content\materialize\js\jquery-2.1.4.min.js" />
@@ -144,12 +165,19 @@
     <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.ttf" />
     <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.eot" />
+    <Content Include="obj\Debug\AppClient.csprojResolveAssemblyReference.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="img\anyone.png" />
     <Content Include="img\blue-user-icon.png" />
     <Content Include="img\fondo2.jpg" />
     <Content Include="img\loading42.gif" />
     <Content Include="img\logo-web.png" />
+    <Content Include="obj\Debug\AppClient.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\AppClient.dll" />
+    <Content Include="obj\Debug\AppClient.pdb" />
+    <Content Include="obj\Debug\TempPE\Service References.CanchitaWS.Reference.cs.dll" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
@@ -198,6 +226,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginClientController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\ReservaClientController.cs" />
     <Compile Include="Controllers\ReservaController.cs" />
     <Compile Include="Controllers\SedeClientController.cs" />
@@ -205,6 +234,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\CanchitaWS\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -246,6 +278,15 @@
     <Content Include="Views\ReservaClient\DetalleReserva.cshtml" />
     <Content Include="Views\ReservaClient\CrearReserva.cshtml" />
     <Content Include="Views\CampoClient\_Verajax.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\Campo\_Verajax.cshtml" />
+    <Content Include="Views\Campo\Disponibilidad.cshtml" />
+    <Content Include="Views\Campo\VerCalendario.cshtml" />
+    <Content Include="Views\Campo\ListarCampoCombo.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Reserva\CrearReserva.cshtml" />
+    <Content Include="Views\Reserva\DetalleReserva.cshtml" />
+    <Content Include="Views\Reserva\listaPagoPend.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -21,9 +21,9 @@ namespace Canchita.PruebasUnitarias
                 Dni = "70123394",
                 Email = "Armandez@hotmail.com",
                 Telefono = "943823186",
-                TipoUsuario = "Administrador",
-                Username = "acarbajal",
-                Clave = "123"
+                TipoUsuario = "Cliente",
+                Username = "elcliente",
+                Clave = "abc"
             };
 
            

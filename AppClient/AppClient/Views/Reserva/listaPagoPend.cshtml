@@ -1,0 +1,48 @@
+﻿@model IEnumerable<AppClient.CanchitaWS.Pago>
+
+@{
+    ViewBag.Title = "listaPagoPend";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>lista_Pagos_Pendientes</h2>
+
+<div class="row">
+    <p></p>
+
+    <a href="@Url.Action("ListarCampoCombo", "Campo")" id=" buto" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i>Agregar Una Reserv</a>
+    <label style="font-size:30px" for="buto">Agregar Otra Reserva</label>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.monto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nroPago)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.monto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nroPago)
+        </td>
+        <td>          
+           @Html.ActionLink("Pagar s/.", "Pagar", "Reserva", new { nroPago = item.nroPago }, null)
+        </td>
+    </tr>
+}
+
+</table>

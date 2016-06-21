@@ -35,6 +35,9 @@ namespace Canchita.Service
         bool AgregarReserva(Reserva reserva, List<DetalleReserva> listaDetalle);
         [OperationContract]
         double retornarMontoReserva(int idReserva);
+
+        [OperationContract]
+        int obtenerUltimoIDReseva();
         #endregion
 
         #region . TARJETA .

@@ -44,3 +44,9 @@ D:\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Servi
 D:\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
 D:\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
 D:\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb
+C:\Users\Administrador\Pictures\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll.config
+C:\Users\Administrador\Pictures\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll
+C:\Users\Administrador\Pictures\CanchaLa10\Canchita.Service\bin\Canchita.Service.pdb
+C:\Users\Administrador\Pictures\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Pictures\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
+C:\Users\Administrador\Pictures\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb
