@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AppClient.CanchitaWS;
 using System.IO;
+using System.Net;
 
 namespace AppClient.Controllers
 {
@@ -40,9 +41,24 @@ namespace AppClient.Controllers
             {
                 sede.Imagen = null;
             }
+
+            sede.Estado = "Disponible";
             proxy.AgregarSede(sede);
             return RedirectToAction("Index");
         }
+
+          public ActionResult Edit(int id=0)
+          {
+              var sede = proxy.ObtenerSedeId(id);
+
+              if (sede == null)
+              {
+                  return HttpNotFound();
+              }
+              return View(sede);
+          }
+
+
 
     }
 }

@@ -1,60 +1,74 @@
 ﻿@model AppClient.CanchitaWS.Sede
 
 @{
-    ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = null;
 }
-
-<h2>Create</h2>
 
 @using (Html.BeginForm("Create", "Sede", FormMethod.Post, new { enctype = "multipart/form-data" })) 
 {
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Sede</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-        <div class="form-group">
-            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Descripcion)
-                @Html.ValidationMessageFor(model => model.Descripcion)
-            </div>
-        </div>
+  <div id="basic-card" class="section">
+            <div class="row">
+                <div class="col s12 m8 l12">
+                    <div class="card  white">
+                        <div class="card-content cyan lighten-4">
+                            <h5 class=" center-align grey-text  text-darken-2">Nueva Sede</h5>
+                        </div>
+                        <div class="card-action">
+                            <div class="row">
+                                <div class="col s12">
+                                    <div style="width:70% ; margin:0 auto;">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="mdi-action-account-circle prefix"></i>
+                                                @Html.EditorFor(model => model.Descripcion)
+                                                @Html.LabelFor(model => model.Descripcion)
+                                            </div>
+                                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Direccion)
-                @Html.ValidationMessageFor(model => model.Direccion)
-            </div>
-        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="mdi-communication-email prefix"></i>
+                                                @Html.EditorFor(model => model.Direccion)
+                                                @Html.LabelFor(model => model.Direccion)
+                                            </div>
+                                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Estado)
-                @Html.ValidationMessageFor(model => model.Estado)
-            </div>
-        </div>
+                                        <div class="row">
+                                            <div class="file-field input-field">
+                                                <div class="btn">
+                                                    <span>File</span>
+                                                    <input type="file" id="fimage" name="fimage">
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Imagen, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                                        <div class="row">
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <button class="btn cyan waves-effect waves-light right" type="submit" name="action">
+                                                        Guardar
+                                                        <i class="mdi-content-send right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <input type="file" id="fimage" name="fimage" />
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+</div>
+  
+            
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
+

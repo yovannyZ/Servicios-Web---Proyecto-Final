@@ -62,21 +62,24 @@ namespace Canchita.Service.Data
 
         public List<Pago> listarPagosPendientes()
         {
-            List<Pago> lista = new List<Pago>();           
+            List<Pago> lista = new List<Pago>();
+            Reserva reserva = new Reserva();
+            Pago pago = null;
             string query = "Select * from Pago where estado='Pendiente'";
             using (SqlDataReader lector = DBHelper.ExecuteDataReader(query))
             {
+
                 if (lector != null && lector.HasRows)
                 {
-                    Pago pago = new Pago();
-                    Reserva reserva = new Reserva();
+
                     while (lector.Read())
                     {
-                        pago.nroPago = lector[0].ToString();
-                        pago.monto = double.Parse(lector[1].ToString());
-                        pago.estado = lector[2].ToString();
-                        reserva.Id = Convert.ToInt32(lector[3].ToString());
-                        pago.idReserva = reserva;                                              
+                        pago = new Pago();
+                        pago.nroPago = lector["nroPago"].ToString();
+                        pago.monto = double.Parse(lector["monto"].ToString());
+                        pago.estado = lector["estado"].ToString();
+                        reserva.Id = Convert.ToInt32(lector["idReserva"].ToString());
+                        pago.idReserva = reserva;
                         lista.Add(pago);
                     }
                 }

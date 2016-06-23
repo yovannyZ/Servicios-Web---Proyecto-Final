@@ -1,0 +1,68 @@
+﻿@model AppClient.CanchitaWS.Usuario
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    
+<link href="@Url.Content("~/content/css/style.css")" type="text/css" rel="stylesheet" media="screen,projection">
+<link href="@Url.Content("~/content/css/page-center.css")" type="text/css" rel="stylesheet" media="screen,projection">
+<link href="@Url.Content("~/content/css/prism.css")" type="text/css" rel="stylesheet" media="screen,projection">
+}
+
+
+@using (Html.BeginForm("Login", "LoginClient", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+     <div id="login-page" class="row">
+    <div class="col s12 z-depth-4 card-panel">
+      <form class="login-form">
+        <div class="row">
+          <div class="input-field col s12 center">
+              <img src="~/img/anyone.png" alt="" class="circle responsive-img valign profile-image-login">
+            <p class="center login-form-text" >identificate para poder hacer una reserva</p>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+              <i class="material-icons prefix">perm_identity</i>
+              @Html.EditorFor(model => model.Username)
+            <label for="Username" class="center-align">Username</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+              <i class="material-icons prefix">lock_outline</i>
+              @Html.PasswordFor(model => model.Clave)
+            <label for="Clave">Password</label>
+          </div>
+        </div>
+        <div class="row">          
+          <div class="input-field col s12 m12 l12  login-text">
+              <input type="checkbox" id="remember-me" />
+              <label for="remember-me">Remember me</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+              <button class="btn waves-effect waves-light col s12" type="submit" name="action">Login</button>
+              <p class="red-text text-darken-3 center-align">@ViewBag.Error</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6 m6 l6">
+            <p class="margin medium-small"><a href="page-register.html">Register Now!</a></p>
+          </div>
+          <div class="input-field col s6 m6 l6">
+              <p class="margin right-align medium-small"><a href="page-forgot-password.html">Forgot password ?</a></p>
+          </div>          
+        </div>
+
+      </form>
+    </div>
+  </div>
+    
+}
+

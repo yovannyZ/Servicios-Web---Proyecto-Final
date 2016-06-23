@@ -1004,10 +1004,10 @@ namespace AppClient.CanchitaWS {
         System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.Usuario>> ListarUsuarioAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ValidarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ValidarUsuarioResponse")]
-        bool ValidarUsuario(AppClient.CanchitaWS.Usuario usuario);
+        AppClient.CanchitaWS.Usuario ValidarUsuario(AppClient.CanchitaWS.Usuario usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ValidarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ValidarUsuarioResponse")]
-        System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(AppClient.CanchitaWS.Usuario usuario);
+        System.Threading.Tasks.Task<AppClient.CanchitaWS.Usuario> ValidarUsuarioAsync(AppClient.CanchitaWS.Usuario usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifas", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasResponse")]
         System.Collections.Generic.List<AppClient.CanchitaWS.Tarifa> ListarTarifas(System.DateTime fechaReserva, int idCampo);
@@ -1026,6 +1026,12 @@ namespace AppClient.CanchitaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/retornarMontoReserva", ReplyAction="http://tempuri.org/ITransaccion/retornarMontoReservaResponse")]
         System.Threading.Tasks.Task<double> retornarMontoReservaAsync(int idReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/obtenerUltimoIDReseva", ReplyAction="http://tempuri.org/ITransaccion/obtenerUltimoIDResevaResponse")]
+        int obtenerUltimoIDReseva();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/obtenerUltimoIDReseva", ReplyAction="http://tempuri.org/ITransaccion/obtenerUltimoIDResevaResponse")]
+        System.Threading.Tasks.Task<int> obtenerUltimoIDResevaAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/crearTarjetas", ReplyAction="http://tempuri.org/ITransaccion/crearTarjetasResponse")]
         bool crearTarjetas(AppClient.CanchitaWS.Tarjeta tarjeta);
@@ -1146,6 +1152,12 @@ namespace AppClient.CanchitaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerCamposXSede", ReplyAction="http://tempuri.org/ITransaccion/ObtenerCamposXSedeResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.Campo>> ObtenerCamposXSedeAsync(int idSede);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerCamposXId", ReplyAction="http://tempuri.org/ITransaccion/ObtenerCamposXIdResponse")]
+        AppClient.CanchitaWS.Campo ObtenerCamposXId(int idCampo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerCamposXId", ReplyAction="http://tempuri.org/ITransaccion/ObtenerCamposXIdResponse")]
+        System.Threading.Tasks.Task<AppClient.CanchitaWS.Campo> ObtenerCamposXIdAsync(int idCampo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1199,11 +1211,11 @@ namespace AppClient.CanchitaWS {
             return base.Channel.ListarUsuarioAsync();
         }
         
-        public bool ValidarUsuario(AppClient.CanchitaWS.Usuario usuario) {
+        public AppClient.CanchitaWS.Usuario ValidarUsuario(AppClient.CanchitaWS.Usuario usuario) {
             return base.Channel.ValidarUsuario(usuario);
         }
         
-        public System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(AppClient.CanchitaWS.Usuario usuario) {
+        public System.Threading.Tasks.Task<AppClient.CanchitaWS.Usuario> ValidarUsuarioAsync(AppClient.CanchitaWS.Usuario usuario) {
             return base.Channel.ValidarUsuarioAsync(usuario);
         }
         
@@ -1229,6 +1241,14 @@ namespace AppClient.CanchitaWS {
         
         public System.Threading.Tasks.Task<double> retornarMontoReservaAsync(int idReserva) {
             return base.Channel.retornarMontoReservaAsync(idReserva);
+        }
+        
+        public int obtenerUltimoIDReseva() {
+            return base.Channel.obtenerUltimoIDReseva();
+        }
+        
+        public System.Threading.Tasks.Task<int> obtenerUltimoIDResevaAsync() {
+            return base.Channel.obtenerUltimoIDResevaAsync();
         }
         
         public bool crearTarjetas(AppClient.CanchitaWS.Tarjeta tarjeta) {
@@ -1389,6 +1409,14 @@ namespace AppClient.CanchitaWS {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.Campo>> ObtenerCamposXSedeAsync(int idSede) {
             return base.Channel.ObtenerCamposXSedeAsync(idSede);
+        }
+        
+        public AppClient.CanchitaWS.Campo ObtenerCamposXId(int idCampo) {
+            return base.Channel.ObtenerCamposXId(idCampo);
+        }
+        
+        public System.Threading.Tasks.Task<AppClient.CanchitaWS.Campo> ObtenerCamposXIdAsync(int idCampo) {
+            return base.Channel.ObtenerCamposXIdAsync(idCampo);
         }
     }
 }

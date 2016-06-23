@@ -114,18 +114,25 @@ namespace Canchita.Service
             return UsuarioDAO.Agregar(usuario);
         }
 
-        public bool ValidarUsuario(Usuario usuario)
+        public Usuario ValidarUsuario(Usuario usuario)
         {
-            bool isValid = false;
-            var usu = UsuarioDAO.ObtenerUsuario(usuario.Username);
+            Usuario usu = UsuarioDAO.ObtenerUsuario(usuario.Username,usuario.TipoUsuario);
+
             if (usu != null)
             {
                 if (usu.Clave.Equals(usuario.Clave))
                 {
-                    isValid = true;
+                    return  usu;
+                }
+                else
+                {
+                   return usu = null;
                 }
             }
-            return isValid;
+            else
+            {
+                return usu;
+            }
         }
 
         public List<Usuario> ListarUsuario()
@@ -166,6 +173,11 @@ namespace Canchita.Service
         public double retornarMontoReserva(int idReserva)
         {
             return ReservaDAO.retornarmonto(idReserva);
+        }
+
+        public int obtenerUltimoIDReseva()
+        {
+            return ReservaDAO.ObtenerIdUltimaReserva();
         }
         #endregion
 
@@ -276,14 +288,16 @@ namespace Canchita.Service
         {
             return CampoDAO.ObtenerCamposXSede(idSede);
         }
+        public Campo ObtenerCamposXId(int idCampo)
+        {
+            return CampoDAO.ObtenerCamposXId(idCampo);
+        }
 
         #endregion
 
 
 
 
-
-
-       
+        
     }
 }

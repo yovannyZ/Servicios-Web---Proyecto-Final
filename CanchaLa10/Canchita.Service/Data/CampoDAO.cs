@@ -135,6 +135,46 @@ namespace Canchita.Service.Data
 
             return lista;
         }
+        public Campo ObtenerCamposXId(int idCampo)
+        {
+            var sedeDao = new SedeDAO();
+            Campo campo = null;
+            Sede sede = null;
+
+            string query = "SELECT * FROM Campo where idCampo=@pr1";
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@pr1",idCampo)
+             };
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query, dbParams))
+            {
+                if (lector != null && lector.HasRows)
+                {
+                     campo= new Campo();
+                     sede = new Sede();
+
+                    while (lector.Read())
+                    {
+                        campo.Id = Convert.ToInt32(lector["idCampo"]);
+                        campo.Descripcion = Convert.ToString(lector["Descripcion"]);
+                        campo.Estado = Convert.ToString(lector["Estado"]);
+                        campo.Sede=sedeDao.ObtenerSedeId(Convert.ToInt32(lector["idSede"]));
+                        var img = lector["Imagen"];
+                        if (img is System.DBNull)
+                        {
+                            campo.Imagen = null;
+                        }
+                        else
+                        {
+                            campo.Imagen = (byte[])img;
+                        }
+                       
+                    }
+                }
+            }
+
+            return campo;
+        }
 
     }
 }

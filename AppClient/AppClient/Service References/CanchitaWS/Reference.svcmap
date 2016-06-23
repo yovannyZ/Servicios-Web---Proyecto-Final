@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ed75fcfa-f263-4579-b1fb-da4882f66805" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9d16d751-57ad-4b77-b796-726425c83557" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -24,11 +24,11 @@
     <MetadataSource Address="http://localhost:1557/Transaccion.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Transaccion2.xsd" MetadataType="Schema" ID="55e1f4e6-4e74-4302-a7b8-2122fe8c2d6a" SourceId="1" SourceUrl="http://localhost:1557/Transaccion.svc?xsd=xsd2" />
-    <MetadataFile FileName="Transaccion1.xsd" MetadataType="Schema" ID="b2de61bb-58da-40fc-ae93-164aa3b7d958" SourceId="1" SourceUrl="http://localhost:1557/Transaccion.svc?xsd=xsd1" />
-    <MetadataFile FileName="Transaccion.xsd" MetadataType="Schema" ID="a066ca18-8deb-4244-80de-4a0a04bfeb3b" SourceId="1" SourceUrl="http://localhost:1557/Transaccion.svc?xsd=xsd0" />
-    <MetadataFile FileName="Transaccion.disco" MetadataType="Disco" ID="82688485-616c-42f8-a09e-a2a6027825c0" SourceId="1" SourceUrl="http://localhost:1557/Transaccion.svc?disco" />
-    <MetadataFile FileName="Transaccion.wsdl" MetadataType="Wsdl" ID="2d9aa384-c053-4bf5-bd55-370960b6da96" SourceId="1" SourceUrl="http://localhost:1557/Transaccion.svc?wsdl" />
+    <MetadataFile FileName="Transaccion.xsd" MetadataType="Schema" ID="745b577b-7adc-452b-bea7-42aac6987a00" SourceId="1" SourceUrl="http://localhost:1557/Transaccion.svc?xsd=xsd2" />
+    <MetadataFile FileName="Transaccion1.xsd" MetadataType="Schema" ID="68b6f7d1-a5b5-41bb-aa09-0fdb521136d4" SourceId="1" SourceUrl="http://localhost:1557/Transaccion.svc?xsd=xsd1" />
+    <MetadataFile FileName="Transaccion2.xsd" MetadataType="Schema" ID="67c9e035-f83d-43f3-8870-5c3732f48eae" SourceId="1" SourceUrl="http://localhost:1557/Transaccion.svc?xsd=xsd0" />
+    <MetadataFile FileName="Transaccion.disco" MetadataType="Disco" ID="4a5d9778-cfea-4deb-8214-7893fc56b81a" SourceId="1" SourceUrl="http://localhost:1557/Transaccion.svc?disco" />
+    <MetadataFile FileName="Transaccion.wsdl" MetadataType="Wsdl" ID="31a1f1cd-438c-4d10-9e80-b4dd4838da71" SourceId="1" SourceUrl="http://localhost:1557/Transaccion.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

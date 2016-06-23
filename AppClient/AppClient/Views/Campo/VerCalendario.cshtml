@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "VerCalendario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container">
+    <div class="card-panel black white-text center-align">Selecciona una fecha en la cual desea hacer una reserva</div>
+
+    @using (Ajax.BeginForm("Verajax", "Campo", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "div1", InsertionMode = InsertionMode.Replace, LoadingElementId = "waitimage" }))
+    {
+        <div class="row">
+            <div class="col m6 offset-m3">
+                <div class="input-field">
+                    <label for="dia">Fecha de reserva  (Haz click qui)</label>
+                    <input type="date" id="dia" name="dia" class="datepicker" />
+                    <div id="error" class="error"> Selecciona una fecha</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m6 offset-m3">
+                <button id="diponibles" type="submit" class="waves-effect waves-light btn"><i class="material-icons right">schedule</i>Ver Horarios Disponibles</button>
+            </div>
+        </div>
+    }
+
+
+
+
+
+    <!--   //using (Html.BeginForm("Disponibilidad", "CampoClient", FormMethod.Get, new { enctype = "multipart/form-data" }))
+       {
+           <div class="row">
+               <div class="col m6 offset-m3">
+                   <div class="input-field">
+                       <label for="dia">Fecha de reserva  (Haz click qui)</label>
+                       <input type="date" id="dia" name="dia" class="datepicker" />
+                       <div id="error" class="error"> Selecciona una fecha</div>
+                   </div>
+               </div>
+           </div>
+           <div class="row">
+               <div class="col m6 offset-m3">
+                   <button id="diponibles" type="submit" class="waves-effect waves-light btn"><i class="material-icons right">schedule</i>Ver Horarios Disponibles</button>
+               </div>
+           </div>
+       }-->
+    <br />
+    <img id="waitimage" src="~/img/loading42.gif" style="display:none" />
+    <br />
+
+    <div id="div1"></div>
+
+</div>

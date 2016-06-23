@@ -7,9 +7,14 @@
 <h2>Index</h2>
 
 
+@{
+    if (Session["usuario"] == null)
+    {
+        
+    }
+}
 
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("Disponibilidad", "CampoClient", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div>
         <a class="btn-floating btn-large waves-effect waves-light red" href="/Home"><i class="material-icons">fast_rewind</i></a>
