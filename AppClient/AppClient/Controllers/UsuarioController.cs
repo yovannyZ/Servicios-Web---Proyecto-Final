@@ -13,11 +13,7 @@ namespace AppClient.Controllers
         TransaccionClient proxy = new TransaccionClient();
         //
         // GET: /Usuario/
-        public ActionResult Index()
-        {
-            var listado = proxy.ListarUsuario();
-            return View(listado);
-        }
+    
 
         public ActionResult listaUsuario()
         {

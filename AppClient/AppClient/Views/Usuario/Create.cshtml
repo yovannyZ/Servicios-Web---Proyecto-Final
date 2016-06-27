@@ -20,7 +20,7 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="mdi-action-account-circle prefix"></i>
-                                                @Html.EditorFor(model => model.Nombres)
+                                                @Html.TextBoxFor(model => model.Nombres, new { @required="required" })
                                                 @Html.LabelFor(model => model.Nombres)
                                             </div>
                                         </div>
@@ -28,34 +28,34 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="mdi-communication-email prefix"></i>
-                                               @Html.EditorFor(model => model.Apellidos)
+                                               @Html.TextBoxFor(model => model.Apellidos, new { @required = "required" })
                                                @Html.LabelFor(model => model.Apellidos)
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="mdi-communication-email prefix"></i>
-                                                @Html.EditorFor(model => model.Email)
+                                                @Html.TextBoxFor(model => model.Email, new { @required = "required" })
                                                 @Html.LabelFor(model => model.Email)
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="mdi-communication-email prefix"></i>
-                                                @Html.EditorFor(model => model.Username)
+                                                @Html.TextBoxFor(model => model.Username, new { @required = "required" })
                                                 @Html.LabelFor(model => model.Username)
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="mdi-communication-email prefix"></i>
-                                                @Html.EditorFor(model => model.Clave)
+                                                @Html.TextBoxFor(model => model.Clave, new { @required = "required" })
                                                 @Html.LabelFor(model => model.Clave)
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <select name="TipoUsuario">
+                                                <select name="TipoUsuario" required>
                                                     <option value="" disabled selected>Seleccione una opcion</option>
                                                     <option value="Administrador">Administrador</option>
                                                     <option value="Cliente">Cliente</option>

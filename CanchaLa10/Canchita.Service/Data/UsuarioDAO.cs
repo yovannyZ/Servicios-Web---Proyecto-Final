@@ -143,14 +143,31 @@ namespace Canchita.Service.Data
         public Usuario ObtenerUsuario(string username,string tipoUsuario)
         {
             Usuario usuario = null;
-            string query = "SELECT * FROM USUARIO WHERE USERNAME=@pr1 and TipoUsuario=@pr2";
+            string query;
+            SqlParameter[] dbParams;
 
-            SqlParameter[] dbParams = new SqlParameter[]
-             {
+            if (tipoUsuario != null)
+            {
+                query = "SELECT * FROM USUARIO WHERE USERNAME=@pr1 and TipoUsuario=@pr2";
+
+                 dbParams = new SqlParameter[]
+                {
                  DBHelper.MakeParam("@pr1",username),
                  DBHelper.MakeParam("@pr2",tipoUsuario)
-             };
+                 };
 
+            }
+            else
+            {
+                query = "SELECT * FROM USUARIO WHERE USERNAME=@pr1";
+
+                dbParams = new SqlParameter[]
+                {
+                 DBHelper.MakeParam("@pr1",username)
+                
+                 };
+            }
+            
             using (SqlDataReader lector = DBHelper.ExecuteDataReader(query,dbParams))
             {
                 if (lector != null && lector.HasRows)

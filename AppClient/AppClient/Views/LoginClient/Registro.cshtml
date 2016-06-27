@@ -1,0 +1,101 @@
+﻿
+@model AppClient.CanchitaWS.Usuario
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+@using (Html.BeginForm("Registro", "LoginClient", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div id="login-page" class="row">
+        <div class="col s12 z-depth-4 card-panel">
+            <form class="login-form">
+                <div class="row">
+                    <div class="input-field col s12 center">
+                        <h4>Registrate</h4>
+                        <p class="center login-form-text">Unete a nosotros ahora!!</p>
+                    </div>
+                </div>
+                <div class="row margin">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">supervisor_account</i>
+                        @Html.TextBoxFor(model => model.Nombres, new { @required = "required" })
+                        <label for="Nombres" class="center-align">Nombre</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">supervisor_account</i>
+                        @Html.TextBoxFor(model => model.Apellidos, new { @required = "required" })
+                        <label for="Apellidos" class="center-align">Apellidos</label>
+                    </div>
+                </div>
+                <div class="row margin">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">perm_identity</i>
+                        @Html.TextBoxFor(model => model.Username, new { @required = "required" })
+                        <label for="Username" class="center-align">Username</label>
+                    </div>
+                </div>
+                <div class="row margin">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input type="email" required id="Email" name="Email" />
+                        <label for="Email">Email</label>
+                    </div>
+                </div>
+                <div class="row margin">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">lock_outline</i>
+                        @Html.PasswordFor(model => model.Clave, new { @required = "required" })
+                        <label for="Clave">Password</label>
+                    </div>
+                </div>
+                <div class="row margin">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input type="password" id="ClaveRepet" />
+                        <label for="ClaveRepet">Repetir cntraseña</label>
+                        <div id="error" class="error"> La contraseña no coincide</div>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="btn waves-effect waves-light col s12 btnRegistro" type="submit">Registrate ahora!</button>
+                        <p class="red-text text-darken-3 center-align">@ViewBag.Error</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6 m12">
+                        <p class="margin medium-small center-align">¿Ya tienes una cuenta? <a href="/LoginClient/Login">Iniciar sesión</a></p>
+                    </div>
+                    
+                </div>
+
+            </form>
+        </div>
+    </div>
+}
+
+@section script{
+    <script>
+
+            $('.btnRegistro').click(function () {
+
+                var clave = $('#Clave').val();
+                var claveRepet = $('#ClaveRepet').val();
+
+                if (clave != claveRepet) {
+                    $('#error').fadeIn('slow');
+                    return false;
+                }
+            });
+       
+    </script>
+    
+}
+

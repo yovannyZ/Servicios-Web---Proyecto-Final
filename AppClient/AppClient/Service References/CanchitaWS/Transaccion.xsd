@@ -29,6 +29,7 @@
   <xs:complexType name="Tarifa">
     <xs:sequence>
       <xs:element minOccurs="0" name="Checked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="HoraFin" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="HoraInicio" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />

@@ -120,14 +120,22 @@ namespace Canchita.Service
 
             if (usu != null)
             {
-                if (usu.Clave.Equals(usuario.Clave))
+                if (usuario.TipoUsuario != null)
                 {
-                    return  usu;
+                    if (usu.Clave.Equals(usuario.Clave))
+                    {
+                        return usu;
+                    }
+                    else
+                    {
+                        return usu = null;
+                    }
                 }
                 else
                 {
-                   return usu = null;
+                    return usu;
                 }
+                
             }
             else
             {
@@ -176,6 +184,31 @@ namespace Canchita.Service
         {
             return TarifaDAO.Listar(fechaReserva, idCampo);
         }
+
+        public bool AgregarTarifa(Tarifa tarifa)
+        {
+            return TarifaDAO.Agregar(tarifa);
+        }
+
+        public bool EliminarTarifa(Tarifa tarifa)
+        {
+            return TarifaDAO.Eliminar(tarifa);
+        }
+
+        public bool ActualizarTarifa(Tarifa tarifa)
+        {
+            return TarifaDAO.Actulizar(tarifa);
+        }
+
+        public List<Tarifa> ListarTarifasAdmin()
+        {
+            return TarifaDAO.ListarTarifas();
+        }
+
+        public Tarifa ObtenerTarifaxI(int id)
+        {
+            return TarifaDAO.ObtenerTarifaxId(id);
+        }
         #endregion
 
         #region . RESERVA .
@@ -207,6 +240,10 @@ namespace Canchita.Service
         public List<Reserva> listarReservaXUsuario(int idUsuario)
         {
             return ReservaDAO.ListarReservaXUsuario(idUsuario);
+        }
+        public List<Reserva> ListarReservas()
+        {
+            return ReservaDAO.ListadoReservas();
         }
         #endregion
 
@@ -333,6 +370,13 @@ namespace Canchita.Service
         {
             return DetalleReservaDAO.VerDetalleXReserva(idReserva);
         }
+        public List<DetalleReserva> listarDetalleXReserva(int IdReserva)
+        {
+            return DetalleReservaDAO.listarDetalleXReserva(IdReserva);
+        }
         #endregion
+
+
+
     }
 }

@@ -15,10 +15,7 @@ namespace AppClient.Controllers
         TransaccionClient proxy = new TransaccionClient();
         //
         // GET: /Home/
-        public ActionResult Index()
-        {
-            return View();
-        }
+       
 
         public ActionResult DetalleReserva()
         {
@@ -175,6 +172,18 @@ namespace AppClient.Controllers
             proxy.reservarPagoEfectivo(pago, idUltimaReserva);
             proxy.pagarReservaConEfectivo(pago.nroPago);
             return View();
+        }
+
+        public ActionResult ListadoReserva()
+        {
+            var listado = proxy.ListarReservas();
+            return View(listado);
+        }
+
+        public ActionResult DetallexReserva(int IdReserva)
+        {
+            var listado = proxy.listarDetalleXReserva(IdReserva);
+            return View(listado);
         }
 
 	}

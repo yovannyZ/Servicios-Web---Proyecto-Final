@@ -6,8 +6,7 @@
 }
 
     <h3 class="center-align">Detalle de la  Reserva</h3>
-    <input type="text" id="dia" name="dia" value="@Session["diareserva"].ToString()" disabled />
-
+   
     <table class="striped">
         <thead>
             <tr>
@@ -47,8 +46,9 @@
         </tbody>
     </table>
     <h1>Monto total = @montoTotal</h1>
+<button class="waves-effect waves-light  btn btnPagar" data-id="@montoTotal"><i class="mdi-action-thumb-up left"></i>Pagar Reserva</button>
    
-    <button class="center-block btn-floating  waves-effect waves-light btnPagar" data-id="@montoTotal" title=" pagar"><i class="mdi-image-edit tiny"></i></button>
+
 
 
 

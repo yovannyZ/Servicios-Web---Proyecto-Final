@@ -25,16 +25,6 @@ namespace AppClient.Controllers
             return View();
         }
 
-        public ActionResult Disponibilidad(DateTime dia)
-        {
-            string diaFormat = string.Format("{0:yyyy-MM-dd}", dia);
-            ViewBag.dia = diaFormat;
-            Session["diaReserva"] = dia;
-            int idCampo = (int)Session["idCampo"];
-            var listado = proxy.ListarTarifas(dia, idCampo);
-            return View(listado);
-        }
-
         [HttpPost]
         public ActionResult Disponibilidad(List<Tarifa> lista)
         {

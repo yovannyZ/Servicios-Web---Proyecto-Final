@@ -4,12 +4,6 @@ C:\Users\Yovanny\Documents\Visual Studio 2013\Projects\CanchaLa10\Canchita.Servi
 C:\Users\Yovanny\Documents\Visual Studio 2013\Projects\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
 C:\Users\Yovanny\Documents\Visual Studio 2013\Projects\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
 C:\Users\Yovanny\Documents\Visual Studio 2013\Projects\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb
-C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll.config
-C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll
-C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.pdb
-C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
-C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
-C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb
 C:\Users\Riki\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
 C:\Users\Riki\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll.config
 C:\Users\Riki\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll
@@ -57,3 +51,9 @@ D:\Nueva carpeta\Servicios-Web---Proyecto-Final-Desarrollo (1)\Servicios-Web---P
 D:\Nueva carpeta\Servicios-Web---Proyecto-Final-Desarrollo (1)\Servicios-Web---Proyecto-Final-Desarrollo\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb
 D:\Nueva carpeta\Servicios-Web---Proyecto-Final-Desarrollo (1)\Servicios-Web---Proyecto-Final-Desarrollo\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
 C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll.config
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.pdb
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache

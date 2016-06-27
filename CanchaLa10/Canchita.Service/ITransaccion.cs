@@ -43,6 +43,21 @@ namespace Canchita.Service
         #region . TARIFA .
         [OperationContract]
         List<Tarifa> ListarTarifas(DateTime fechaReserva, int idCampo);
+
+        [OperationContract]
+        bool  AgregarTarifa(Tarifa tarifa);
+
+        [OperationContract]
+        bool EliminarTarifa(Tarifa tarifa);
+
+        [OperationContract]
+        bool ActualizarTarifa(Tarifa tarifa);
+
+        [OperationContract]
+        List<Tarifa> ListarTarifasAdmin();
+
+        [OperationContract]
+        Tarifa ObtenerTarifaxI( int id);
         #endregion
 
         #region . RESERVA .
@@ -55,6 +70,9 @@ namespace Canchita.Service
         int obtenerUltimoIDReseva();
         [OperationContract]
         List<Reserva> listarReservaXUsuario(int idUsuario);
+
+          [OperationContract]
+        List<Reserva> ListarReservas();
         
         #endregion
 
@@ -127,6 +145,9 @@ namespace Canchita.Service
         #region .DetalleReserva.
         [OperationContract]
         List<DetalleReservaCompletoxUsuario> verDetalleReserva(int idReserva);
+
+         [OperationContract]
+        List<DetalleReserva> listarDetalleXReserva(int IdReserva);
         #endregion
     }
 }

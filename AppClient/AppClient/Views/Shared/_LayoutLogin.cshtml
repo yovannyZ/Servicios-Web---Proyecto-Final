@@ -22,26 +22,14 @@
 </head>
 <body class="cyan lighten-2">
     @RenderBody()
-
-
-
-    <script src="~/content/js/jquery-2.1.4.min.js"></script>
+    <script src="~/content/js/jquery-1.11.2.min.js"></script>
     <script src="~/content/js/materialize.min.js"></script>
     <script src="~/content/js/prism.js"></script>
     <script src="~/content/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="~/content/js/plugins.js"></script>
-    <script>
-        $(document).ready(function () {
 
-            $('#diponibles').click(function () {
-                var dia = $('#dia').val();
-                if (dia == "") {
-                    $('#error').fadeIn('slow');
-                    return false;
-                }
-            });
-        });
-    </script>
+    @RenderSection("script",false)
+   
 </body>
 
 </html>

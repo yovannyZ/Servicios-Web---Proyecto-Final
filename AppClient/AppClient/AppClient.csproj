@@ -248,6 +248,9 @@
     <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.Reserva.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.DetalleReserva.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CanchitaWS\Transaccion.disco" />
     <None Include="Service References\CanchitaWS\configuration91.svcinfo" />
     <None Include="Service References\CanchitaWS\configuration.svcinfo" />
@@ -271,6 +274,7 @@
     <Compile Include="Controllers\ReservaController.cs" />
     <Compile Include="Controllers\SedeClientController.cs" />
     <Compile Include="Controllers\SedeController.cs" />
+    <Compile Include="Controllers\TarifaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -300,7 +304,6 @@
     <Content Include="Views\SedeClient\Index.cshtml" />
     <Content Include="Views\CampoClient\Index.cshtml" />
     <Content Include="Views\CampoClient\VerCalendario.cshtml" />
-    <Content Include="Views\CampoClient\Disponibilidad.cshtml" />
     <None Include="Service References\CanchitaWS\Transaccion.wsdl" />
     <None Include="Service References\CanchitaWS\Transaccion.xsd">
       <SubType>Designer</SubType>
@@ -328,7 +331,6 @@
     <Content Include="Views\Reserva\_VerHorarios.cshtml" />
     <Content Include="Views\Reserva\PagarEfectivo.cshtml" />
     <Content Include="Views\Reserva\DetallePago.cshtml" />
-    <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\listaUsuario.cshtml" />
     <Content Include="Views\Usuario\Create.cshtml" />
     <Content Include="Views\Usuario\Edit.cshtml" />
@@ -337,6 +339,11 @@
     <Content Include="Views\ReservaClient\verlistaReservasxCliente.cshtml" />
     <Content Include="Views\ReservaClient\verDetalleXReserva.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\LoginClient\Registro.cshtml" />
+    <Content Include="Views\LoginClient\CerrarSession.cshtml" />
+    <Content Include="Views\Reserva\ListadoReserva.cshtml" />
+    <Content Include="Views\Reserva\DetallexReserva.cshtml" />
+    <Content Include="Views\Tarifa\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

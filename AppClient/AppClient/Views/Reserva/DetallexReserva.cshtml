@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AppClient.CanchitaWS.DetalleReserva>
+
+@{
+    Layout = null;
+}
+
+<div id="basic-card" class="section">
+    <div class="row">
+        <div class="col s12 m10 l12">
+            <div class="row">
+                <div class="col s12 m8 l12">
+                    <div class="card  white">
+                        <div class="card-content cyan lighten-4">
+                            <h5 class=" center-align grey-text  text-darken-2">Detalle Reserva</h5>
+                            
+                        </div>
+                        <div class="card-action">
+                            <div id="table-datatables">
+
+                                <div class="row">
+
+                                    <div class="col s12 m8 l9 offset-l1">
+                                        <table id="data-table-simple" class="responsive-table display" cellspacing="0">
+                                            <thead>
+                                                <tr> 
+                                                    <th>
+                                                       Hora Inicio
+                                                    </th>
+                                                    <th>
+                                                        Hora fin
+                                                    </th>
+                                                    <th>
+                                                        Precio
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.HoraInicio)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.HoraFin)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.Precio)
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

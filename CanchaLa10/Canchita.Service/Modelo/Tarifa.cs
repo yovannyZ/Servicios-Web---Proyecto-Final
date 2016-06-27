@@ -11,6 +11,7 @@ namespace Canchita.Service.Modelo
         public string HoraInicio { get; set; }
         public string HoraFin { get; set; }
         public double Precio { get; set; }
+        public string Estado { get; set; }
         public bool Checked { get; set; }
      
     }

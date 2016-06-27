@@ -199,6 +199,9 @@ namespace AppClient.CanchitaWS {
         private bool CheckedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string HoraFinField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -229,6 +232,19 @@ namespace AppClient.CanchitaWS {
                 if ((this.CheckedField.Equals(value) != true)) {
                     this.CheckedField = value;
                     this.RaisePropertyChanged("Checked");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
                 }
             }
         }
@@ -1164,6 +1180,36 @@ namespace AppClient.CanchitaWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifas", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.Tarifa>> ListarTarifasAsync(System.DateTime fechaReserva, int idCampo);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarTarifa", ReplyAction="http://tempuri.org/ITransaccion/AgregarTarifaResponse")]
+        bool AgregarTarifa(AppClient.CanchitaWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarTarifa", ReplyAction="http://tempuri.org/ITransaccion/AgregarTarifaResponse")]
+        System.Threading.Tasks.Task<bool> AgregarTarifaAsync(AppClient.CanchitaWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/EliminarTarifa", ReplyAction="http://tempuri.org/ITransaccion/EliminarTarifaResponse")]
+        bool EliminarTarifa(AppClient.CanchitaWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/EliminarTarifa", ReplyAction="http://tempuri.org/ITransaccion/EliminarTarifaResponse")]
+        System.Threading.Tasks.Task<bool> EliminarTarifaAsync(AppClient.CanchitaWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ActualizarTarifa", ReplyAction="http://tempuri.org/ITransaccion/ActualizarTarifaResponse")]
+        bool ActualizarTarifa(AppClient.CanchitaWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ActualizarTarifa", ReplyAction="http://tempuri.org/ITransaccion/ActualizarTarifaResponse")]
+        System.Threading.Tasks.Task<bool> ActualizarTarifaAsync(AppClient.CanchitaWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifasAdmin", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasAdminResponse")]
+        System.Collections.Generic.List<AppClient.CanchitaWS.Tarifa> ListarTarifasAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifasAdmin", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.Tarifa>> ListarTarifasAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerTarifaxI", ReplyAction="http://tempuri.org/ITransaccion/ObtenerTarifaxIResponse")]
+        AppClient.CanchitaWS.Tarifa ObtenerTarifaxI(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerTarifaxI", ReplyAction="http://tempuri.org/ITransaccion/ObtenerTarifaxIResponse")]
+        System.Threading.Tasks.Task<AppClient.CanchitaWS.Tarifa> ObtenerTarifaxIAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarReserva", ReplyAction="http://tempuri.org/ITransaccion/AgregarReservaResponse")]
         bool AgregarReserva(AppClient.CanchitaWS.Reserva reserva, System.Collections.Generic.List<AppClient.CanchitaWS.DetalleReserva> listaDetalle);
         
@@ -1187,6 +1233,12 @@ namespace AppClient.CanchitaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarReservaXUsuario", ReplyAction="http://tempuri.org/ITransaccion/listarReservaXUsuarioResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.Reserva>> listarReservaXUsuarioAsync(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarReservas", ReplyAction="http://tempuri.org/ITransaccion/ListarReservasResponse")]
+        System.Collections.Generic.List<AppClient.CanchitaWS.Reserva> ListarReservas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarReservas", ReplyAction="http://tempuri.org/ITransaccion/ListarReservasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.Reserva>> ListarReservasAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/crearTarjetas", ReplyAction="http://tempuri.org/ITransaccion/crearTarjetasResponse")]
         bool crearTarjetas(AppClient.CanchitaWS.Tarjeta tarjeta);
@@ -1319,6 +1371,12 @@ namespace AppClient.CanchitaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/verDetalleReserva", ReplyAction="http://tempuri.org/ITransaccion/verDetalleReservaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.DetalleReservaCompletoxUsuario>> verDetalleReservaAsync(int idReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarDetalleXReserva", ReplyAction="http://tempuri.org/ITransaccion/listarDetalleXReservaResponse")]
+        System.Collections.Generic.List<AppClient.CanchitaWS.DetalleReserva> listarDetalleXReserva(int IdReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarDetalleXReserva", ReplyAction="http://tempuri.org/ITransaccion/listarDetalleXReservaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.DetalleReserva>> listarDetalleXReservaAsync(int IdReserva);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1420,6 +1478,46 @@ namespace AppClient.CanchitaWS {
             return base.Channel.ListarTarifasAsync(fechaReserva, idCampo);
         }
         
+        public bool AgregarTarifa(AppClient.CanchitaWS.Tarifa tarifa) {
+            return base.Channel.AgregarTarifa(tarifa);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AgregarTarifaAsync(AppClient.CanchitaWS.Tarifa tarifa) {
+            return base.Channel.AgregarTarifaAsync(tarifa);
+        }
+        
+        public bool EliminarTarifa(AppClient.CanchitaWS.Tarifa tarifa) {
+            return base.Channel.EliminarTarifa(tarifa);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EliminarTarifaAsync(AppClient.CanchitaWS.Tarifa tarifa) {
+            return base.Channel.EliminarTarifaAsync(tarifa);
+        }
+        
+        public bool ActualizarTarifa(AppClient.CanchitaWS.Tarifa tarifa) {
+            return base.Channel.ActualizarTarifa(tarifa);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ActualizarTarifaAsync(AppClient.CanchitaWS.Tarifa tarifa) {
+            return base.Channel.ActualizarTarifaAsync(tarifa);
+        }
+        
+        public System.Collections.Generic.List<AppClient.CanchitaWS.Tarifa> ListarTarifasAdmin() {
+            return base.Channel.ListarTarifasAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.Tarifa>> ListarTarifasAdminAsync() {
+            return base.Channel.ListarTarifasAdminAsync();
+        }
+        
+        public AppClient.CanchitaWS.Tarifa ObtenerTarifaxI(int id) {
+            return base.Channel.ObtenerTarifaxI(id);
+        }
+        
+        public System.Threading.Tasks.Task<AppClient.CanchitaWS.Tarifa> ObtenerTarifaxIAsync(int id) {
+            return base.Channel.ObtenerTarifaxIAsync(id);
+        }
+        
         public bool AgregarReserva(AppClient.CanchitaWS.Reserva reserva, System.Collections.Generic.List<AppClient.CanchitaWS.DetalleReserva> listaDetalle) {
             return base.Channel.AgregarReserva(reserva, listaDetalle);
         }
@@ -1450,6 +1548,14 @@ namespace AppClient.CanchitaWS {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.Reserva>> listarReservaXUsuarioAsync(int idUsuario) {
             return base.Channel.listarReservaXUsuarioAsync(idUsuario);
+        }
+        
+        public System.Collections.Generic.List<AppClient.CanchitaWS.Reserva> ListarReservas() {
+            return base.Channel.ListarReservas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.Reserva>> ListarReservasAsync() {
+            return base.Channel.ListarReservasAsync();
         }
         
         public bool crearTarjetas(AppClient.CanchitaWS.Tarjeta tarjeta) {
@@ -1626,6 +1732,14 @@ namespace AppClient.CanchitaWS {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.DetalleReservaCompletoxUsuario>> verDetalleReservaAsync(int idReserva) {
             return base.Channel.verDetalleReservaAsync(idReserva);
+        }
+        
+        public System.Collections.Generic.List<AppClient.CanchitaWS.DetalleReserva> listarDetalleXReserva(int IdReserva) {
+            return base.Channel.listarDetalleXReserva(IdReserva);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.DetalleReserva>> listarDetalleXReservaAsync(int IdReserva) {
+            return base.Channel.listarDetalleXReservaAsync(IdReserva);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace AppClient.Controllers
             {
                 Session["usuario"] = usuLogeado;
 
-                return RedirectToAction("Index", "Campo");
+                return RedirectToAction("ListadoReserva", "Reserva");
             }
             else
             {

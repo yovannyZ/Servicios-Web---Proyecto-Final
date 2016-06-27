@@ -1,0 +1,143 @@
+﻿@model IEnumerable<AppClient.CanchitaWS.Tarifa>
+
+@{
+
+    Layout = "~/Views/Shared/_LayoutAdmind.cshtml";
+}
+
+<div id="basic-card" class="section">
+    <div class="row">
+        <div class="col s12 m10 l12">
+            <div class="row">
+                <div class="col s12 m8 l12">
+                    <div class="card  white">
+                        <div class="card-content cyan lighten-4">
+                            <h5 class=" center-align grey-text  text-darken-2">Gestor de Tarifas</h5>
+                            <div class="row">
+                                <div style="margin:0 auto; width:58px">
+                                    <a class="center-block btn-floating btn-large waves-effect waves-light  modal-trigger" id="btnNuevo" href="#modalCrear" title="Crear una nueva sede"><i class="mdi-content-add"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <div id="table-datatables">
+
+                                <div class="row">
+
+                                    <div class="col s12 m8 l9 offset-l1">
+                                        <table id="data-table-simple" class="responsive-table display" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        Hora Iinicio
+                                                    </th>
+                                                    <th>
+                                                        Hora Fin
+                                                    </th>
+                                                    <th>
+                                                        Precio
+                                                    </th>
+                                                    <th>
+                                                        Estado
+                                                    </th>
+                                                    <th>ACTUALIZAR</th>
+                                                    <th>ELIMINAR</th>
+
+                                                </tr>
+                                            </thead>
+
+                                            <tfoot>
+                                                <tr>
+                                                    <th>
+                                                        Hora Iinicio
+                                                    </th>
+                                                    <th>
+                                                        Hora Fin
+                                                    </th>
+                                                    <th>
+                                                        Precio
+                                                    </th>
+                                                    <th>
+                                                        Estado
+                                                    </th>
+                                                    <th>ACTUALIZAR</th>
+                                                    <th>ELIMINAR</th>
+                                                </tr>
+                                            </tfoot>
+
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.HoraInicio)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.HoraFin)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.Precio)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.Estado)
+                                                        </td>
+
+                                                        <td>
+                                                            <button class="center-block btn-floating  waves-effect waves-light btnEdit" data-id="@item.Id" title="Editar Tarifa"><i class="mdi-image-edit tiny"></i></button>
+                                                        </td>
+                                                        <td>
+                                                            <button class="center-block btn-floating  waves-effect waves-light btnEliminar" data-id="@item.Id" title="Eliminar Tarifa"><i class="mdi-content-clear tiny"></i></button>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Crear -->
+<div id="modalCrear" class="modal">
+    <div class="modal-content" id="modal-content">
+        <!--View Crear-->
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+</div>
+
+
+<!-- Modal Editar -->
+<div id="modalEditar" class="modal">
+    <div class="modal-content" id="modal-content">
+        <!--View Editar-->
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+</div>
+
+<!-- Modal Eliminar -->
+<div id="modalEliminar" class="modal">
+    <div class="modal-content" id="modal-content">
+        <!--View Eliminar-->
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+</div>
+
+
+
+
+@section scripts{
+    <script src="~/Scripts/Sede/Sede.js"></script>
+}

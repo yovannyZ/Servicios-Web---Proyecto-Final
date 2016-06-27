@@ -69,5 +69,42 @@ namespace Canchita.Service.Data
 
             return list;
         }
+
+        public List<DetalleReserva> listarDetalleXReserva(int idReserva)
+        {
+            ReservaDAO reservaDao = new ReservaDAO();
+            TarifaDAO tarifaDao = new TarifaDAO();
+
+            List<DetalleReserva> listadoDetalle = null;
+            DetalleReserva detalle = null;
+
+            string query = "Select * from  Reserva_Tarifa where IdRserva=@pr1";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@pr1",idReserva)
+             };
+
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query, dbParams))
+            {
+                if (lector != null && lector.HasRows)
+                {
+                    listadoDetalle = new List<DetalleReserva>();
+                    while (lector.Read())
+                    {
+                        detalle = new DetalleReserva();
+                        detalle.Reserva = reservaDao.ObtenerReservaxId(int.Parse(lector["idRserva"].ToString()));
+                        detalle.Tarifa = tarifaDao.ObtenerTarifaxId(int.Parse(lector["idTarifa"].ToString()));
+                        detalle.HoraInicio = lector["HoraInicio"].ToString();
+                        detalle.HoraFin = lector["HoraFin"].ToString();
+                        detalle.Precio=double.Parse( lector["Tarifa"].ToString());
+                        listadoDetalle.Add(detalle);
+                     
+                    }
+                }
+            }
+
+            return listadoDetalle;
+        }
     }
 }

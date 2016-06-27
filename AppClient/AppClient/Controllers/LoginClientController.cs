@@ -22,11 +22,15 @@ namespace AppClient.Controllers
         {
             usuario.TipoUsuario = "Cliente";
             Usuario usuLogeado = proxy.ValidarUsuario(usuario);
+
             if (usuLogeado!=null)
             {
-
                 Session["usuario"] = usuLogeado;
-                return RedirectToAction("DetalleReserva", "ReservaClient");
+                if (Session["idCampo"] != null)
+                {
+                    return RedirectToAction("VerCalendario", "CampoClient", new { idCampo = (int)Session["idCampo"] });
+                }
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -68,7 +72,40 @@ namespace AppClient.Controllers
             }
 
         }
-        
+
+        public ActionResult Registro()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Registro(Usuario usuario)
+        {
+           
+           if ( proxy.ValidarUsuario(usuario) == null)
+           {
+               usuario.TipoUsuario = "Cliente";
+               usuario.Estado = "Activo";
+               proxy.AgregarUsuario(usuario);
+               Usuario nuevoUsuario = proxy.ValidarUsuario(usuario);
+               Session["usuario"] = nuevoUsuario;
+               if (Session["idCampo"]!= null)
+               {
+                   return RedirectToAction("VerCalendario", "CampoClient", new { idCampo = (int)Session["idCampo"] });
+               }
+               return RedirectToAction("Index","Home");
+           }
+           else
+           {
+               ViewBag.Error = "El usuario ya existe";
+               return View(usuario);
+           }        }
+
+        public ActionResult CerrarSesion()
+        {
+            Session.RemoveAll();
+            return RedirectToAction("Index", "Home");
+        }
 
 	}
 }

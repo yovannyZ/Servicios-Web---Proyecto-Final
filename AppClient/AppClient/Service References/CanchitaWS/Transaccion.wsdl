@@ -61,6 +61,36 @@
   <wsdl:message name="ITransaccion_ListarTarifas_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarTarifasResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_AgregarTarifa_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarTarifa" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_AgregarTarifa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarTarifaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_EliminarTarifa_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTarifa" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_EliminarTarifa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTarifaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ActualizarTarifa_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarTarifa" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ActualizarTarifa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarTarifaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ListarTarifasAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTarifasAdmin" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ListarTarifasAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTarifasAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ObtenerTarifaxI_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTarifaxI" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ObtenerTarifaxI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTarifaxIResponse" />
+  </wsdl:message>
   <wsdl:message name="ITransaccion_AgregarReserva_InputMessage">
     <wsdl:part name="parameters" element="tns:AgregarReserva" />
   </wsdl:message>
@@ -84,6 +114,12 @@
   </wsdl:message>
   <wsdl:message name="ITransaccion_listarReservaXUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:listarReservaXUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ListarReservas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarReservas" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ListarReservas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarReservasResponse" />
   </wsdl:message>
   <wsdl:message name="ITransaccion_crearTarjetas_InputMessage">
     <wsdl:part name="parameters" element="tns:crearTarjetas" />
@@ -217,6 +253,12 @@
   <wsdl:message name="ITransaccion_verDetalleReserva_OutputMessage">
     <wsdl:part name="parameters" element="tns:verDetalleReservaResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_listarDetalleXReserva_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarDetalleXReserva" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_listarDetalleXReserva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarDetalleXReservaResponse" />
+  </wsdl:message>
   <wsdl:portType name="ITransaccion">
     <wsdl:operation name="AgregarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarUsuario" message="tns:ITransaccion_AgregarUsuario_InputMessage" />
@@ -254,6 +296,26 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ListarTarifas" message="tns:ITransaccion_ListarTarifas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ListarTarifasResponse" message="tns:ITransaccion_ListarTarifas_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AgregarTarifa">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarTarifa" message="tns:ITransaccion_AgregarTarifa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/AgregarTarifaResponse" message="tns:ITransaccion_AgregarTarifa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTarifa">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/EliminarTarifa" message="tns:ITransaccion_EliminarTarifa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/EliminarTarifaResponse" message="tns:ITransaccion_EliminarTarifa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTarifa">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ActualizarTarifa" message="tns:ITransaccion_ActualizarTarifa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ActualizarTarifaResponse" message="tns:ITransaccion_ActualizarTarifa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTarifasAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ListarTarifasAdmin" message="tns:ITransaccion_ListarTarifasAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ListarTarifasAdminResponse" message="tns:ITransaccion_ListarTarifasAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTarifaxI">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ObtenerTarifaxI" message="tns:ITransaccion_ObtenerTarifaxI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ObtenerTarifaxIResponse" message="tns:ITransaccion_ObtenerTarifaxI_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AgregarReserva">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarReserva" message="tns:ITransaccion_AgregarReserva_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/AgregarReservaResponse" message="tns:ITransaccion_AgregarReserva_OutputMessage" />
@@ -269,6 +331,10 @@
     <wsdl:operation name="listarReservaXUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/listarReservaXUsuario" message="tns:ITransaccion_listarReservaXUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/listarReservaXUsuarioResponse" message="tns:ITransaccion_listarReservaXUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarReservas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ListarReservas" message="tns:ITransaccion_ListarReservas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ListarReservasResponse" message="tns:ITransaccion_ListarReservas_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="crearTarjetas">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/crearTarjetas" message="tns:ITransaccion_crearTarjetas_InputMessage" />
@@ -358,6 +424,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/verDetalleReserva" message="tns:ITransaccion_verDetalleReserva_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/verDetalleReservaResponse" message="tns:ITransaccion_verDetalleReserva_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="listarDetalleXReserva">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/listarDetalleXReserva" message="tns:ITransaccion_listarDetalleXReserva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/listarDetalleXReservaResponse" message="tns:ITransaccion_listarDetalleXReserva_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITransaccion" type="tns:ITransaccion">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -442,6 +512,51 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AgregarTarifa">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/AgregarTarifa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTarifa">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/EliminarTarifa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTarifa">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ActualizarTarifa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTarifasAdmin">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ListarTarifasAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTarifaxI">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ObtenerTarifaxI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AgregarReserva">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/AgregarReserva" style="document" />
       <wsdl:input>
@@ -471,6 +586,15 @@
     </wsdl:operation>
     <wsdl:operation name="listarReservaXUsuario">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/listarReservaXUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarReservas">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ListarReservas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -669,6 +793,15 @@
     </wsdl:operation>
     <wsdl:operation name="verDetalleReserva">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/verDetalleReserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarDetalleXReserva">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/listarDetalleXReserva" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
