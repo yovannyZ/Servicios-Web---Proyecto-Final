@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "NuevaReserva";
+    Layout = "~/Views/Shared/_LayoutAdmind.cshtml";
+}
+
+
+<div class="row">
+    @using (Ajax.BeginForm("VerHorarios", "Reserva", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "div1", InsertionMode = InsertionMode.Replace }))
+    {
+
+        <div class="col s12 m12 l6">
+            <div class="card-panel">
+                <h4 class="header2">Nueva Reserva</h4>
+                <div class="row">
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            @Html.DropDownList("IdUsuario", null, "Seleccionar Usuario", htmlAttributes: new { @class = "form-control" })
+                            <label class="select-label">Usuario</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            @Html.DropDownList("IdCampo", null, "Seleccionar Campo", htmlAttributes: new { @class = "form-control" })
+                            <label class="select-label">Campo</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="dia">Fecha de reserva  (Haz click qui)</label>
+                            <input type="date" id="dia" name="dia" class="datepicker" />
+                            <div id="error" class="error"> Selecciona una fecha</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button id="diponibles" type="submit" class="waves-effect waves-light btn">
+                                Ver Horarios Disponibles
+                                <i class="mdi-content-send right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    }
+    <div id="div1" class="col l6" ></div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/Reserva/Reserva.js"></script>
+}
+
+
+
+
+
+

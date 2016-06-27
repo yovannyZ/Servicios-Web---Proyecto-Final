@@ -37,8 +37,9 @@
                                                     <th>
                                                         @Html.DisplayNameFor(model => model.Estado)
                                                     </th>
-
-                                                    <th></th>
+                                                    <th>ACTUALIZAR</th>
+                                                    <th>ELIMINAR</th>
+                                                   
                                                 </tr>
                                             </thead>
 
@@ -53,8 +54,8 @@
                                                     <th>
                                                         @Html.DisplayNameFor(model => model.Estado)
                                                     </th>
-
-                                                    <th></th>
+                                                    <th>ACTUALIZAR</th>
+                                                    <th>ELIMINAR</th>
                                                 </tr>
                                             </tfoot>
 
@@ -73,11 +74,10 @@
                                                         </td>
 
                                                         <td>
-                                                            <a href="/Sede/Edit/ @Html.DisplayFor(modelItem => item.Id)">
-                                                                <i class="mdi-editor-border-color"></i><span></span>
-                                                            </a>
-                                                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                                                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                                            <button class="center-block btn-floating  waves-effect waves-light btnEdit" data-id="@item.Id"  title="Editar Sede"><i class="mdi-image-edit tiny"></i></button> 
+                                                        </td>
+                                                        <td>
+                                                            <button class="center-block btn-floating  waves-effect waves-light btnEliminar" data-id="@item.Id" title="Eliminar Sede"><i class="mdi-content-clear tiny"></i></button>
                                                         </td>
                                                     </tr>
                                                 }
@@ -98,6 +98,28 @@
 <!-- Modal Crear -->
 <div id="modalCrear" class="modal">
     <div class="modal-content" id="modal-content">
+        <!--View Crear-->
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+</div>
+
+
+<!-- Modal Editar -->
+<div id="modalEditar" class="modal">
+    <div class="modal-content" id="modal-content">
+        <!--View Editar-->
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+</div>
+
+<!-- Modal Eliminar -->
+<div id="modalEliminar" class="modal">
+    <div class="modal-content" id="modal-content">
+        <!--View Eliminar-->
     </div>
     <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>

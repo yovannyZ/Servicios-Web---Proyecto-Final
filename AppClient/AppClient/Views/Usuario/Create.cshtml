@@ -1,0 +1,144 @@
+﻿@model AppClient.CanchitaWS.Usuario
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("Create", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" })) 
+{
+ 
+            <div class="row">
+                <div class="col s12 m8 l12">
+                    <div class="card  white">
+                        <div class="card-content cyan lighten-4">
+                            <h5 class=" center-align grey-text  text-darken-2">Nuevo Usuario</h5>
+                        </div>
+                        <div class="card-action">
+                            <div class="row">
+                                <div class="col s12">
+                                    <div style="width:70% ; margin:0 auto;">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="mdi-action-account-circle prefix"></i>
+                                                @Html.EditorFor(model => model.Nombres)
+                                                @Html.LabelFor(model => model.Nombres)
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="mdi-communication-email prefix"></i>
+                                               @Html.EditorFor(model => model.Apellidos)
+                                               @Html.LabelFor(model => model.Apellidos)
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="mdi-communication-email prefix"></i>
+                                                @Html.EditorFor(model => model.Email)
+                                                @Html.LabelFor(model => model.Email)
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="mdi-communication-email prefix"></i>
+                                                @Html.EditorFor(model => model.Username)
+                                                @Html.LabelFor(model => model.Username)
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="mdi-communication-email prefix"></i>
+                                                @Html.EditorFor(model => model.Clave)
+                                                @Html.LabelFor(model => model.Clave)
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <select name="TipoUsuario">
+                                                    <option value="" disabled selected>Seleccione una opcion</option>
+                                                    <option value="Administrador">Administrador</option>
+                                                    <option value="Cliente">Cliente</option>
+                                                </select>
+                                                <label>Materialize Select</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="file-field input-field">
+                                                <div class="btn col m6" id="upload-button">
+                                                    <span>Imagen</span>
+                                                </div>
+                                                <br /><br />
+                                                <input type="file" id="fimage" name="fimage" style="display:none;">
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col m6 " >
+                                                <img id="imagenSede" src="" width="180" height="200"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <button class="btn cyan waves-effect waves-light right" type="submit" name="action">
+                                                        Guardar
+                                                        <i class="mdi-content-send right"></i>
+                                                    </button>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+  
+            
+
+}
+
+<script>
+    $(document).ready(function () {
+        $('select').material_select();
+        $('.slider').slider({ full_width: false });
+    });
+
+    var img = $('#imagenSede');
+    img.css('display', 'none');
+
+    $('#upload-button').click(function () {
+        $('#fimage').trigger('click');
+        return false;
+    });
+
+    function readfichier(e) {
+        if (window.FileReader) {
+            var file = e.target.files[0];
+            var reader = new FileReader();
+            if (file && file.type.match('image.*')) {
+                reader.readAsDataURL(file);
+            } else {
+                img.css('display', 'none');
+                img.attr('src', '');
+            }
+            reader.onloadend = function (e) {
+                img.attr('src', reader.result);
+                img.css('display', 'block');
+            }
+        }
+    }
+
+    document.getElementById('fimage').addEventListener('change', readfichier, false);
+</script>
+
+

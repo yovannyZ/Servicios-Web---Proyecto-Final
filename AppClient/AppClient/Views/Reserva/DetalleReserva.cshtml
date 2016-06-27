@@ -1,18 +1,11 @@
 ﻿@model List<AppClient.CanchitaWS.DetalleReserva>
 
 @{
-    ViewBag.Title = "DetalleReserva";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmind.cshtml";
     double montoTotal = 0;    
 }
 
-<h2>DetalleReserva</h2>
-
-
-@using (Html.BeginForm("CrearReserva", "Reserva", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-
-
+    <h3 class="center-align">Detalle de la  Reserva</h3>
     <input type="text" id="dia" name="dia" value="@Session["diareserva"].ToString()" disabled />
 
     <table class="striped">
@@ -54,9 +47,24 @@
         </tbody>
     </table>
     <h1>Monto total = @montoTotal</h1>
-    <button class="btn waves-effect waves-light" type="submit" name="action">
-        Realizar reserva
-        <i class="material-icons right">send</i>
-    </button>
+   
+    <button class="center-block btn-floating  waves-effect waves-light btnPagar" data-id="@montoTotal" title=" pagar"><i class="mdi-image-edit tiny"></i></button>
 
+
+
+
+
+<!-- Modal Pagar -->
+<div id="modalPagar" class="modal">
+    <div class="modal-content" id="modal-content">
+        <!--View Pagar-->
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/Reserva/Reserva.js"></script>
 }

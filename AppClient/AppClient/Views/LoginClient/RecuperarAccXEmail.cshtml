@@ -1,0 +1,41 @@
+﻿@model AppClient.CanchitaWS.Usuario
+
+
+@{
+    ViewBag.Title = "RecuperarAccXEmail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("RecuperarAccXEmail", "LoginClient", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+
+        <div class="center-align">
+            <h4>Ingrese su email para que pueda recuperar su cuenta </h4>
+            <hr />
+            @Html.ValidationSummary(true)
+            <div class="login-form-text">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Recuperar" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+   
+}
+<div style="text-align:center">
+    @Html.ActionLink("Regresar al Login", "Login")
+</div>
+<p class="green-text text-darken-3 center-align">@ViewBag.Info</p>
+<p class="red-text text-darken-3 center-align">@ViewBag.Error</p>
+
+

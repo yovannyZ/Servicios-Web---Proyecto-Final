@@ -17,84 +17,28 @@ namespace AppClient.Controllers
         // GET: Campo
         public ActionResult Index()
         {
-            var listado = proxy.ListarCampos();
-            return View(listado);
+           if (Session["usuario"] != null)
+           {
+                int idSede = (int)Session["sedeSelect"];
+                var listado = proxy.ObtenerCamposXSede(idSede);
+                return View(listado);
+           }
+           else
+           {
+                return RedirectToAction("Index", "Admin");
+
+           }
+            
         }
-
-        public ActionResult ListarCampoCombo()
-        {
-
-            int idSede = (int)Session["sedeSelect"];
-            var listado = proxy.ObtenerCamposXSede(idSede);
-            ViewBag.Id = new SelectList(listado, "Id", "Descripcion");
-            return View();
-        }
-
-        public ActionResult VerCalendario(int combo)
-        {
-            Session["idCampo"] = combo;
-            return View();
-        }
-
-        public ActionResult Disponibilidad(DateTime dia)
-        {
-            string diaFormat = string.Format("{0:yyyy-MM-dd}", dia);
-            ViewBag.dia = diaFormat;
-            Session["diaReserva"] = dia;
-            int idCampo = (int)Session["idCampo"];
-            var listado = proxy.ListarTarifas(dia, idCampo);
-            return View(listado);
-        }
-
-        [HttpPost]
-        public ActionResult Disponibilidad(List<Tarifa> lista)
-        {
-            DetalleReserva dtReserva;
-            List<DetalleReserva> listaDetalles = new List<DetalleReserva>();
-            double monto = 0;
-            foreach (var tarifa in lista)
-            {
-                if (tarifa.Checked)
-                {
-                    monto = tarifa.Precio + monto;
-                    dtReserva = new DetalleReserva();
-                    dtReserva.Tarifa = tarifa;
-                    dtReserva.HoraInicio = tarifa.HoraInicio;
-                    dtReserva.HoraFin = tarifa.HoraFin;
-                    dtReserva.Precio = tarifa.Precio;
-                    listaDetalles.Add(dtReserva);
-                }
-            }
-            Session["listaDetalles"] = listaDetalles;
-
-            return RedirectToAction("DetalleReserva", "Reserva");
-        }
-
-
-        public PartialViewResult Verajax(DateTime dia)
-        {
-            string diaFormat = string.Format("{0:yyyy-MM-dd}", dia);
-            ViewBag.dia = diaFormat;
-            Session["diaReserva"] = dia;
-            int idCampo = (int)Session["idCampo"];
-            var listado = proxy.ListarTarifas(dia, idCampo);
-            return PartialView("_Verajax", listado);
-        }
-
-
 
         public ActionResult Create()
         {
-
-            var listaSedes = proxy.ListarSedes();
-            ViewBag.Id = new SelectList(listaSedes, "Id", "Descripcion");
-
-            return View();
+                return View();
         }
 
 
         [HttpPost]
-        public ActionResult Create(Campo campo, HttpPostedFileBase fimage, int combo)
+        public ActionResult Create(Campo campo, HttpPostedFileBase fimage)
         {
 
             if (fimage != null)
@@ -109,12 +53,64 @@ namespace AppClient.Controllers
             {
                 campo.Imagen = null;
             }
-            Sede sede = new Sede();
-            sede.Id = combo;
+
+            int idSede=(int)Session["sedeSelect"];
+            Sede sede = proxy.ObtenerSedeId(idSede);
             campo.Sede = sede;
             proxy.AgregarCampo(campo);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Edit(int id = 0)
+        {
+            var campo = proxy.ObtenerCamposXId(id);
+
+            if (campo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(campo);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Campo campo, HttpPostedFileBase fimage)
+        {
+            if (fimage != null)
+            {
+                using (var reader = new BinaryReader(fimage.InputStream))
+                {
+                    byte[] data = reader.ReadBytes(fimage.ContentLength);
+                    campo.Imagen = data;
+                } 
+            }
+            else
+            {
+                campo.Imagen = null;
+            }
+
+            proxy.ActualizarCampo(campo);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Eliminar(int id = 0)
+        {
+            var sede = proxy.ObtenerCamposXId(id);
+
+            if (sede == null)
+            {
+                return HttpNotFound();
+            }
+            return View(sede);
+
+        }
+
+        [HttpPost]
+        public ActionResult Eliminar(Campo campo)
+        {
+            proxy.EliminarCampo(campo);
+            return RedirectToAction("Index");
+        }
+
 
 
     }

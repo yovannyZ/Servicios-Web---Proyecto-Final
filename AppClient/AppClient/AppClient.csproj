@@ -129,6 +129,7 @@
     <Content Include="content\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="content\js\materialize.js" />
     <Content Include="content\js\materialize.min.js" />
+    <Content Include="content\js\MaterializeClient.min.js" />
     <Content Include="content\js\plugins.js" />
     <Content Include="content\js\plugins\chartist-js\chartist-script.js" />
     <Content Include="content\js\plugins\chartist-js\chartist.min.css" />
@@ -184,7 +185,10 @@
     <Content Include="obj\Debug\AppClient.dll" />
     <Content Include="obj\Debug\AppClient.pdb" />
     <Content Include="obj\Debug\TempPE\Service References.CanchitaWS.Reference.cs.dll" />
+    <Content Include="Scripts\Campo\Campo.js" />
+    <Content Include="Scripts\Reserva\Reserva.js" />
     <Content Include="Scripts\Sede\Sede.js" />
+    <Content Include="Scripts\Usuario\Usuario.js" />
     <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.Campo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -238,6 +242,12 @@
     <Content Include="content\fonts\roboto\Roboto-Thin.woff" />
     <Content Include="content\fonts\roboto\Roboto-Thin.woff2" />
     <Content Include="content\js\jquery-2.1.4.min.map" />
+    <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.DetalleReservaCompletoxUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.Reserva.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CanchitaWS\Transaccion.disco" />
     <None Include="Service References\CanchitaWS\configuration91.svcinfo" />
     <None Include="Service References\CanchitaWS\configuration.svcinfo" />
@@ -256,12 +266,12 @@
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginClientController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ReservaClientController.cs" />
     <Compile Include="Controllers\ReservaController.cs" />
     <Compile Include="Controllers\SedeClientController.cs" />
     <Compile Include="Controllers\SedeController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -282,9 +292,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\InsertarHoras.cshtml" />
-    <Content Include="Views\Reserva\Index.cshtml" />
     <Content Include="Views\Reserva\InsertarHoras.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Sede\Index.cshtml" />
     <Content Include="Views\Sede\Create.cshtml" />
     <Content Include="Views\Campo\Index.cshtml" />
@@ -307,18 +315,28 @@
     <Content Include="Views\ReservaClient\DetalleReserva.cshtml" />
     <Content Include="Views\ReservaClient\CrearReserva.cshtml" />
     <Content Include="Views\CampoClient\_Verajax.cshtml" />
-    <Content Include="Views\Menu\Index.cshtml" />
-    <Content Include="Views\Campo\_Verajax.cshtml" />
-    <Content Include="Views\Campo\Disponibilidad.cshtml" />
-    <Content Include="Views\Campo\VerCalendario.cshtml" />
-    <Content Include="Views\Campo\ListarCampoCombo.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Reserva\CrearReserva.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Reserva\DetalleReserva.cshtml" />
     <Content Include="Views\Reserva\listaPagoPend.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmind.cshtml" />
     <Content Include="Views\Errors\_NotFound.cshtml" />
     <Content Include="Views\Sede\Edit.cshtml" />
+    <Content Include="Views\Sede\Eliminar.cshtml" />
+    <Content Include="Views\Campo\Edit.cshtml" />
+    <Content Include="Views\Campo\Eliminar.cshtml" />
+    <Content Include="Views\Reserva\NuevaReserva.cshtml" />
+    <Content Include="Views\Reserva\_VerHorarios.cshtml" />
+    <Content Include="Views\Reserva\PagarEfectivo.cshtml" />
+    <Content Include="Views\Reserva\DetallePago.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\listaUsuario.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\Eliminar.cshtml" />
+    <Content Include="Views\LoginClient\RecuperarAccXEmail.cshtml" />
+    <Content Include="Views\ReservaClient\verlistaReservasxCliente.cshtml" />
+    <Content Include="Views\ReservaClient\verDetalleXReserva.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

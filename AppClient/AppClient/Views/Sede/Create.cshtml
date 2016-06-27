@@ -7,7 +7,7 @@
 
 @using (Html.BeginForm("Create", "Sede", FormMethod.Post, new { enctype = "multipart/form-data" })) 
 {
-  <div id="basic-card" class="section">
+ 
             <div class="row">
                 <div class="col s12 m8 l12">
                     <div class="card  white">
@@ -36,13 +36,18 @@
 
                                         <div class="row">
                                             <div class="file-field input-field">
-                                                <div class="btn">
-                                                    <span>File</span>
-                                                    <input type="file" id="fimage" name="fimage">
+                                                <div class="btn col m6" id="upload-button">
+                                                    <span>Imagen</span>
                                                 </div>
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
+                                                <br /><br />
+                                                <input type="file" id="fimage" name="fimage" style="display:none;">
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col m6 " >
+                                                <img id="imagenSede" src="" width="180" height="200"/>
                                             </div>
                                         </div>
 
@@ -54,6 +59,7 @@
                                                         <i class="mdi-content-send right"></i>
                                                     </button>
                                                 </div>
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -64,11 +70,40 @@
                     </div>
                 </div>
             </div>
-</div>
+
   
             
 
 }
 
+<script>
+
+    var img = $('#imagenSede');
+    img.css('display', 'none');
+
+    $('#upload-button').click(function () {
+        $('#fimage').trigger('click');
+        return false;
+    });
+
+    function readfichier(e) {
+        if (window.FileReader) {
+            var file = e.target.files[0];
+            var reader = new FileReader();
+            if (file && file.type.match('image.*')) {
+                reader.readAsDataURL(file);
+            } else {
+                img.css('display', 'none');
+                img.attr('src', '');
+            }
+            reader.onloadend = function (e) {
+                img.attr('src', reader.result);
+                img.css('display', 'block');
+            }
+        }
+    }
+
+    document.getElementById('fimage').addEventListener('change', readfichier, false);
+</script>
 
 

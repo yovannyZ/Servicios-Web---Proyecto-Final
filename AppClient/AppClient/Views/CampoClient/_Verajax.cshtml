@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout =null;
 }
 
 @using (Html.BeginForm("Disponibilidad", "CampoClient", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -45,6 +45,13 @@
     </button>
 
 }
+<script>
+
+    $(document).ready(function () {
+        $('.borrarHidden input[type="hidden"]').remove();
+      
+    });
+</script>
 
 
 

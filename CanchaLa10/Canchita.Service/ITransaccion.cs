@@ -21,8 +21,23 @@ namespace Canchita.Service
 
         [OperationContract]
         List<Usuario> ListarUsuario();
+
         [OperationContract]
+        bool EmininarUsuario(Usuario usuario);
+
+         [OperationContract]
         Usuario ValidarUsuario(Usuario usuario);
+
+        [OperationContract]
+        Usuario ObtenerUsuarioId(int id);
+
+        [OperationContract]
+        Usuario devolverUseryContra(Usuario usuario);
+
+        [OperationContract]
+        string mandarCorreo(Usuario usuario);
+
+
         #endregion
 
         #region . TARIFA .
@@ -38,6 +53,9 @@ namespace Canchita.Service
 
         [OperationContract]
         int obtenerUltimoIDReseva();
+        [OperationContract]
+        List<Reserva> listarReservaXUsuario(int idUsuario);
+        
         #endregion
 
         #region . TARJETA .
@@ -104,6 +122,11 @@ namespace Canchita.Service
         List<Campo> ObtenerCamposXSede(int idSede);
         [OperationContract]
         Campo ObtenerCamposXId(int idCampo);
+        #endregion
+
+        #region .DetalleReserva.
+        [OperationContract]
+        List<DetalleReservaCompletoxUsuario> verDetalleReserva(int idReserva);
         #endregion
     }
 }

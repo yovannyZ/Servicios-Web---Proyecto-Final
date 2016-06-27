@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("PagarEfectivo", "Reserva", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="black">
+       <h4 class="yellow-text center-align "> Total a Pagar</h4>
+        <h4 class="yellow-text center-align">   @ViewBag.Monto</h4>
+        <input type="hidden" value="@ViewBag.Monto" id="monto" name="monto" />
+    </div>
+<div>
+    Dinero Recibido:
+    <input type="text" id="montoRecibido" name="montoRecibido" />
+</div>
+    <div>
+        <button type="submit">Pagar</button>
+    </div>
+}

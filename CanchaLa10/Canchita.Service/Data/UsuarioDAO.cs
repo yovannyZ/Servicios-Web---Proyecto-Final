@@ -15,19 +15,18 @@ namespace Canchita.Service.Data
         public bool Agregar(Usuario usuario)
         {
             bool exito = false;
-            string query = "INSERT INTO USUARIO  VALUES(@pr1,@pr2,@pr3,@pr4,@pr5,@pr6,@pr7,@pr8,@pr9)";
+            string query = "INSERT INTO USUARIO  VALUES(@pr1,@pr2,@pr3,@pr4,@pr5,@pr6,@pr7,@pr8)";
 
             SqlParameter[] dbParams = new SqlParameter[]
              {
                  DBHelper.MakeParam("@pr1",usuario.Nombres),
-                 DBHelper.MakeParam("@pr2",usuario.ApPaterno),
-                 DBHelper.MakeParam("@pr3",usuario.ApMaterno),
-                 DBHelper.MakeParam("@pr4",usuario.Dni),
-                 DBHelper.MakeParam("@pr5",usuario.Email),
-                 DBHelper.MakeParam("@pr6",usuario.Telefono),
-                 DBHelper.MakeParam("@pr7",usuario.TipoUsuario),
-                 DBHelper.MakeParam("@pr8",usuario.Username),
-                 DBHelper.MakeParam("@pr9",usuario.Clave)
+                 DBHelper.MakeParam("@pr2",usuario.Apellidos),
+                 DBHelper.MakeParam("@pr3",usuario.Email),
+                 DBHelper.MakeParam("@pr4",usuario.TipoUsuario),
+                 DBHelper.MakeParam("@pr5",usuario.Username),
+                 DBHelper.MakeParam("@pr6",usuario.Clave),
+                 DBHelper.MakeParam("@pr7","Activo"),
+                 DBHelper.MakeParam("@pr8",usuario.Imagen==null?new byte[]{}:usuario.Imagen)
 
              };
             exito = DBHelper.ExecuteNonQuery(query, dbParams)>0;
@@ -38,37 +37,76 @@ namespace Canchita.Service.Data
         {
             bool exito = false;
             string query = "UPDATE USUARIO SET Nombres=@pr1,"+
-                                                   "apPaterno=@pr2,"+
-                                                   "apMaterno=@pr3,"+
-                                                   "DNI=@pr4,"+
-                                                   "EMail=@pr5,"+
-                                                   "Telefono=@pr6,"+
-                                                   "TipoUsuario=@pr7,"+
-                                                   "username=@pr8,"+
-                                                   "clave=@pr9 where idUsuario=@pr10 ";
+                                                   "Apellidos=@pr2,"+
+                                                   "EMail=@pr3,"+
+                                                   "TipoUsuario=@pr4,"+
+                                                   "username=@pr5,"+
+                                                   "clave=@pr6 , Estado=@pr7 , Imagen=@pr8 where idUsuario=@pr9 ";
 
             SqlParameter[] dbParams = new SqlParameter[]
              {
                  DBHelper.MakeParam("@pr1",usuario.Nombres),
-                 DBHelper.MakeParam("@pr2",usuario.ApPaterno),
-                 DBHelper.MakeParam("@pr3",usuario.ApMaterno),
-                 DBHelper.MakeParam("@pr4",usuario.Dni),
-                 DBHelper.MakeParam("@pr5",usuario.Email),
-                 DBHelper.MakeParam("@pr6",usuario.Telefono),
-                 DBHelper.MakeParam("@pr7",usuario.TipoUsuario),
-                 DBHelper.MakeParam("@pr8",usuario.Username),
-                 DBHelper.MakeParam("@pr9",usuario.Clave),
-                 DBHelper.MakeParam("@pr10",usuario.Id)
+                 DBHelper.MakeParam("@pr2",usuario.Apellidos),
+                 DBHelper.MakeParam("@pr3",usuario.Email),
+                 DBHelper.MakeParam("@pr4",usuario.TipoUsuario),
+                 DBHelper.MakeParam("@pr5",usuario.Username),
+                 DBHelper.MakeParam("@pr6",usuario.Clave),
+                 DBHelper.MakeParam("@pr7",usuario.Estado),
+                  DBHelper.MakeParam("@pr8",usuario.Imagen),
+                  DBHelper.MakeParam("@pr9",usuario.Id)
 
              };
             exito = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
             return exito;
         }
+
+        public bool ActualizarSinImagen(Usuario usuario)
+        {
+            bool exito = false;
+            string query = "UPDATE USUARIO SET Nombres=@pr1," +
+                                                   "Apellidos=@pr2," +
+                                                   "EMail=@pr3," +
+                                                   "TipoUsuario=@pr4," +
+                                                   "username=@pr5," +
+                                                   "clave=@pr6 , Estado=@pr7 where idUsuario=@pr8 ";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@pr1",usuario.Nombres),
+                 DBHelper.MakeParam("@pr2",usuario.Apellidos),
+                 DBHelper.MakeParam("@pr3",usuario.Email),
+                 DBHelper.MakeParam("@pr4",usuario.TipoUsuario),
+                 DBHelper.MakeParam("@pr5",usuario.Username),
+                 DBHelper.MakeParam("@pr6",usuario.Clave),
+                 DBHelper.MakeParam("@pr7",usuario.Estado),
+                 DBHelper.MakeParam("@pr8",usuario.Id)
+
+             };
+            exito = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
+            return exito;
+        }
+
+        public bool Eliminar(Usuario usuario)
+        {
+            bool exito = false;
+            string query = "UPDATE USUARIO SET Estado=@pr1 where idUsuario=@pr2 ";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@pr1","Inactivo"),
+                 DBHelper.MakeParam("@pr2",usuario.Id)
+
+             };
+            exito = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
+
+            return exito;
+
+        }
         public List<Usuario> ListarUsuarios()
         {
            
             List<Usuario> lista= new List<Usuario>();
-            string query = "SELECT * FROM Usuario";
+            string query = "SELECT * FROM Usuario where Estado='Activo'";
             using (SqlDataReader lector = DBHelper.ExecuteDataReader(query)) { 
             if (lector != null && lector.HasRows)
                 {
@@ -78,14 +116,22 @@ namespace Canchita.Service.Data
                         usuario = new Usuario();
                         usuario.Id = Convert.ToInt32(lector["idUsuario"]);
                         usuario.Nombres = Convert.ToString(lector["Nombres"]);
-                        usuario.ApPaterno = Convert.ToString(lector["apPaterno"]);
-                        usuario.ApMaterno = Convert.ToString(lector["apMaterno"]);
-                        usuario.Dni = Convert.ToString(lector["DNI"]);
+                        usuario.Apellidos = Convert.ToString(lector["Apellidos"]);
                         usuario.Email = Convert.ToString(lector["EMail"]);
                         usuario.TipoUsuario = Convert.ToString(lector["TipoUsuario"]);
                         usuario.Username = Convert.ToString(lector["username"]);
                         usuario.Clave = Convert.ToString(lector["clave"]);
-                        usuario.Telefono = Convert.ToString(lector["Telefono"]);
+                        usuario.Estado = Convert.ToString(lector["Estado"]);
+                        var img = lector["Imagen"];
+                        if (img is System.DBNull)
+                        {
+                            usuario.Imagen = null;
+                        }
+                        else
+                        {
+                            usuario.Imagen = (byte[])img;
+                        }
+                       
                         lista.Add(usuario);
                     }
                 }
@@ -114,18 +160,136 @@ namespace Canchita.Service.Data
                     {
                         usuario.Id = Convert.ToInt32(lector["idUsuario"]);
                         usuario.Nombres = Convert.ToString(lector["Nombres"]);
-                        usuario.ApPaterno = Convert.ToString(lector["apPaterno"]);
-                        usuario.ApMaterno = Convert.ToString(lector["apMaterno"]);
-                        usuario.Dni = Convert.ToString(lector["DNI"]);
+                        usuario.Apellidos = Convert.ToString(lector["Apellidos"]);
                         usuario.Email = Convert.ToString(lector["EMail"]);
                         usuario.TipoUsuario = Convert.ToString(lector["TipoUsuario"]);
                         usuario.Username = Convert.ToString(lector["username"]);
                         usuario.Clave = Convert.ToString(lector["clave"]);
-                        usuario.Telefono = Convert.ToString(lector["Telefono"]);
+                        usuario.Estado = Convert.ToString(lector["Estado"]);
+                        var img = lector["Imagen"];
+                        if (img is System.DBNull)
+                        {
+                            usuario.Imagen = null;
+                        }
+                        else
+                        {
+                            usuario.Imagen = (byte[])img;
+                        }
                     }
                 }
             }
             return usuario;
         }
+
+        public Usuario ObtenerUsuarioId(int id)
+        {
+            Usuario usuario = null;
+            string query = "SELECT * FROM USUARIO WHERE idUsuario=@pr1";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@pr1",id)
+             };
+
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query, dbParams))
+            {
+                if (lector != null && lector.HasRows)
+                {
+                    usuario = new Usuario();
+                    while (lector.Read())
+                    {
+                        usuario.Id = Convert.ToInt32(lector["idUsuario"]);
+                        usuario.Nombres = Convert.ToString(lector["Nombres"]);
+                        usuario.Apellidos = Convert.ToString(lector["Apellidos"]);
+                        usuario.Email = Convert.ToString(lector["EMail"]);
+                        usuario.TipoUsuario = Convert.ToString(lector["TipoUsuario"]);
+                        usuario.Username = Convert.ToString(lector["username"]);
+                        usuario.Clave = Convert.ToString(lector["clave"]);
+                        usuario.Estado = Convert.ToString(lector["Estado"]);
+                        var img = lector["Imagen"];
+                        if (img is System.DBNull)
+                        {
+                            usuario.Imagen = null;
+                        }
+                        else
+                        {
+                            usuario.Imagen = (byte[])img;
+                        }
+                    }
+                }
+            }
+            return usuario;
+        }
+
+        public Usuario devolverUseryContra(string email)
+        {
+            Usuario usuario = null;
+            string query = "SELECT * FROM USUARIO WHERE  email=@email";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {                
+                 DBHelper.MakeParam("@email",email)
+             };
+
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query, dbParams))
+            {
+                if (lector != null && lector.HasRows)
+                {
+                    usuario = new Usuario();
+                    while (lector.Read())
+                    {
+                        usuario.Id = Convert.ToInt32(lector["idUsuario"]);
+                        usuario.Nombres = Convert.ToString(lector["Nombres"]);
+                        usuario.Apellidos = Convert.ToString(lector["Apellidos"]);
+                        usuario.Email = Convert.ToString(lector["EMail"]);
+                        usuario.TipoUsuario = Convert.ToString(lector["TipoUsuario"]);
+                        usuario.Username = Convert.ToString(lector["username"]);
+                        usuario.Clave = Convert.ToString(lector["clave"]);
+                     
+                    }
+                }
+            }
+            return usuario;
+        }
+
+        public string recuperarCuenta(string email, string apellidos, string nombre, string username, string clave)
+        {
+            string mensaje = "";
+            System.Net.Mail.MailMessage msj = new System.Net.Mail.MailMessage();
+            msj.To.Add(email);
+            //Asunto
+            msj.Subject = "Recuperación de Usuario y Contraseña - Campos Deportivos 'LA 10' ";
+            msj.SubjectEncoding = System.Text.Encoding.UTF8;
+            //Cuerpo del Mensaje
+            /*  msj.Body = "Gracias por user el sistema de recuperación de canchita la 10"+ Environment.NewLine+
+            "Estimado:  "+usuClave.Apellidos+" ,   " + usuClave.Nombres +Environment.NewLine+ "Su contraseña olvidada es:  "+
+            " " + usuClave.Clave + Environment.NewLine + "Estamos para ayudarte." + Environment.NewLine +"Atte. Soporte LA 10";*/
+            msj.Body = "<br /> <br /> <h2 style='color:2D3C6B'>Gracias por utilizar el Servicio de Recuperación de Usuarios y  Contraseñas de Canchita la 10 </h2> <br />  <br />  <br />" +
+            "Estimado: <b style='color:blue'>" + apellidos + " </b>,  <b style='color:blue'>" + nombre + " </b> <br />Su Usuario olvidado es:  " +
+            "<b style='color:green'> " + username + " </b>  y su Contraseña olvidada es:  <b style='color:green'> " + clave + " </b> </b> <br /> <br /> <br /> <h4 style='color:2D3C6B'>Estamos para ayudarte. <br /> Atte. Soporte LA 10 </h4>";
+            msj.BodyEncoding = System.Text.Encoding.UTF8;
+            msj.IsBodyHtml = true;
+            msj.From = new System.Net.Mail.MailAddress("edpg20152016@gmail.com");
+            //cliente de correo:
+            System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+            cliente.Credentials =
+            new System.Net.NetworkCredential("edpg20152016@gmail.com", "@edpg20152016");
+            cliente.Port = 587;
+            cliente.EnableSsl = true;
+            cliente.Host = "smtp.gmail.com";
+            try
+            {
+                cliente.Send(msj);
+                mensaje = "Enviado";
+            }
+            catch (System.Net.Mail.SmtpException ex)
+            {
+                mensaje = "Error";
+            }
+
+            return mensaje;
+        }
+
+
     }
 }

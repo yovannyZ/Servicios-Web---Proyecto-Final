@@ -19,9 +19,9 @@ namespace Canchita.Service.Data
             SqlParameter[] dbParams = new SqlParameter[]
              {
                  DBHelper.MakeParam("@pr1",campo.Descripcion),
-                 DBHelper.MakeParam("@pr2",campo.Estado),
+                 DBHelper.MakeParam("@pr2","Activo"),
                  DBHelper.MakeParam("@pr3",campo.Sede.Id),
-                  DBHelper.MakeParam("@pr4",campo.Imagen)
+                  DBHelper.MakeParam("@pr4",campo.Imagen==null?new byte[]{}:campo.Imagen)
                  
              };
             exito = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
@@ -31,12 +31,12 @@ namespace Canchita.Service.Data
         public bool Eliminar(Campo campo)
         {
             bool exito = false;
-            string query = "DELETE FROM CAMPO WHERE idCampo =@pr1";
+            string query = "UPDATE CAMPO SET Estado=@pr1 WHERE idCampo= @pr2";
 
             SqlParameter[] dbParams = new SqlParameter[]
              {
-                 DBHelper.MakeParam("@pr1",campo.Id),
-                  
+                  DBHelper.MakeParam("@pr1","Inactivo"),
+                 DBHelper.MakeParam("@pr2",campo.Id)
              };
             exito = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
             return exito;
@@ -45,13 +45,12 @@ namespace Canchita.Service.Data
         public bool Actualizar(Campo campo)
         {
             bool exito = false;
-            string query = "UPDATE CAMPO SET Descripcion = @pr1, Estado=@pr2, idSede=@pr3,Imagen=@pr5 WHERE idCampo= @pr4";
+            string query = "UPDATE CAMPO SET Descripcion = @pr1, Estado=@pr2,Imagen=@pr5 WHERE idCampo= @pr4";
 
             SqlParameter[] dbParams = new SqlParameter[]
              {
                  DBHelper.MakeParam("@pr1",campo.Descripcion),
                  DBHelper.MakeParam("@pr2",campo.Estado),
-                 DBHelper.MakeParam("@pr3",campo.Sede.Id),
                  DBHelper.MakeParam("@pr4",campo.Id),
                   DBHelper.MakeParam("@pr5",campo.Imagen)
              };
@@ -59,12 +58,27 @@ namespace Canchita.Service.Data
             return exito;
         }
 
+        public bool ActualizarSinImagen(Campo campo)
+        {
+            bool exito = false;
+            string query = "UPDATE CAMPO SET Descripcion = @pr1, Estado=@pr2 WHERE idCampo= @pr4";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@pr1",campo.Descripcion),
+                 DBHelper.MakeParam("@pr2",campo.Estado),
+                 DBHelper.MakeParam("@pr4",campo.Id)
+                
+             };
+            exito = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
+            return exito;
+        }
         public List<Campo> ListarCampos()
         {
             List<Campo> lista = new List<Campo>();
             Sede sede = new Sede();
 
-            string query = "SELECT * FROM Campo";
+            string query = "SELECT * FROM Campo WHERE Estado='Activo'";
             using (SqlDataReader lector = DBHelper.ExecuteDataReader(query))
             {
                 if (lector != null && lector.HasRows)
@@ -101,7 +115,7 @@ namespace Canchita.Service.Data
             List<Campo> lista = new List<Campo>();
             Sede sede = new Sede();
 
-            string query = "SELECT * FROM Campo where idSede=@pr1";
+            string query = "SELECT * FROM Campo where idSede=@pr1 and  Estado='Activo'";
             SqlParameter[] dbParams = new SqlParameter[]
              {
                  DBHelper.MakeParam("@pr1",idSede)
@@ -141,7 +155,7 @@ namespace Canchita.Service.Data
             Campo campo = null;
             Sede sede = null;
 
-            string query = "SELECT * FROM Campo where idCampo=@pr1";
+            string query = "SELECT * FROM Campo where idCampo=@pr1 and  Estado='Activo'";
             SqlParameter[] dbParams = new SqlParameter[]
              {
                  DBHelper.MakeParam("@pr1",idCampo)

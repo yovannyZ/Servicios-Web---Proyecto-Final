@@ -7,13 +7,13 @@ using AppClient.CanchitaWS;
 
 namespace AppClient.Controllers
 {
-    public class LoginController : Controller
+    public class AdminController : Controller
     {
         TransaccionClient proxy = new TransaccionClient();
         //
         // GET: /Login/
         [HttpGet]
-        public ActionResult Login()
+        public ActionResult Index()
         {
             var listasedes = proxy.ListarSedes();
             ViewBag.Id = new SelectList(listasedes, "Id", "Descripcion");
@@ -21,7 +21,7 @@ namespace AppClient.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(Usuario usuario, int combo)
+        public ActionResult Index(Usuario usuario, int combo)
         {
             usuario.TipoUsuario = "Administrador";
             var listasedes = proxy.ListarSedes();
@@ -32,7 +32,7 @@ namespace AppClient.Controllers
             {
                 Session["usuario"] = usuLogeado;
 
-                return RedirectToAction("Index", "Menu");
+                return RedirectToAction("Index", "Campo");
             }
             else
             {

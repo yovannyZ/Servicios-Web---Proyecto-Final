@@ -1,0 +1,47 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/content/css/materialize.min.css" rel="stylesheet" />
+    
+    <link href="~/content/css/style.css" rel="stylesheet" />
+    <link href="~/content/css/page-center.css" rel="stylesheet" />
+    <link href="~/content/js/plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" />
+    <style>
+        .error {
+            display: none;
+            color: red;
+        }
+    </style>
+
+
+</head>
+<body class="cyan lighten-2">
+    @RenderBody()
+
+
+
+    <script src="~/content/js/jquery-2.1.4.min.js"></script>
+    <script src="~/content/js/materialize.min.js"></script>
+    <script src="~/content/js/prism.js"></script>
+    <script src="~/content/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="~/content/js/plugins.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#diponibles').click(function () {
+                var dia = $('#dia').val();
+                if (dia == "") {
+                    $('#error').fadeIn('slow');
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

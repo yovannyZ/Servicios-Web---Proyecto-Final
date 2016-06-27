@@ -9,14 +9,13 @@ namespace Canchita.Service.Modelo
     {
         public int Id { get; set; }
         public string Nombres { get; set; }
-        public string ApPaterno { get; set; }
-        public string ApMaterno { get; set; }
-        public string Dni { get; set; }
+        public string Apellidos { get; set; }
         public string Email { get; set; }
-        public string Telefono { get; set; }
         public string TipoUsuario { get; set; }
         public string Username { get; set; }
         public string Clave { get; set; }
+        public string Estado { get; set; }
+        public byte[] Imagen { get; set; }
         
     }
 }

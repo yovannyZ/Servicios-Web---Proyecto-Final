@@ -143,8 +143,32 @@ namespace Canchita.Service
 
         public bool ActualizarUsuario(Usuario usuario)
         {
-            return UsuarioDAO.Actualizar(usuario);
+            if(usuario.Imagen==null)
+                return UsuarioDAO.ActualizarSinImagen(usuario);
+            else
+                return UsuarioDAO.Actualizar(usuario);
         }
+
+        public Usuario ObtenerUsuarioId(int id)
+        {
+            return UsuarioDAO.ObtenerUsuarioId(id);
+        }
+
+        public bool EmininarUsuario(Usuario usuario)
+        {
+            return UsuarioDAO.Eliminar(usuario);
+        }
+
+        public Usuario devolverUseryContra(Usuario usuario)
+        {
+            return UsuarioDAO.devolverUseryContra(usuario.Email);
+        }
+
+        public string mandarCorreo(Usuario usuario)
+        {
+            return UsuarioDAO.recuperarCuenta(usuario.Email, usuario.Apellidos, usuario.Nombres, usuario.Username, usuario.Clave);
+        }
+       
         #endregion
 
         #region . TARIFA .
@@ -178,6 +202,11 @@ namespace Canchita.Service
         public int obtenerUltimoIDReseva()
         {
             return ReservaDAO.ObtenerIdUltimaReserva();
+        }
+
+        public List<Reserva> listarReservaXUsuario(int idUsuario)
+        {
+            return ReservaDAO.ListarReservaXUsuario(idUsuario);
         }
         #endregion
 
@@ -270,7 +299,10 @@ namespace Canchita.Service
 
         public bool ActualizarCampo(Campo campo)
         {
-            return CampoDAO.Actualizar(campo);
+            if (campo.Imagen==null)
+                return CampoDAO.ActualizarSinImagen(campo);
+            else
+                return CampoDAO.Actualizar(campo);
         }
 
         public List<Campo> ListarCampos()
@@ -295,9 +327,12 @@ namespace Canchita.Service
 
         #endregion
 
+        #region . DETALLERESERVA .
 
-
-
-        
+        public List<DetalleReservaCompletoxUsuario> verDetalleReserva(int idReserva)
+        {
+            return DetalleReservaDAO.VerDetalleXReserva(idReserva);
+        }
+        #endregion
     }
 }

@@ -1,19 +1,20 @@
 ﻿@model AppClient.CanchitaWS.Sede
 
 @{
-    ViewBag.Title = "Edit";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    Layout = null;
 }
 
-<h2>Edit</h2>
+<div class="card-panel grey darken-2 center-align">
+    <h5 class="white-text">Editar Sede</h5>
+</div>
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Sede</h4>
-        <hr />
         @Html.ValidationSummary(true)
         <div class="form-group">
             @Html.LabelFor(model => model.Descripcion, new { @class = "control-label col-md-2" })
@@ -49,6 +50,3 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link href="~/content/css/materialize.min.css" rel="stylesheet" />
     <link href="~/content/css/myStyle.css" rel="stylesheet" />
     @RenderSection("Styles", false)
     
@@ -22,14 +22,29 @@
     </script>
 </head>
 <body>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo"><img src="~/img/logo-web.png" width="180" /></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Registrate aqui</a></li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
     <div>
         @RenderBody()
     </div>
     
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script src="~/content/js/jquery-2.1.4.min.js"></script>
     <script src="~/content/js/jquery.unobtrusive-ajax.js"></script>
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+    <script src="~/content/js/MaterializeClient.min.js"></script>
+    
     @RenderSection("script", false)
     <script>
 
@@ -62,8 +77,6 @@
             $('select').material_select();
             $('.slider').slider({ full_width: false });
         });
-
-      
     </script>
 </body>
 </html>

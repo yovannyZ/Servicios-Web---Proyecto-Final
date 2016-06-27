@@ -35,5 +35,41 @@ namespace AppClient.Controllers
             }
             
         }
+
+
+        public ActionResult RecuperarAccXEmail()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RecuperarAccXEmail(Usuario userRecuperar)
+        {
+            Usuario usuClave = new Usuario();
+            usuClave = proxy.devolverUseryContra(userRecuperar);
+            if (usuClave != null)
+            {
+                string resul = proxy.mandarCorreo(usuClave);
+                if (resul.Equals("Error"))
+                {
+                    ViewBag.Error = "Error al enviar el correo";
+                    return View();
+                }
+                else
+                {
+                    ViewBag.Info = "En Breve se enviará un correo a la cuenta especificada. Gracias";
+                    return View();
+                }
+            }
+            else
+            {
+                ViewBag.Error = "No se encontró email";
+                return View();
+            }
+
+        }
+        
+
 	}
 }

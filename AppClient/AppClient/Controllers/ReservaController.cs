@@ -24,13 +24,14 @@ namespace AppClient.Controllers
         {
             var listadoDetalles = (List<DetalleReserva>)Session["listaDetalles"];
 
-            return View(listadoDetalles);
-        }
+           return View(listadoDetalles);
+     }
 
         public ActionResult EliminarDetalle(int id)
         {
             var listadoDetalles = (List<DetalleReserva>)Session["listaDetalles"];
             listadoDetalles.RemoveAll(x => x.Tarifa.Id == id);
+            
             Session["listaDetalles"] = listadoDetalles;
             return RedirectToAction("DetalleReserva");
         }
@@ -77,22 +78,35 @@ namespace AppClient.Controllers
             return RedirectToAction("listaPagoPend");
         }
 
-
-
-     /*   public ActionResult InsertarHoras(DateTime dia)
+        public ActionResult NuevaReserva()
         {
-            int i = (int)Session["idCampo"];
+            var listaUsuarios= proxy.ListarUsuario();
+            ViewBag.IdUsuario = new SelectList(listaUsuarios, "Id", "Nombres");
+
+            var listaCampos = proxy.ListarCampos();
+            ViewBag.IdCampo = new SelectList(listaCampos, "Id", "Descripcion");
+
+
+            return View();
+        }
+
+
+        public PartialViewResult VerHorarios(DateTime dia, int IdCampo, int IdUsuario)
+        {
             string diaFormat = string.Format("{0:yyyy-MM-dd}", dia);
             ViewBag.dia = diaFormat;
-            var listado = proxy.ListarTarifas(dia, i);
-            return View(listado);
-        }*/
+            Session["diaReserva"] = dia;
+            Session["idCampo"] = IdCampo;
 
-        
+            Usuario usuario =  (Usuario)Session["usuario"];
 
-/*
-        [HttpPost]
-        public ActionResult InsertarHoras(List<Tarifa> lista, DateTime dia)
+            var listado = proxy.ListarTarifas(dia, IdCampo);
+            return PartialView("_VerHorarios", listado);
+        }
+
+
+          [HttpPost]
+        public ActionResult DetalleReserva(List<Tarifa> lista)
         {
             DetalleReserva dtReserva;
             List<DetalleReserva> listaDetalles = new List<DetalleReserva>();
@@ -110,19 +124,58 @@ namespace AppClient.Controllers
                     listaDetalles.Add(dtReserva);
                 }
             }
+            Session["monto"] = monto;
+            Session["listaDetalles"] = listaDetalles;
+
+            return View(listaDetalles);
+        }
+
+          public ActionResult PagarEfectivo(double monto)
+          {
+              ViewBag.Monto = monto;
+              return View();
+          }
+
+
+        [HttpPost]
+          public ActionResult PagarEfectivo(string montoRecibido, double monto)
+          {
+             
+              double cambio =double.Parse(montoRecibido) - monto;
+              Session["MontoRecibido"] = montoRecibido;
+              Session["Cambio"] = cambio;
+              return RedirectToAction("DetallePago");
+          }
+
+
+        public ActionResult DetallePago()
+        {
+            double monto = 0;
+            var listadoDetalles = (List<DetalleReserva>)Session["listaDetalles"];
+
+            foreach (var lista in listadoDetalles)
+            {
+                monto = monto + lista.Precio;
+            }
+
             Reserva reserva = new Reserva();
-            Campo campo = new Campo { Id = 1 };
-            Usuario usuario = new Usuario { Id = 3 };
+            Campo campo = proxy.ObtenerCamposXId((int)Session["idCampo"]);
+            Usuario usuario = (Usuario)Session["usuario"];
             reserva.campo = campo;
             reserva.usuario = usuario;
-            reserva.FechaReserva = dia;
-            reserva.Estado = "Pendiente";
+            reserva.FechaReserva = (DateTime)Session["diaReserva"];
+            reserva.Estado = "Cancelado";
             reserva.Monto = monto;
-            proxy.AgregarReserva(reserva, listaDetalles);
+            proxy.AgregarReserva(reserva, listadoDetalles);
 
-            return RedirectToAction("Index");
+            //crear pago:
+            int idUltimaReserva = proxy.obtenerUltimoIDReseva();
+            Pago pago = new Pago();
+            pago.nroPago = "P" + idUltimaReserva;
+            proxy.reservarPagoEfectivo(pago, idUltimaReserva);
+            proxy.pagarReservaConEfectivo(pago.nroPago);
+            return View();
         }
-        */
 
 	}
 }

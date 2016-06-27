@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AppClient.CanchitaWS.DetalleReservaCompletoxUsuario>
+
+@{
+    ViewBag.Title = "verDetalleXReserva";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>verDetalleXReserva</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionCampo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imagencampo)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionSede)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DireccionSede)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.horaFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.horaInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tarifa)
+        </th>
+        <th></th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionCampo)
+        </td>
+        @{ var imagen = string.Empty;
+         if (item.imagencampo != null)
+         {
+             var base64 = Convert.ToBase64String(item.imagencampo);
+             imagen = string.Format("data:image/jpg;base64,{0}", base64);
+         }
+        }
+        <td>
+        <img width="100" height="70" src="@Html.DisplayFor(modelItem => imagen)" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionSede)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DireccionSede)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.horaFin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.horaInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tarifa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |           
+        </td>
+    </tr>
+}
+
+</table>

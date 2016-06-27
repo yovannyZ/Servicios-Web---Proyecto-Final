@@ -16,8 +16,16 @@ namespace AppClient.Controllers
         // GET: Sede
         public ActionResult Index()
         {
-            var listado = proxy.ListarSedes();
-            return View(listado);
+            if (Session["usuario"] != null)
+            {
+                var listado = proxy.ListarSedes();
+                return View(listado);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Admin");
+            }
+           
         }
 
         public ActionResult Create()
@@ -41,8 +49,6 @@ namespace AppClient.Controllers
             {
                 sede.Imagen = null;
             }
-
-            sede.Estado = "Disponible";
             proxy.AgregarSede(sede);
             return RedirectToAction("Index");
         }
@@ -58,6 +64,31 @@ namespace AppClient.Controllers
               return View(sede);
           }
 
+        [HttpPost]
+          public ActionResult Edit(Sede sede)
+          {
+              proxy.ActualizarSede(sede);
+              return RedirectToAction("Index");
+          }
+
+        public ActionResult Eliminar(int id = 0)
+        {
+            var sede = proxy.ObtenerSedeId(id);
+
+            if (sede == null)
+            {
+                return HttpNotFound();
+            }
+            return View(sede);
+            
+        }
+
+        [HttpPost]
+        public ActionResult Eliminar(Sede sede)
+        {
+            proxy.EliminarSede(sede);
+            return RedirectToAction("Index");
+        }
 
 
     }

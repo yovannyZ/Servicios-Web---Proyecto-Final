@@ -20,7 +20,7 @@ namespace Canchita.Service.Data
              {
                  DBHelper.MakeParam("@pr1",sede.Descripcion),
                  DBHelper.MakeParam("@pr2",sede.Direccion),
-                 DBHelper.MakeParam("@pr3",sede.Estado),
+                 DBHelper.MakeParam("@pr3","Activo"),
                  //cambiar update
                  DBHelper.MakeParam("@p5",sede.Imagen==null?new byte[]{}:sede.Imagen)
                  
@@ -33,12 +33,11 @@ namespace Canchita.Service.Data
         public bool Eliminar(Sede sede)
         {
             bool exito = false;
-            string query = "DELETE FROM SEDE WHERE idSede =@pr1";
+            string query = "UPDATE SEDE SET Estado='Inactivo' WHERE idSede= @pr1";
 
             SqlParameter[] dbParams = new SqlParameter[]
              {
-                 DBHelper.MakeParam("@pr1",sede.Id),
-                  
+                 DBHelper.MakeParam("@pr1",sede.Id)
              };
             exito = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
             return exito;
@@ -56,7 +55,7 @@ namespace Canchita.Service.Data
                  DBHelper.MakeParam("@pr2",sede.Direccion),
                  DBHelper.MakeParam("@pr3",sede.Estado),
                  DBHelper.MakeParam("@pr4",sede.Id),
-                DBHelper.MakeParam("@p5",sede.Imagen==null?(object)DBNull.Value:sede.Imagen)
+                 DBHelper.MakeParam("@p5",sede.Imagen==null?new byte[]{}:sede.Imagen)
                 
 
              };
@@ -68,7 +67,7 @@ namespace Canchita.Service.Data
         {
 
             List<Sede> lista = new List<Sede>();
-            string query = "SELECT * FROM Sede";
+            string query = "SELECT * FROM Sede WHERE Estado='Activo'";
             using (SqlDataReader lector = DBHelper.ExecuteDataReader(query))
             {
                 if (lector != null && lector.HasRows)

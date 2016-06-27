@@ -47,7 +47,29 @@ namespace AppClient.Controllers
             reserva.Monto = monto;
             proxy.AgregarReserva(reserva,listadoDetalles);
 
-            return View();
+            int idUltimaReserva = proxy.obtenerUltimoIDReseva();
+            Pago pago = new Pago();
+            pago.nroPago = "P" + idUltimaReserva;
+            proxy.reservarPagoEfectivo(pago, idUltimaReserva);
+
+            return RedirectToAction("verlistaReservasxCliente");
         }
+
+        public ActionResult verlistaReservasxCliente()
+        {
+            Usuario usuario = (Usuario)Session["usuario"];
+            int idUsuario = usuario.Id;
+            var listado = proxy.listarReservaXUsuario(idUsuario);
+            return View(listado);
+        }
+
+
+        public ActionResult verDetalleXReserva(int id)
+        {
+            var listado = proxy.verDetalleReserva(id);
+            
+            return View(listado);
+        }
+
 	}
 }

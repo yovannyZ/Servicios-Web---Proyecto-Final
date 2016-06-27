@@ -68,6 +68,40 @@ namespace Canchita.Service.Data
             return resul;
         }
 
+        public List<Reserva> ListarReservaXUsuario(int idUsuario)
+        {
+            Reserva reserva = null;
+            Campo campo = new Campo();
+            Usuario usuario = new Usuario();
+            List<Reserva> lista = new List<Reserva>();
+            string query = "Select  R.* from Usuario as U, Reserva as R Where U.idUsuario=R.idUsuario And U.idUsuario=@idUsuario";
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@idUsuario",idUsuario)
+             };
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query, dbParams))
+            {
+
+                if (lector != null && lector.HasRows)
+                {
+
+                    while (lector.Read())
+                    {
+                        reserva = new Reserva();
+                        reserva.Id = int.Parse(lector["idReserva"].ToString());
+                        reserva.FechaReserva = DateTime.Parse(lector["fechaReserva"].ToString());
+                        reserva.Monto = double.Parse(lector["monto"].ToString());
+                        reserva.Estado = lector["estado"].ToString();
+                        campo.Id = int.Parse(lector["idCampo"].ToString());
+                        usuario.Id = int.Parse(lector["idUsuario"].ToString());
+                        reserva.campo = campo;
+                        reserva.usuario = usuario;
+                        lista.Add(reserva);
+                    }
+                }
+            }
+            return lista;
+        }
 
     }
 }

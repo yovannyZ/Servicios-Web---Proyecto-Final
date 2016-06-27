@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "DetallePago";
+    Layout = "~/Views/Shared/_LayoutAdmind.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+<div>
+     <h5 class="center-align blue-text">Total a pagar:</h5>
+</div>
+<div>
+    <h5 class="center-align green-text">@Session["monto"]</h5>
+</div>
+<div >
+    <h5 class="center-align blue-text">Total Recibido:</h5>       
+</div>
+<div>
+    <h5 class="center-align black-text">@Session["MontoRecibido"]</h5>
+</div>
+
+<div>
+    <h5 class="center-align blue-text">Cambio:</h5>
+</div>
+<div>
+    <h5 class="center-align orange-text">@Session["Cambio"]</h5>
+</div>
+
+<div>
+    <a href="/Reserva/NuevaReserva"> Desea hacer otra reserva</a>
+</div>

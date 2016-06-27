@@ -1,21 +1,13 @@
 ﻿@model AppClient.CanchitaWS.Usuario
 
 @{
-    ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h2>Login</h2>
-
-@section Styles {
-
-    <link href="@Url.Content("~/content/materialize/css/style.css")" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="@Url.Content("~/content/materialize/css/page-center.css")" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="@Url.Content("~/content/materialize/css/prism.css")" type="text/css" rel="stylesheet" media="screen,projection">
+   
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 
 
-@using (Html.BeginForm("Login", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+@using (Html.BeginForm("Index", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div id="login-page" class="row">
@@ -30,14 +22,15 @@
                 <div class="row margin">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">perm_identity</i>
-                        @Html.EditorFor(model => model.Username)
+                        @Html.TextBoxFor(model => model.Username,  new { @required = "required" } )
                         <label for="Username" class="center-align">Username</label>
+                       
                     </div>
                 </div>
                 <div class="row margin">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">lock_outline</i>
-                        @Html.PasswordFor(model => model.Clave)
+                        @Html.PasswordFor(model => model.Clave, new { @required = "required" })
                         <label for="Clave">Password</label>
                     </div>
                 </div>
@@ -45,16 +38,13 @@
                 <div class="row margin">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">location_on</i>
-                        @Html.DropDownList("combo", ViewBag.Id as IEnumerable<SelectListItem>, "--Elige tu Sede")
+                        @Html.DropDownList("combo", ViewBag.Id as IEnumerable<SelectListItem>, "--Elige tu Sede", new { @required = "required" })
                         <label class="select-label">Sede</label>
                         
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12 m12 l12  login-text">
-                        <input type="checkbox" id="remember-me" />
-                        <label for="remember-me">Remember me</label>
-                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
@@ -64,10 +54,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6 m6 l6">
-                        <p class="margin medium-small"><a href="page-register.html">Register Now!</a></p>
-                    </div>
-                    <div class="input-field col s6 m6 l6">
-                        <p class="margin right-align medium-small"><a href="page-forgot-password.html">Forgot password ?</a></p>
+                        <p class="margin right-align medium-small"><a href="page-forgot-password.html">Olvisate tu contraseña?</a></p>
                     </div>
                 </div>
 
