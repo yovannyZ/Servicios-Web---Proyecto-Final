@@ -36,7 +36,6 @@ namespace AppClient.Controllers
             
         }
 
-
         public ActionResult RecuperarAccXEmail()
         {
 

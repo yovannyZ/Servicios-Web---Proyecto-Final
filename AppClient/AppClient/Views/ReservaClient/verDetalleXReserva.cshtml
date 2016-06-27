@@ -3,33 +3,39 @@
 @{
     ViewBag.Title = "verDetalleXReserva";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <style type="text/css">
+        table {
+            background-color: whitesmoke;
+            margin-left: 10%;
+            width: 80%;
+        }
+    </style>
 }
 
-<h2>verDetalleXReserva</h2>
+<h2 style="text-decoration:underline;font-family:'Times New Roman', Times, serif ; color:green; text-align:center">Detalle de la Reserva</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
+<h4 style="font-family:Tahoma;">
+    @Html.ActionLink("Volver <--", "verlistaReservasxCliente")
+</h4>
+<table class="table-of-contents">
+    <tr class="row green ">
         <th>
             @Html.DisplayNameFor(model => model.DescripcionCampo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.imagencampo)
         </th>
-
         <th>
             @Html.DisplayNameFor(model => model.DescripcionSede)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DireccionSede)
+        </th>       
+        <th>
+            @Html.DisplayNameFor(model => model.horaInicio)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.horaFin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.horaInicio)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.tarifa)
@@ -37,7 +43,7 @@
         <th></th>
     </tr>
 @foreach (var item in Model) {
-    <tr>
+    <tr  class="row green-text">
         <td>
             @Html.DisplayFor(modelItem => item.DescripcionCampo)
         </td>
@@ -49,7 +55,7 @@
          }
         }
         <td>
-        <img width="100" height="70" src="@Html.DisplayFor(modelItem => imagen)" />
+        <img class="circle" width="100" height="70" src="@Html.DisplayFor(modelItem => imagen)" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DescripcionSede)
@@ -58,17 +64,13 @@
             @Html.DisplayFor(modelItem => item.DireccionSede)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.horaInicio)
+        </td>
+         <td>
             @Html.DisplayFor(modelItem => item.horaFin)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.horaInicio)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.tarifa)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |           
         </td>
     </tr>
 }

@@ -56,8 +56,13 @@ namespace AppClient.Controllers
             }
             Session["monto"] = monto;
             Session["listaDetalles"] = listaDetalles;
-            
-            return RedirectToAction("Login","LoginClient");
+            if (Session["usuario"] != null)
+            {
+                return RedirectToAction("DetalleReserva", "ReservaClient");
+            }
+            else {
+                return RedirectToAction("Login", "LoginClient");
+            }
         }
 
         public PartialViewResult Verajax(DateTime dia)

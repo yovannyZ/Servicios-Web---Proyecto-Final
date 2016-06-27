@@ -3,15 +3,23 @@
 @{
     ViewBag.Title = "verlistaReservasxCliente";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <style type="text/css" >
+        table{
+            background-color:whitesmoke;
+            margin-left:10%;
+            
+            width:80%;
+        }
+    </style>
 }
 
-<h2>verlistaReservasxCliente</h2>
+<h2 style="color:green;text-align:center;text-decoration:underline;font-family:'Times New Roman', Times, serif ">Mis Reservas</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h4 style="font-family:Tahoma;">
+    @Html.ActionLink("Realizar otra Reserva","Index","SedeClient")
+</h4>
 <table class="table">
-    <tr>
+    <tr class="row green ">
         <th>
             @Html.DisplayNameFor(model => model.Estado)
         </th>
@@ -25,7 +33,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    <tr class="row green-text">
         <td>
             @Html.DisplayFor(modelItem => item.Estado)
         </td>
@@ -36,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.Monto)
         </td>
         <td>
-            @Html.ActionLink(" - Ver Detalle -", "verDetalleXReserva", new { id = item.Id }) |
+            @Html.ActionLink("- Ver Detalle -", "verDetalleXReserva", new { id = item.Id }) 
 
         </td>
     </tr>
