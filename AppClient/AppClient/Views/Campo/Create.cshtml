@@ -21,7 +21,7 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="mdi-action-account-circle prefix"></i>
-                                                @Html.EditorFor(model => model.Descripcion)
+                                                @Html.TextBoxFor(model => model.Descripcion, new { @required="required" })
                                                 @Html.LabelFor(model => model.Descripcion)
                                             </div>
                                         </div>
@@ -39,7 +39,7 @@
 
                                         <div class="row">
                                             <div class="input-field col m6 " >
-                                                <img id="imagenSede" src="" width="180" height="200"/>
+                                                <img id="imagenCampo" src="" width="180" height="200"/>
                                             </div>
                                         </div>
 
@@ -70,7 +70,7 @@
 
 <script>
 
-    var img = $('#imagenSede');
+    var img = $('#imagenCampo');
     img.css('display', 'none');
 
     $('#upload-button').click(function () {

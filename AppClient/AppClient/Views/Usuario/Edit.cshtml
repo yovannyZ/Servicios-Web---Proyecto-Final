@@ -5,15 +5,14 @@
     Layout = null;
 }
 
-<h2>Edit</h2>
+<h2>Editar Usuario</h2>
 
 @using (Html.BeginForm("Edit", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Campo</h4>
-        <hr />
+        
         @Html.ValidationSummary(true)
         <div class="form-group">
             @Html.LabelFor(model => model.Nombres, new { @class = "control-label col-md-2" })

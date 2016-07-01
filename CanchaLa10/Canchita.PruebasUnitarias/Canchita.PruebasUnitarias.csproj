@@ -75,7 +75,16 @@
     <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Campo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.DetalleReservaCompletoxUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Pago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Reserva.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TransaccionWS\Canchita.PruebasUnitarias.TransaccionWS.Sede.datasource">

@@ -33,7 +33,14 @@ namespace AppClient.Controllers
 
         public ActionResult Create()
         {
+            if (Session["usuario"] == null)
+            {
+                return RedirectToAction("Index", "Admin");
+            }
+            else
+            {
                 return View();
+            }
         }
 
 
@@ -63,13 +70,21 @@ namespace AppClient.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            var campo = proxy.ObtenerCamposXId(id);
-
-            if (campo == null)
+            if (Session["usuario"] == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Index", "Admin");
             }
-            return View(campo);
+            else
+            {
+                var campo = proxy.ObtenerCamposXId(id);
+
+                if (campo == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(campo);
+            }
+           
         }
 
         [HttpPost]
@@ -94,13 +109,22 @@ namespace AppClient.Controllers
 
         public ActionResult Eliminar(int id = 0)
         {
-            var sede = proxy.ObtenerCamposXId(id);
 
-            if (sede == null)
+            if (Session["usuario"] == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Index", "Admin");
             }
-            return View(sede);
+            else
+            {
+                var sede = proxy.ObtenerCamposXId(id);
+
+                if (sede == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(sede);
+            }
+            
 
         }
 

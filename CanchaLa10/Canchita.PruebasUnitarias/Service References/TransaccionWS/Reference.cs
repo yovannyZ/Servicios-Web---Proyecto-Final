@@ -23,28 +23,25 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ApMaternoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ApPaternoField;
+        private string ApellidosField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ClaveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DniField;
+        private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
+        private string EstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombresField;
+        private byte[] ImagenField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TelefonoField;
+        private string NombresField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TipoUsuarioField;
@@ -63,27 +60,14 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ApMaterno {
+        public string Apellidos {
             get {
-                return this.ApMaternoField;
+                return this.ApellidosField;
             }
             set {
-                if ((object.ReferenceEquals(this.ApMaternoField, value) != true)) {
-                    this.ApMaternoField = value;
-                    this.RaisePropertyChanged("ApMaterno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ApPaterno {
-            get {
-                return this.ApPaternoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ApPaternoField, value) != true)) {
-                    this.ApPaternoField = value;
-                    this.RaisePropertyChanged("ApPaterno");
+                if ((object.ReferenceEquals(this.ApellidosField, value) != true)) {
+                    this.ApellidosField = value;
+                    this.RaisePropertyChanged("Apellidos");
                 }
             }
         }
@@ -102,19 +86,6 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Dni {
-            get {
-                return this.DniField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DniField, value) != true)) {
-                    this.DniField = value;
-                    this.RaisePropertyChanged("Dni");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Email {
             get {
                 return this.EmailField;
@@ -123,6 +94,19 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
                 if ((object.ReferenceEquals(this.EmailField, value) != true)) {
                     this.EmailField = value;
                     this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
                 }
             }
         }
@@ -141,6 +125,19 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Imagen {
+            get {
+                return this.ImagenField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImagenField, value) != true)) {
+                    this.ImagenField = value;
+                    this.RaisePropertyChanged("Imagen");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Nombres {
             get {
                 return this.NombresField;
@@ -149,19 +146,6 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
                 if ((object.ReferenceEquals(this.NombresField, value) != true)) {
                     this.NombresField = value;
                     this.RaisePropertyChanged("Nombres");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Telefono {
-            get {
-                return this.TelefonoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TelefonoField, value) != true)) {
-                    this.TelefonoField = value;
-                    this.RaisePropertyChanged("Telefono");
                 }
             }
         }
@@ -215,6 +199,9 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         private bool CheckedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string HoraFinField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -245,6 +232,19 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
                 if ((this.CheckedField.Equals(value) != true)) {
                     this.CheckedField = value;
                     this.RaisePropertyChanged("Checked");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
                 }
             }
         }
@@ -455,6 +455,9 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] ImagenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Canchita.PruebasUnitarias.TransaccionWS.Sede SedeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -507,6 +510,19 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Imagen {
+            get {
+                return this.ImagenField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImagenField, value) != true)) {
+                    this.ImagenField = value;
+                    this.RaisePropertyChanged("Imagen");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public Canchita.PruebasUnitarias.TransaccionWS.Sede Sede {
             get {
                 return this.SedeField;
@@ -549,6 +565,9 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] ImagenField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -608,6 +627,19 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Imagen {
+            get {
+                return this.ImagenField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImagenField, value) != true)) {
+                    this.ImagenField = value;
+                    this.RaisePropertyChanged("Imagen");
                 }
             }
         }
@@ -949,6 +981,147 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DetalleReservaCompletoxUsuario", Namespace="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo")]
+    [System.SerializableAttribute()]
+    public partial class DetalleReservaCompletoxUsuario : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionCampoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionSedeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DireccionSedeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string horaFinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string horaInicioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] imagencampoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double tarifaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DescripcionCampo {
+            get {
+                return this.DescripcionCampoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionCampoField, value) != true)) {
+                    this.DescripcionCampoField = value;
+                    this.RaisePropertyChanged("DescripcionCampo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DescripcionSede {
+            get {
+                return this.DescripcionSedeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionSedeField, value) != true)) {
+                    this.DescripcionSedeField = value;
+                    this.RaisePropertyChanged("DescripcionSede");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DireccionSede {
+            get {
+                return this.DireccionSedeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DireccionSedeField, value) != true)) {
+                    this.DireccionSedeField = value;
+                    this.RaisePropertyChanged("DireccionSede");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string horaFin {
+            get {
+                return this.horaFinField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.horaFinField, value) != true)) {
+                    this.horaFinField = value;
+                    this.RaisePropertyChanged("horaFin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string horaInicio {
+            get {
+                return this.horaInicioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.horaInicioField, value) != true)) {
+                    this.horaInicioField = value;
+                    this.RaisePropertyChanged("horaInicio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] imagencampo {
+            get {
+                return this.imagencampoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imagencampoField, value) != true)) {
+                    this.imagencampoField = value;
+                    this.RaisePropertyChanged("imagencampo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double tarifa {
+            get {
+                return this.tarifaField;
+            }
+            set {
+                if ((this.tarifaField.Equals(value) != true)) {
+                    this.tarifaField = value;
+                    this.RaisePropertyChanged("tarifa");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TransaccionWS.ITransaccion")]
     public interface ITransaccion {
@@ -971,17 +1144,71 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ListarUsuarioResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Usuario>> ListarUsuarioAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ValidarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ValidarUsuarioResponse")]
-        bool ValidarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/EmininarUsuario", ReplyAction="http://tempuri.org/ITransaccion/EmininarUsuarioResponse")]
+        bool EmininarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/EmininarUsuario", ReplyAction="http://tempuri.org/ITransaccion/EmininarUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> EmininarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ValidarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ValidarUsuarioResponse")]
-        System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        Canchita.PruebasUnitarias.TransaccionWS.Usuario ValidarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ValidarUsuario", ReplyAction="http://tempuri.org/ITransaccion/ValidarUsuarioResponse")]
+        System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Usuario> ValidarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerUsuarioId", ReplyAction="http://tempuri.org/ITransaccion/ObtenerUsuarioIdResponse")]
+        Canchita.PruebasUnitarias.TransaccionWS.Usuario ObtenerUsuarioId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerUsuarioId", ReplyAction="http://tempuri.org/ITransaccion/ObtenerUsuarioIdResponse")]
+        System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Usuario> ObtenerUsuarioIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/devolverUseryContra", ReplyAction="http://tempuri.org/ITransaccion/devolverUseryContraResponse")]
+        Canchita.PruebasUnitarias.TransaccionWS.Usuario devolverUseryContra(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/devolverUseryContra", ReplyAction="http://tempuri.org/ITransaccion/devolverUseryContraResponse")]
+        System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Usuario> devolverUseryContraAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/mandarCorreo", ReplyAction="http://tempuri.org/ITransaccion/mandarCorreoResponse")]
+        string mandarCorreo(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/mandarCorreo", ReplyAction="http://tempuri.org/ITransaccion/mandarCorreoResponse")]
+        System.Threading.Tasks.Task<string> mandarCorreoAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifas", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasResponse")]
-        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ListarTarifas(System.DateTime fechaReserva);
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ListarTarifas(System.DateTime fechaReserva, int idCampo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifas", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa>> ListarTarifasAsync(System.DateTime fechaReserva);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa>> ListarTarifasAsync(System.DateTime fechaReserva, int idCampo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarTarifa", ReplyAction="http://tempuri.org/ITransaccion/AgregarTarifaResponse")]
+        bool AgregarTarifa(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarTarifa", ReplyAction="http://tempuri.org/ITransaccion/AgregarTarifaResponse")]
+        System.Threading.Tasks.Task<bool> AgregarTarifaAsync(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/EliminarTarifa", ReplyAction="http://tempuri.org/ITransaccion/EliminarTarifaResponse")]
+        bool EliminarTarifa(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/EliminarTarifa", ReplyAction="http://tempuri.org/ITransaccion/EliminarTarifaResponse")]
+        System.Threading.Tasks.Task<bool> EliminarTarifaAsync(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ActualizarTarifa", ReplyAction="http://tempuri.org/ITransaccion/ActualizarTarifaResponse")]
+        bool ActualizarTarifa(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ActualizarTarifa", ReplyAction="http://tempuri.org/ITransaccion/ActualizarTarifaResponse")]
+        System.Threading.Tasks.Task<bool> ActualizarTarifaAsync(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifasAdmin", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasAdminResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ListarTarifasAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifasAdmin", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa>> ListarTarifasAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerTarifaxI", ReplyAction="http://tempuri.org/ITransaccion/ObtenerTarifaxIResponse")]
+        Canchita.PruebasUnitarias.TransaccionWS.Tarifa ObtenerTarifaxI(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerTarifaxI", ReplyAction="http://tempuri.org/ITransaccion/ObtenerTarifaxIResponse")]
+        System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ObtenerTarifaxIAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarReserva", ReplyAction="http://tempuri.org/ITransaccion/AgregarReservaResponse")]
         bool AgregarReserva(Canchita.PruebasUnitarias.TransaccionWS.Reserva reserva, System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva> listaDetalle);
@@ -994,6 +1221,24 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/retornarMontoReserva", ReplyAction="http://tempuri.org/ITransaccion/retornarMontoReservaResponse")]
         System.Threading.Tasks.Task<double> retornarMontoReservaAsync(int idReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/obtenerUltimoIDReseva", ReplyAction="http://tempuri.org/ITransaccion/obtenerUltimoIDResevaResponse")]
+        int obtenerUltimoIDReseva();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/obtenerUltimoIDReseva", ReplyAction="http://tempuri.org/ITransaccion/obtenerUltimoIDResevaResponse")]
+        System.Threading.Tasks.Task<int> obtenerUltimoIDResevaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarReservaXUsuario", ReplyAction="http://tempuri.org/ITransaccion/listarReservaXUsuarioResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> listarReservaXUsuario(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarReservaXUsuario", ReplyAction="http://tempuri.org/ITransaccion/listarReservaXUsuarioResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> listarReservaXUsuarioAsync(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarReservas", ReplyAction="http://tempuri.org/ITransaccion/ListarReservasResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> ListarReservas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarReservas", ReplyAction="http://tempuri.org/ITransaccion/ListarReservasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> ListarReservasAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/crearTarjetas", ReplyAction="http://tempuri.org/ITransaccion/crearTarjetasResponse")]
         bool crearTarjetas(Canchita.PruebasUnitarias.TransaccionWS.Tarjeta tarjeta);
@@ -1079,6 +1324,12 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/EliminarSede", ReplyAction="http://tempuri.org/ITransaccion/EliminarSedeResponse")]
         System.Threading.Tasks.Task<bool> EliminarSedeAsync(Canchita.PruebasUnitarias.TransaccionWS.Sede sede);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerSedeId", ReplyAction="http://tempuri.org/ITransaccion/ObtenerSedeIdResponse")]
+        Canchita.PruebasUnitarias.TransaccionWS.Sede ObtenerSedeId(int idSede);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerSedeId", ReplyAction="http://tempuri.org/ITransaccion/ObtenerSedeIdResponse")]
+        System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Sede> ObtenerSedeIdAsync(int idSede);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarCampo", ReplyAction="http://tempuri.org/ITransaccion/AgregarCampoResponse")]
         bool AgregarCampo(Canchita.PruebasUnitarias.TransaccionWS.Campo campo);
         
@@ -1102,6 +1353,30 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/EliminarCampo", ReplyAction="http://tempuri.org/ITransaccion/EliminarCampoResponse")]
         System.Threading.Tasks.Task<bool> EliminarCampoAsync(Canchita.PruebasUnitarias.TransaccionWS.Campo campo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerCamposXSede", ReplyAction="http://tempuri.org/ITransaccion/ObtenerCamposXSedeResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Campo> ObtenerCamposXSede(int idSede);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerCamposXSede", ReplyAction="http://tempuri.org/ITransaccion/ObtenerCamposXSedeResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Campo>> ObtenerCamposXSedeAsync(int idSede);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerCamposXId", ReplyAction="http://tempuri.org/ITransaccion/ObtenerCamposXIdResponse")]
+        Canchita.PruebasUnitarias.TransaccionWS.Campo ObtenerCamposXId(int idCampo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ObtenerCamposXId", ReplyAction="http://tempuri.org/ITransaccion/ObtenerCamposXIdResponse")]
+        System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Campo> ObtenerCamposXIdAsync(int idCampo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/verDetalleReserva", ReplyAction="http://tempuri.org/ITransaccion/verDetalleReservaResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReservaCompletoxUsuario> verDetalleReserva(int idReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/verDetalleReserva", ReplyAction="http://tempuri.org/ITransaccion/verDetalleReservaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReservaCompletoxUsuario>> verDetalleReservaAsync(int idReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarDetalleXReserva", ReplyAction="http://tempuri.org/ITransaccion/listarDetalleXReservaResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva> listarDetalleXReserva(int IdReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarDetalleXReserva", ReplyAction="http://tempuri.org/ITransaccion/listarDetalleXReservaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva>> listarDetalleXReservaAsync(int IdReserva);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1155,20 +1430,92 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
             return base.Channel.ListarUsuarioAsync();
         }
         
-        public bool ValidarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+        public bool EmininarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.EmininarUsuario(usuario);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EmininarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.EmininarUsuarioAsync(usuario);
+        }
+        
+        public Canchita.PruebasUnitarias.TransaccionWS.Usuario ValidarUsuario(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
             return base.Channel.ValidarUsuario(usuario);
         }
         
-        public System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+        public System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Usuario> ValidarUsuarioAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
             return base.Channel.ValidarUsuarioAsync(usuario);
         }
         
-        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ListarTarifas(System.DateTime fechaReserva) {
-            return base.Channel.ListarTarifas(fechaReserva);
+        public Canchita.PruebasUnitarias.TransaccionWS.Usuario ObtenerUsuarioId(int id) {
+            return base.Channel.ObtenerUsuarioId(id);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa>> ListarTarifasAsync(System.DateTime fechaReserva) {
-            return base.Channel.ListarTarifasAsync(fechaReserva);
+        public System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Usuario> ObtenerUsuarioIdAsync(int id) {
+            return base.Channel.ObtenerUsuarioIdAsync(id);
+        }
+        
+        public Canchita.PruebasUnitarias.TransaccionWS.Usuario devolverUseryContra(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.devolverUseryContra(usuario);
+        }
+        
+        public System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Usuario> devolverUseryContraAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.devolverUseryContraAsync(usuario);
+        }
+        
+        public string mandarCorreo(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.mandarCorreo(usuario);
+        }
+        
+        public System.Threading.Tasks.Task<string> mandarCorreoAsync(Canchita.PruebasUnitarias.TransaccionWS.Usuario usuario) {
+            return base.Channel.mandarCorreoAsync(usuario);
+        }
+        
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ListarTarifas(System.DateTime fechaReserva, int idCampo) {
+            return base.Channel.ListarTarifas(fechaReserva, idCampo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa>> ListarTarifasAsync(System.DateTime fechaReserva, int idCampo) {
+            return base.Channel.ListarTarifasAsync(fechaReserva, idCampo);
+        }
+        
+        public bool AgregarTarifa(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa) {
+            return base.Channel.AgregarTarifa(tarifa);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AgregarTarifaAsync(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa) {
+            return base.Channel.AgregarTarifaAsync(tarifa);
+        }
+        
+        public bool EliminarTarifa(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa) {
+            return base.Channel.EliminarTarifa(tarifa);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EliminarTarifaAsync(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa) {
+            return base.Channel.EliminarTarifaAsync(tarifa);
+        }
+        
+        public bool ActualizarTarifa(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa) {
+            return base.Channel.ActualizarTarifa(tarifa);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ActualizarTarifaAsync(Canchita.PruebasUnitarias.TransaccionWS.Tarifa tarifa) {
+            return base.Channel.ActualizarTarifaAsync(tarifa);
+        }
+        
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ListarTarifasAdmin() {
+            return base.Channel.ListarTarifasAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Tarifa>> ListarTarifasAdminAsync() {
+            return base.Channel.ListarTarifasAdminAsync();
+        }
+        
+        public Canchita.PruebasUnitarias.TransaccionWS.Tarifa ObtenerTarifaxI(int id) {
+            return base.Channel.ObtenerTarifaxI(id);
+        }
+        
+        public System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Tarifa> ObtenerTarifaxIAsync(int id) {
+            return base.Channel.ObtenerTarifaxIAsync(id);
         }
         
         public bool AgregarReserva(Canchita.PruebasUnitarias.TransaccionWS.Reserva reserva, System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva> listaDetalle) {
@@ -1185,6 +1532,30 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         public System.Threading.Tasks.Task<double> retornarMontoReservaAsync(int idReserva) {
             return base.Channel.retornarMontoReservaAsync(idReserva);
+        }
+        
+        public int obtenerUltimoIDReseva() {
+            return base.Channel.obtenerUltimoIDReseva();
+        }
+        
+        public System.Threading.Tasks.Task<int> obtenerUltimoIDResevaAsync() {
+            return base.Channel.obtenerUltimoIDResevaAsync();
+        }
+        
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> listarReservaXUsuario(int idUsuario) {
+            return base.Channel.listarReservaXUsuario(idUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> listarReservaXUsuarioAsync(int idUsuario) {
+            return base.Channel.listarReservaXUsuarioAsync(idUsuario);
+        }
+        
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> ListarReservas() {
+            return base.Channel.ListarReservas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> ListarReservasAsync() {
+            return base.Channel.ListarReservasAsync();
         }
         
         public bool crearTarjetas(Canchita.PruebasUnitarias.TransaccionWS.Tarjeta tarjeta) {
@@ -1299,6 +1670,14 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
             return base.Channel.EliminarSedeAsync(sede);
         }
         
+        public Canchita.PruebasUnitarias.TransaccionWS.Sede ObtenerSedeId(int idSede) {
+            return base.Channel.ObtenerSedeId(idSede);
+        }
+        
+        public System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Sede> ObtenerSedeIdAsync(int idSede) {
+            return base.Channel.ObtenerSedeIdAsync(idSede);
+        }
+        
         public bool AgregarCampo(Canchita.PruebasUnitarias.TransaccionWS.Campo campo) {
             return base.Channel.AgregarCampo(campo);
         }
@@ -1329,6 +1708,38 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         public System.Threading.Tasks.Task<bool> EliminarCampoAsync(Canchita.PruebasUnitarias.TransaccionWS.Campo campo) {
             return base.Channel.EliminarCampoAsync(campo);
+        }
+        
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Campo> ObtenerCamposXSede(int idSede) {
+            return base.Channel.ObtenerCamposXSede(idSede);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Campo>> ObtenerCamposXSedeAsync(int idSede) {
+            return base.Channel.ObtenerCamposXSedeAsync(idSede);
+        }
+        
+        public Canchita.PruebasUnitarias.TransaccionWS.Campo ObtenerCamposXId(int idCampo) {
+            return base.Channel.ObtenerCamposXId(idCampo);
+        }
+        
+        public System.Threading.Tasks.Task<Canchita.PruebasUnitarias.TransaccionWS.Campo> ObtenerCamposXIdAsync(int idCampo) {
+            return base.Channel.ObtenerCamposXIdAsync(idCampo);
+        }
+        
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReservaCompletoxUsuario> verDetalleReserva(int idReserva) {
+            return base.Channel.verDetalleReserva(idReserva);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReservaCompletoxUsuario>> verDetalleReservaAsync(int idReserva) {
+            return base.Channel.verDetalleReservaAsync(idReserva);
+        }
+        
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva> listarDetalleXReserva(int IdReserva) {
+            return base.Channel.listarDetalleXReserva(IdReserva);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva>> listarDetalleXReservaAsync(int IdReserva) {
+            return base.Channel.listarDetalleXReservaAsync(IdReserva);
         }
     }
 }

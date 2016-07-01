@@ -2,14 +2,13 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="Usuario">
     <xs:sequence>
-      <xs:element minOccurs="0" name="ApMaterno" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ApPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Apellidos" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Dni" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="Nombres" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TipoUsuario" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -30,6 +29,7 @@
   <xs:complexType name="Tarifa">
     <xs:sequence>
       <xs:element minOccurs="0" name="Checked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="HoraFin" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="HoraInicio" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
@@ -53,6 +53,7 @@
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="Sede" nillable="true" type="tns:Sede" />
     </xs:sequence>
   </xs:complexType>
@@ -63,6 +64,7 @@
       <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Sede" nillable="true" type="tns:Sede" />
@@ -82,6 +84,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DetalleReserva" nillable="true" type="tns:DetalleReserva" />
+  <xs:complexType name="ArrayOfReserva">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Reserva" nillable="true" type="tns:Reserva" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReserva" nillable="true" type="tns:ArrayOfReserva" />
   <xs:complexType name="Tarjeta">
     <xs:sequence>
       <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
@@ -126,4 +134,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfCampo" nillable="true" type="tns:ArrayOfCampo" />
+  <xs:complexType name="ArrayOfDetalleReservaCompletoxUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetalleReservaCompletoxUsuario" nillable="true" type="tns:DetalleReservaCompletoxUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetalleReservaCompletoxUsuario" nillable="true" type="tns:ArrayOfDetalleReservaCompletoxUsuario" />
+  <xs:complexType name="DetalleReservaCompletoxUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DescripcionCampo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionSede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DireccionSede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="horaFin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="horaInicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="imagencampo" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="tarifa" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalleReservaCompletoxUsuario" nillable="true" type="tns:DetalleReservaCompletoxUsuario" />
 </xs:schema>

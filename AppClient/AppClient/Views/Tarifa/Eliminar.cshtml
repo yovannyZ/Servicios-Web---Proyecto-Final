@@ -1,0 +1,90 @@
+﻿@model AppClient.CanchitaWS.Tarifa
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Eliminar</title>
+</head>
+<body>
+    <div id="basic-card" class="section">
+        <div class="row">
+            <div class="col s12 m10 l12">
+                <div class="row">
+                    <div class="col s12 m8 l12">
+                        <div class="card  white">
+                            <div class="card-content cyan lighten-4">
+                                <h5 class=" center-align grey-text  text-darken-2">¿Estas seguro que deseas eliminar?</h5>
+
+                            </div>
+                            <div class="card-action">
+                                <div id="table-datatables">
+
+                                    <div class="row">
+
+                                        <div class="col s12 m8 l9 offset-l1">
+                                            <table id="data-table-simple" class="responsive-table display" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            Hora Iinicio
+                                                        </th>
+                                                        <th>
+                                                            Hora Fin
+                                                        </th>
+                                                        <th>
+                                                            Precio
+                                                        </th>
+                                                        <th>
+                                                            Estado
+                                                        </th>
+                                                        
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => modelItem.HoraInicio)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => modelItem.HoraFin)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => modelItem.Precio)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => modelItem.Estado)
+                                                        </td>
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-default" />
+               
+            </div>
+        }
+   
+</body>
+</html>

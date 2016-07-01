@@ -15,8 +15,7 @@ namespace AppClient.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var listasedes = proxy.ListarSedes();
-            ViewBag.Id = new SelectList(listasedes, "Id", "Descripcion");
+            ListarSedes();
             return View();
         }
 
@@ -24,8 +23,7 @@ namespace AppClient.Controllers
         public ActionResult Index(Usuario usuario, int combo)
         {
             usuario.TipoUsuario = "Administrador";
-            var listasedes = proxy.ListarSedes();
-            ViewBag.Id = new SelectList(listasedes, "Id", "Descripcion");
+            ListarSedes();
             Session["sedeSelect"] = combo;
             Usuario usuLogeado = proxy.ValidarUsuario(usuario);
             if (usuLogeado != null)
@@ -40,6 +38,26 @@ namespace AppClient.Controllers
                 return View();
             }
 
+        }
+        public ActionResult CerrarSesion()
+        {
+            Session.Remove("sedeSelect");
+            Session.Remove("usuario");
+            Session.Remove("listaDetalles");
+            Session.Remove("DetalleReserva");
+            Session.Remove("idCampo");
+            Session.Remove("usuariocliente");
+            Session.Remove("monto");
+            Session.Remove("MontoRecibido");
+            Session.Remove("Cambio");
+            Session.Remove("diaReserva");
+            return View("Index");
+        }
+
+        public void ListarSedes()
+        {
+            var listasedes = proxy.ListarSedes();
+            ViewBag.Id = new SelectList(listasedes, "Id", "Descripcion");
         }
 	}
 }

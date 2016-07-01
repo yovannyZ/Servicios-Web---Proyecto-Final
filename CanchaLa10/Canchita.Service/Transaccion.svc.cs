@@ -309,7 +309,10 @@ namespace Canchita.Service
 
         public bool ActualizarSede(Sede sede)
         {
-            return SedeDAO.Actualizar(sede);
+            if (sede.Imagen == null)
+                return SedeDAO.ActualizarSinImagen(sede);
+            else
+                 return SedeDAO.Actualizar(sede);
         }
 
         public List<Sede> ListarSedes()

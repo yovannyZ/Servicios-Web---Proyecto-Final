@@ -14,16 +14,16 @@ namespace AppClient.Controllers
         // GET: /ReservaClient/
         public ActionResult DetalleReserva()
         {
-          var listadoDetalles = (List<DetalleReserva>)Session["listaDetalles"];
+            var listadoDetalles = (List<DetalleReserva>)Session["listaDetallesCliente"];
 
           return View(listadoDetalles);
         }
 
         public ActionResult EliminarDetalle(int id)
         {
-            var listadoDetalles = (List<DetalleReserva>)Session["listaDetalles"];
+            var listadoDetalles = (List<DetalleReserva>)Session["listaDetallesCliente"];
             listadoDetalles.RemoveAll(x => x.Tarifa.Id==id);
-            Session["listaDetalles"] = listadoDetalles;
+            Session["listaDetallesCliente"] = listadoDetalles;
             return RedirectToAction("DetalleReserva");
         }
 
@@ -31,18 +31,18 @@ namespace AppClient.Controllers
         public ActionResult CrearReserva()
         {
             double monto = 0;
-            var listadoDetalles = (List<DetalleReserva>)Session["listaDetalles"];
+            var listadoDetalles = (List<DetalleReserva>)Session["listaDetallesCliente"];
 
             foreach(var lista in listadoDetalles ){
                 monto = monto + lista.Precio;
             }
 
             Reserva reserva = new Reserva();
-            Campo campo = proxy.ObtenerCamposXId((int)Session["idCampo"]);
-            Usuario usuario =(Usuario)Session["usuario"];
+            Campo campo = proxy.ObtenerCamposXId((int)Session["idCampoCliente"]);
+            Usuario usuario = (Usuario)Session["usuarioCliente"];
             reserva.campo = campo;
             reserva.usuario = usuario;
-            reserva.FechaReserva = (DateTime)Session["diaReserva"];
+            reserva.FechaReserva = (DateTime)Session["diaReservaCliente"];
             reserva.Estado = "Pendiente";
             reserva.Monto = monto;
             proxy.AgregarReserva(reserva,listadoDetalles);
@@ -57,9 +57,14 @@ namespace AppClient.Controllers
 
         public ActionResult verlistaReservasxCliente()
         {
-            Usuario usuario = (Usuario)Session["usuario"];
+            Usuario usuario = (Usuario)Session["usuarioCliente"];
             int idUsuario = usuario.Id;
             var listado = proxy.listarReservaXUsuario(idUsuario);
+            if (listado.Count <=0)
+            {
+                ViewBag.Mensaje = "Ud. no cuenta con reservas";
+            }
+                
             return View(listado);
         }
 

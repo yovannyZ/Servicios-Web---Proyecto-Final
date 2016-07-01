@@ -107,7 +107,7 @@ namespace Canchita.Service.Data
                  DBHelper.MakeParam("@pr1",tarifa.HoraInicio),
                  DBHelper.MakeParam("@pr2",tarifa.HoraFin),
                   DBHelper.MakeParam("@pr3",tarifa.Precio),
-                    DBHelper.MakeParam("@pr4",tarifa.Estado),
+                    DBHelper.MakeParam("@pr4","Activo")
 
              };
             exito = DBHelper.ExecuteNonQuery(query, parametros) > 0;

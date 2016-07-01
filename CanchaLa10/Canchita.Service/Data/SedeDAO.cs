@@ -55,13 +55,31 @@ namespace Canchita.Service.Data
                  DBHelper.MakeParam("@pr2",sede.Direccion),
                  DBHelper.MakeParam("@pr3",sede.Estado),
                  DBHelper.MakeParam("@pr4",sede.Id),
-                 DBHelper.MakeParam("@p5",sede.Imagen==null?new byte[]{}:sede.Imagen)
+                 DBHelper.MakeParam("@p5",sede.Imagen)
                 
 
              };
             exito = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
             return exito;
         }
+
+        public bool ActualizarSinImagen(Sede sede)
+        {
+            bool exito = false;
+            string query = "UPDATE SEDE SET Descripcion = @pr1, Direccion=@pr2, Estado=@pr3  WHERE idSede= @pr4";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@pr1",sede.Descripcion),
+                 DBHelper.MakeParam("@pr2",sede.Direccion),
+                 DBHelper.MakeParam("@pr3",sede.Estado),
+                 DBHelper.MakeParam("@pr4",sede.Id)
+               
+             };
+            exito = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
+            return exito;
+        }
+
 
         public List<Sede> ListarSedes()
         {

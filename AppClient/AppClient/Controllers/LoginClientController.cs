@@ -25,10 +25,10 @@ namespace AppClient.Controllers
 
             if (usuLogeado!=null)
             {
-                Session["usuario"] = usuLogeado;
-                if (Session["idCampo"] != null)
+                Session["usuarioCliente"] = usuLogeado;
+                if (Session["idCampoCliente"] != null)
                 {
-                    return RedirectToAction("VerCalendario", "CampoClient", new { idCampo = (int)Session["idCampo"] });
+                    return RedirectToAction("VerCalendario", "CampoClient", new { idCampo = (int)Session["idCampoCliente"] });
                 }
                 return RedirectToAction("Index", "Home");
             }
@@ -88,10 +88,10 @@ namespace AppClient.Controllers
                usuario.Estado = "Activo";
                proxy.AgregarUsuario(usuario);
                Usuario nuevoUsuario = proxy.ValidarUsuario(usuario);
-               Session["usuario"] = nuevoUsuario;
-               if (Session["idCampo"]!= null)
+               Session["usuarioCliente"] = nuevoUsuario;
+               if (Session["idCampoCliente"] != null)
                {
-                   return RedirectToAction("VerCalendario", "CampoClient", new { idCampo = (int)Session["idCampo"] });
+                   return RedirectToAction("VerCalendario", "CampoClient", new { idCampo = (int)Session["idCampoCliente"] });
                }
                return RedirectToAction("Index","Home");
            }
@@ -103,7 +103,12 @@ namespace AppClient.Controllers
 
         public ActionResult CerrarSesion()
         {
-            Session.RemoveAll();
+            Session.Remove("usuarioCliente");
+            Session.Remove("idCampoCliente");
+            Session.Remove("SedeCliente");
+            Session.Remove("montoCliente");
+            Session.Remove("listaDetallesCliente");
+            Session.Remove("diaReservaCliente");
             return RedirectToAction("Index", "Home");
         }
 

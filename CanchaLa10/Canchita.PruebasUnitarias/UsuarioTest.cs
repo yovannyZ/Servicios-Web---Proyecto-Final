@@ -16,11 +16,8 @@ namespace Canchita.PruebasUnitarias
             Usuario usuario = new Usuario()
             {
                 Nombres = "Armando",
-                ApPaterno = "Carbajal",
-                ApMaterno = "Carbajal",
-                Dni = "70123394",
+                Apellidos = "Carbajal",          
                 Email = "Armandez@hotmail.com",
-                Telefono = "943823186",
                 TipoUsuario = "Cliente",
                 Username = "elcliente",
                 Clave = "abc"
@@ -35,16 +32,13 @@ namespace Canchita.PruebasUnitarias
         {
             Usuario usuario = new Usuario()
             {
-                Id=10,
+                Id=1,
                 Nombres = "Armando",
-                ApPaterno = "Carbajal",
-                ApMaterno = "Carbajal",
-                Dni = "70123394",
+                Apellidos = "Carbajal",
                 Email = "Armandez@hotmail.com",
-                Telefono = "943823186",
-                TipoUsuario = "Administrador",
-                Username = "acarbajal",
-                Clave = "321"
+                TipoUsuario = "Cliente",
+                Username = "elcliente",
+                Clave = "abc"
             };
 
 
@@ -69,7 +63,7 @@ namespace Canchita.PruebasUnitarias
                  Clave = "321"
              };
 
-             Assert.IsTrue(proxy.ValidarUsuario(usuario));
+             Assert.IsNotNull(proxy.ValidarUsuario(usuario));
          }
     }
 }

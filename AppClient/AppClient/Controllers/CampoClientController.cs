@@ -14,14 +14,14 @@ namespace AppClient.Controllers
         // GET: CampoClient
         public ActionResult Index(int idSede)
         {
-            Session["Sede"] = proxy.ObtenerSedeId(idSede);
+            Session["SedeCliente"] = proxy.ObtenerSedeId(idSede);
             var listado = proxy.ObtenerCamposXSede(idSede);
             return View(listado);
         }
 
         public ActionResult VerCalendario(int idCampo)
         {
-            Session["idCampo"] = idCampo;
+            Session["idCampoCliente"] = idCampo;
             return View();
         }
 
@@ -44,9 +44,9 @@ namespace AppClient.Controllers
                     listaDetalles.Add(dtReserva);
                 }
             }
-            Session["monto"] = monto;
-            Session["listaDetalles"] = listaDetalles;
-            if (Session["usuario"] != null)
+            Session["montoCliente"] = monto;
+            Session["listaDetallesCliente"] = listaDetalles;
+            if (Session["usuarioCliente"] != null)
             {
                 return RedirectToAction("DetalleReserva", "ReservaClient");
             }
@@ -59,8 +59,8 @@ namespace AppClient.Controllers
         {
             string diaFormat = string.Format("{0:yyyy-MM-dd}", dia);
             ViewBag.dia = diaFormat;
-            Session["diaReserva"] = dia;
-            int idCampo = (int)Session["idCampo"];
+            Session["diaReservaCliente"] = dia;
+            int idCampo = (int)Session["idCampoCliente"];
             var listado = proxy.ListarTarifas(dia, idCampo);
             return PartialView("_Verajax", listado);
         }

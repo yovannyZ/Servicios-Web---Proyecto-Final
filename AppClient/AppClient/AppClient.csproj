@@ -188,6 +188,7 @@
     <Content Include="Scripts\Campo\Campo.js" />
     <Content Include="Scripts\Reserva\Reserva.js" />
     <Content Include="Scripts\Sede\Sede.js" />
+    <Content Include="Scripts\Tarifa\Tarifa.js" />
     <Content Include="Scripts\Usuario\Usuario.js" />
     <Content Include="Service References\CanchitaWS\AppClient.CanchitaWS.Campo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -344,6 +345,9 @@
     <Content Include="Views\Reserva\ListadoReserva.cshtml" />
     <Content Include="Views\Reserva\DetallexReserva.cshtml" />
     <Content Include="Views\Tarifa\Index.cshtml" />
+    <Content Include="Views\Tarifa\Create.cshtml" />
+    <Content Include="Views\Tarifa\Edit.cshtml" />
+    <Content Include="Views\Tarifa\Eliminar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

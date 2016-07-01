@@ -1,6 +1,6 @@
 ﻿
 @{
-    AppClient.CanchitaWS.Usuario usuario = (AppClient.CanchitaWS.Usuario)Session["usuario"];
+    AppClient.CanchitaWS.Usuario usuario = (AppClient.CanchitaWS.Usuario)Session["usuarioCliente"];
 }
 <!DOCTYPE html>
 <html>
@@ -30,13 +30,14 @@
         <div class="nav-wrapper container">
             <a id="logo-container" href="#" class="brand-logo"><img src="~/img/logo-web.png" width="180" /></a>
             <ul class="right hide-on-med-and-down">
-                @if (Session["usuario"] == null)
+                @if (Session["usuarioCliente"] == null)
                 {
                     <li><a href="/LoginClient/Registro">Registrate aqui</a></li>
                     <li><a href="/LoginClient/Login">Inicia Sesion aqui</a></li>
                 }
                 else
                 {
+                    <li><a href="/ReservaClient/verlistaReservasxCliente">Ver mis reservas</a></li>
                     <li><a href="/LoginClient/CerrarSesion">Cerrar Sesion</a></li>
                 }
               
@@ -85,8 +86,8 @@
                 $('.button-collapse').sideNav();
                 $('.parallax').parallax();
 
-            }); // end of document ready
-        })(jQuery); // end of jQuery name space
+            }); 
+        })(jQuery); 
 
         $(document).ready(function () {
             $('select').material_select();

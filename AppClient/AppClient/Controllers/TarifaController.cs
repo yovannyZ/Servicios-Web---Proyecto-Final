@@ -27,7 +27,6 @@ namespace AppClient.Controllers
         [HttpPost]
         public ActionResult Create(Tarifa tarifa)
         {
-
             proxy.AgregarTarifa(tarifa);
             return RedirectToAction("Index");
         }

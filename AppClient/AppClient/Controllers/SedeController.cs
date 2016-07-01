@@ -30,7 +30,14 @@ namespace AppClient.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            if (Session["usuario"] == null)
+            {
+                return RedirectToAction("Index", "Admin");
+            }
+            else
+            {
+                return View();
+            }
         }
 
 
@@ -55,31 +62,60 @@ namespace AppClient.Controllers
 
           public ActionResult Edit(int id=0)
           {
-              var sede = proxy.ObtenerSedeId(id);
-
-              if (sede == null)
+              if (Session["usuario"] == null)
               {
-                  return HttpNotFound();
+                  return RedirectToAction("Index", "Admin");
               }
-              return View(sede);
+              else
+              {
+                  var sede = proxy.ObtenerSedeId(id);
+
+                  if (sede == null)
+                  {
+                      return HttpNotFound();
+                  }
+                  return View(sede);
+              }
+              
           }
 
         [HttpPost]
-          public ActionResult Edit(Sede sede)
+          public ActionResult Edit(Sede sede, HttpPostedFileBase fimage)
           {
+              if (fimage != null)
+              {
+                  using (var reader = new BinaryReader(fimage.InputStream))
+                  {
+                      byte[] data = reader.ReadBytes(fimage.ContentLength);
+                      sede.Imagen = data;
+                  }
+              }
+              else
+              {
+                  sede.Imagen = null;
+              }
+
               proxy.ActualizarSede(sede);
               return RedirectToAction("Index");
           }
 
         public ActionResult Eliminar(int id = 0)
         {
-            var sede = proxy.ObtenerSedeId(id);
-
-            if (sede == null)
+            if (Session["usuario"] == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Index", "Admin");
             }
-            return View(sede);
+            else
+            {
+                var sede = proxy.ObtenerSedeId(id);
+
+                if (sede == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(sede);
+            }
+           
             
         }
 

@@ -57,3 +57,9 @@ C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canc
 C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
 C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb
 C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll.config
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.dll
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\bin\Canchita.Service.pdb
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
+C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb
