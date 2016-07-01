@@ -286,11 +286,11 @@ namespace Canchita.Service.Data
             "<b style='color:green'> " + username + " </b>  y su Contraseña olvidada es:  <b style='color:green'> " + clave + " </b> </b> <br /> <br /> <br /> <h4 style='color:2D3C6B'>Estamos para ayudarte. <br /> Atte. Soporte LA 10 </h4>";
             msj.BodyEncoding = System.Text.Encoding.UTF8;
             msj.IsBodyHtml = true;
-            msj.From = new System.Net.Mail.MailAddress("edpg20152016@gmail.com");
+            msj.From = new System.Net.Mail.MailAddress("campoladiez@gmail.com");
             //cliente de correo:
             System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
             cliente.Credentials =
-            new System.Net.NetworkCredential("edpg20152016@gmail.com", "@edpg20152016");
+            new System.Net.NetworkCredential("campoladiez@gmail.com", "@mipassword@123");
             cliente.Port = 587;
             cliente.EnableSsl = true;
             cliente.Host = "smtp.gmail.com";

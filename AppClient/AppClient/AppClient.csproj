@@ -348,6 +348,9 @@
     <Content Include="Views\Tarifa\Create.cshtml" />
     <Content Include="Views\Tarifa\Edit.cshtml" />
     <Content Include="Views\Tarifa\Eliminar.cshtml" />
+    <Content Include="Views\Admin\CerrarSesion.cshtml" />
+    <Content Include="Views\Admin\RecuperarAccXEmail.cshtml" />
+    <Content Include="Views\Shared\_Recuperaradmin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
