@@ -44,6 +44,7 @@
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Monto" type="xs:double" />
       <xs:element minOccurs="0" name="campo" nillable="true" type="tns:Campo" />
+      <xs:element minOccurs="0" name="fechaOperacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="usuario" nillable="true" type="tns:Usuario" />
     </xs:sequence>
   </xs:complexType>

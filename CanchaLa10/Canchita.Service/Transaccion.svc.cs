@@ -245,6 +245,11 @@ namespace Canchita.Service
         {
             return ReservaDAO.ListadoReservas();
         }
+
+        public bool eliminarReserva(int idReserva)
+        {
+            return ReservaDAO.eliminarReserva(idReserva);
+        }
         #endregion
 
         #region . TARJETA .
@@ -297,6 +302,11 @@ namespace Canchita.Service
         public bool pagarReservaConEfectivo(string nroPago)
         {
             return PAGODAO.pagarConEfectivo(nroPago);
+        }
+
+        public bool eliminarPago(int idReserva)
+        {
+            return PAGODAO.eliminarPAgo(idReserva);
         }
 
         #endregion
@@ -377,7 +387,19 @@ namespace Canchita.Service
         {
             return DetalleReservaDAO.listarDetalleXReserva(IdReserva);
         }
+
+        public bool eliminarDetalleReserva(int idReserva)
+        {
+            return ReservaDAO.eliminarDetalleReserva(idReserva);
+        }
         #endregion
+
+
+
+
+
+
+
 
 
 

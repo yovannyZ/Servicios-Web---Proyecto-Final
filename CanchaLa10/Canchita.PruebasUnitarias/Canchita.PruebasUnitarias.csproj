@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="TarifaTest.cs" />
     <Compile Include="TarjetaTest.cs" />
+    <Compile Include="VerificarPagoTest.cs" />
     <Compile Include="UsuarioTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

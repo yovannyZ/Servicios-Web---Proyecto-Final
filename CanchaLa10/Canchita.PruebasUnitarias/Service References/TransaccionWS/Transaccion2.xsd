@@ -261,6 +261,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="eliminarReserva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReserva" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarReservaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminarReservaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="crearTarjetas">
     <xs:complexType>
       <xs:sequence>
@@ -395,6 +409,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="pagarReservaConEfectivoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarPago">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReserva" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminarPagoResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -573,6 +601,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo" minOccurs="0" name="listarDetalleXReservaResult" nillable="true" type="q42:ArrayOfDetalleReserva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarDetalleReserva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReserva" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarDetalleReservaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminarDetalleReservaResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

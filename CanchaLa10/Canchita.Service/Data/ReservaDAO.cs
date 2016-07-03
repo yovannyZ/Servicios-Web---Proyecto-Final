@@ -13,7 +13,7 @@ namespace Canchita.Service.Data
         public bool Agregar(Reserva reserva)
         {
             bool exito = false;
-            string query = "INSERT INTO RESERVA  VALUES(@pr1,@pr2,@pr3,@pr4,@pr5)";
+            string query = "INSERT INTO RESERVA  VALUES(@pr1,@pr2,@pr3,@pr4,@pr5,@pr6)";
 
             SqlParameter[] dbParams = new SqlParameter[]
              {
@@ -21,7 +21,8 @@ namespace Canchita.Service.Data
                  DBHelper.MakeParam("@pr2",reserva.campo.Id),
                  DBHelper.MakeParam("@pr3",reserva.usuario.Id),
                  DBHelper.MakeParam("@pr4",reserva.Estado),
-                 DBHelper.MakeParam("@pr5",reserva.Monto)
+                 DBHelper.MakeParam("@pr5",reserva.Monto),
+                 DBHelper.MakeParam("@pr6",DateTime.Now)
              };
             exito = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
             return exito;
@@ -163,6 +164,29 @@ namespace Canchita.Service.Data
             return reserva;
         }
 
-        
+        public bool eliminarDetalleReserva(int idReserva)
+        {
+            bool result = false;
+            string query = "DELETE FROM Reserva_Tarifa WHERE idRserva=@idReserva";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                  DBHelper.MakeParam("@idReserva",idReserva)                 
+             };
+            result = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
+            return result;
+        }
+        public bool eliminarReserva(int idReserva)
+        {
+            bool result = false;
+            string query = "DELETE FROM Reserva WHERE idReserva=@idReserva";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                  DBHelper.MakeParam("@idReserva",idReserva)                 
+             };
+            result = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
+            return result;
+        }
     }
 }

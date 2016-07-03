@@ -336,6 +336,9 @@ namespace AppClient.CanchitaWS {
         private AppClient.CanchitaWS.Campo campoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime fechaOperacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private AppClient.CanchitaWS.Usuario usuarioField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -409,6 +412,19 @@ namespace AppClient.CanchitaWS {
                 if ((object.ReferenceEquals(this.campoField, value) != true)) {
                     this.campoField = value;
                     this.RaisePropertyChanged("campo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime fechaOperacion {
+            get {
+                return this.fechaOperacionField;
+            }
+            set {
+                if ((this.fechaOperacionField.Equals(value) != true)) {
+                    this.fechaOperacionField = value;
+                    this.RaisePropertyChanged("fechaOperacion");
                 }
             }
         }

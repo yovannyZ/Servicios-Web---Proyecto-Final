@@ -153,5 +153,19 @@ namespace Canchita.Service.Data
 
             return resul;
         }
+
+
+        public bool eliminarPAgo(int idReserva)
+        {
+            bool result = false;
+            string query = "DELETE FROM PAGO WHERE idReserva=@idReserva";
+
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                  DBHelper.MakeParam("@idReserva",idReserva)                 
+             };
+            result = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
+            return result;
+        }
     }
 }

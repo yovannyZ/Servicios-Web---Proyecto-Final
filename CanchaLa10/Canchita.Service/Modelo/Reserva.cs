@@ -13,5 +13,6 @@ namespace Canchita.Service.Modelo
         public Usuario usuario { get; set; }
         public double Monto { get; set; }
         public string Estado { get; set; }
+        public DateTime fechaOperacion { get; set; }
     }
 }
