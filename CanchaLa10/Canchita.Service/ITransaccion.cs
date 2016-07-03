@@ -75,7 +75,8 @@ namespace Canchita.Service
         List<Reserva> ListarReservas();
         [OperationContract]
         bool eliminarReserva(int idReserva);
-        
+        [OperationContract]
+        List<Reserva> listaParaEliminar();
         #endregion
 
         #region . TARJETA .

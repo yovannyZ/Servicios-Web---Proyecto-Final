@@ -127,6 +127,12 @@
   <wsdl:message name="ITransaccion_eliminarReserva_OutputMessage">
     <wsdl:part name="parameters" element="tns:eliminarReservaResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_listaParaEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:listaParaEliminar" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_listaParaEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listaParaEliminarResponse" />
+  </wsdl:message>
   <wsdl:message name="ITransaccion_crearTarjetas_InputMessage">
     <wsdl:part name="parameters" element="tns:crearTarjetas" />
   </wsdl:message>
@@ -357,6 +363,10 @@
     <wsdl:operation name="eliminarReserva">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/eliminarReserva" message="tns:ITransaccion_eliminarReserva_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/eliminarReservaResponse" message="tns:ITransaccion_eliminarReserva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listaParaEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/listaParaEliminar" message="tns:ITransaccion_listaParaEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/listaParaEliminarResponse" message="tns:ITransaccion_listaParaEliminar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="crearTarjetas">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/crearTarjetas" message="tns:ITransaccion_crearTarjetas_InputMessage" />
@@ -634,6 +644,15 @@
     </wsdl:operation>
     <wsdl:operation name="eliminarReserva">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/eliminarReserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaParaEliminar">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/listaParaEliminar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

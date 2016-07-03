@@ -403,5 +403,11 @@ namespace Canchita.Service
 
 
 
+
+
+        public List<Reserva> listaParaEliminar()
+        {
+            return ReservaDAO.listaParaEliminar();
+        }
     }
 }

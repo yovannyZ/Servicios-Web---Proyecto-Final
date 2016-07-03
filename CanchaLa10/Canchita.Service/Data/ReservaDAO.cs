@@ -188,5 +188,27 @@ namespace Canchita.Service.Data
             result = DBHelper.ExecuteNonQuery(query, dbParams) > 0;
             return result;
         }
+
+        public List<Reserva> listaParaEliminar()
+        {                     
+            Reserva reserva = null;
+            List<Reserva> lista = new List<Reserva>();
+            string query = "select  CAST( DATEDIFF(minute,fechaOperacion,getdate())as float) /60 as Tiempo ,idReserva ,fechaOperacion  from reserva where estado='Pendiente'";
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query))
+            {
+                if (lector != null && lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        reserva = new Reserva();
+                        reserva.Id = int.Parse(lector["idReserva"].ToString());
+                        reserva.fechaOperacion = DateTime.Parse(lector["fechaOperacion"].ToString());
+                        reserva.diferencia =double.Parse(lector["Tiempo"].ToString());                                              
+                        lista.Add(reserva);
+                    }
+                }
+            }
+            return lista;
+        }
     }
 }

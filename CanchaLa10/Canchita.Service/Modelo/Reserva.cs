@@ -14,5 +14,6 @@ namespace Canchita.Service.Modelo
         public double Monto { get; set; }
         public string Estado { get; set; }
         public DateTime fechaOperacion { get; set; }
+        public double diferencia { get; set; }
     }
 }

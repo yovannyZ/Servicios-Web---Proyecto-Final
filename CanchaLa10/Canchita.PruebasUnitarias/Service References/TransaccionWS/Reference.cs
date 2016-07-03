@@ -336,6 +336,9 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         private Canchita.PruebasUnitarias.TransaccionWS.Campo campoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double diferenciaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime fechaOperacionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -412,6 +415,19 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
                 if ((object.ReferenceEquals(this.campoField, value) != true)) {
                     this.campoField = value;
                     this.RaisePropertyChanged("campo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double diferencia {
+            get {
+                return this.diferenciaField;
+            }
+            set {
+                if ((this.diferenciaField.Equals(value) != true)) {
+                    this.diferenciaField = value;
+                    this.RaisePropertyChanged("diferencia");
                 }
             }
         }
@@ -1262,6 +1278,12 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/eliminarReserva", ReplyAction="http://tempuri.org/ITransaccion/eliminarReservaResponse")]
         System.Threading.Tasks.Task<bool> eliminarReservaAsync(int idReserva);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listaParaEliminar", ReplyAction="http://tempuri.org/ITransaccion/listaParaEliminarResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> listaParaEliminar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listaParaEliminar", ReplyAction="http://tempuri.org/ITransaccion/listaParaEliminarResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> listaParaEliminarAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/crearTarjetas", ReplyAction="http://tempuri.org/ITransaccion/crearTarjetasResponse")]
         bool crearTarjetas(Canchita.PruebasUnitarias.TransaccionWS.Tarjeta tarjeta);
         
@@ -1598,6 +1620,14 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         public System.Threading.Tasks.Task<bool> eliminarReservaAsync(int idReserva) {
             return base.Channel.eliminarReservaAsync(idReserva);
+        }
+        
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> listaParaEliminar() {
+            return base.Channel.listaParaEliminar();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> listaParaEliminarAsync() {
+            return base.Channel.listaParaEliminarAsync();
         }
         
         public bool crearTarjetas(Canchita.PruebasUnitarias.TransaccionWS.Tarjeta tarjeta) {
