@@ -1154,6 +1154,67 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReporteReservasAnio", Namespace="http://schemas.datacontract.org/2004/07/Canchita.Service.Modelo")]
+    [System.SerializableAttribute()]
+    public partial class ReporteReservasAnio : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MontoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Mes {
+            get {
+                return this.MesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MesField, value) != true)) {
+                    this.MesField = value;
+                    this.RaisePropertyChanged("Mes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Monto {
+            get {
+                return this.MontoField;
+            }
+            set {
+                if ((this.MontoField.Equals(value) != true)) {
+                    this.MontoField = value;
+                    this.RaisePropertyChanged("Monto");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TransaccionWS.ITransaccion")]
     public interface ITransaccion {
@@ -1272,17 +1333,23 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarReservas", ReplyAction="http://tempuri.org/ITransaccion/ListarReservasResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> ListarReservasAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/eliminarReserva", ReplyAction="http://tempuri.org/ITransaccion/eliminarReservaResponse")]
-        bool eliminarReserva(int idReserva);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarReservasPendientes", ReplyAction="http://tempuri.org/ITransaccion/listarReservasPendientesResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> listarReservasPendientes();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/eliminarReserva", ReplyAction="http://tempuri.org/ITransaccion/eliminarReservaResponse")]
-        System.Threading.Tasks.Task<bool> eliminarReservaAsync(int idReserva);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarReservasPendientes", ReplyAction="http://tempuri.org/ITransaccion/listarReservasPendientesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> listarReservasPendientesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listaParaEliminar", ReplyAction="http://tempuri.org/ITransaccion/listaParaEliminarResponse")]
-        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> listaParaEliminar();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarReservasCanceladas", ReplyAction="http://tempuri.org/ITransaccion/listarReservasCanceladasResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> listarReservasCanceladas();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listaParaEliminar", ReplyAction="http://tempuri.org/ITransaccion/listaParaEliminarResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> listaParaEliminarAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarReservasCanceladas", ReplyAction="http://tempuri.org/ITransaccion/listarReservasCanceladasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> listarReservasCanceladasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/verificar", ReplyAction="http://tempuri.org/ITransaccion/verificarResponse")]
+        int verificar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/verificar", ReplyAction="http://tempuri.org/ITransaccion/verificarResponse")]
+        System.Threading.Tasks.Task<int> verificarAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/crearTarjetas", ReplyAction="http://tempuri.org/ITransaccion/crearTarjetasResponse")]
         bool crearTarjetas(Canchita.PruebasUnitarias.TransaccionWS.Tarjeta tarjeta);
@@ -1343,12 +1410,6 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/pagarReservaConEfectivo", ReplyAction="http://tempuri.org/ITransaccion/pagarReservaConEfectivoResponse")]
         System.Threading.Tasks.Task<bool> pagarReservaConEfectivoAsync(string nroPago);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/eliminarPago", ReplyAction="http://tempuri.org/ITransaccion/eliminarPagoResponse")]
-        bool eliminarPago(int idReserva);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/eliminarPago", ReplyAction="http://tempuri.org/ITransaccion/eliminarPagoResponse")]
-        System.Threading.Tasks.Task<bool> eliminarPagoAsync(int idReserva);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/AgregarSede", ReplyAction="http://tempuri.org/ITransaccion/AgregarSedeResponse")]
         bool AgregarSede(Canchita.PruebasUnitarias.TransaccionWS.Sede sede);
@@ -1428,11 +1489,11 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/listarDetalleXReserva", ReplyAction="http://tempuri.org/ITransaccion/listarDetalleXReservaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.DetalleReserva>> listarDetalleXReservaAsync(int IdReserva);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/eliminarDetalleReserva", ReplyAction="http://tempuri.org/ITransaccion/eliminarDetalleReservaResponse")]
-        bool eliminarDetalleReserva(int idReserva);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ReservasxAnio", ReplyAction="http://tempuri.org/ITransaccion/ReservasxAnioResponse")]
+        System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.ReporteReservasAnio> ReservasxAnio(string anio, int idSede);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/eliminarDetalleReserva", ReplyAction="http://tempuri.org/ITransaccion/eliminarDetalleReservaResponse")]
-        System.Threading.Tasks.Task<bool> eliminarDetalleReservaAsync(int idReserva);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ReservasxAnio", ReplyAction="http://tempuri.org/ITransaccion/ReservasxAnioResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.ReporteReservasAnio>> ReservasxAnioAsync(string anio, int idSede);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1614,20 +1675,28 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
             return base.Channel.ListarReservasAsync();
         }
         
-        public bool eliminarReserva(int idReserva) {
-            return base.Channel.eliminarReserva(idReserva);
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> listarReservasPendientes() {
+            return base.Channel.listarReservasPendientes();
         }
         
-        public System.Threading.Tasks.Task<bool> eliminarReservaAsync(int idReserva) {
-            return base.Channel.eliminarReservaAsync(idReserva);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> listarReservasPendientesAsync() {
+            return base.Channel.listarReservasPendientesAsync();
         }
         
-        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> listaParaEliminar() {
-            return base.Channel.listaParaEliminar();
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva> listarReservasCanceladas() {
+            return base.Channel.listarReservasCanceladas();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> listaParaEliminarAsync() {
-            return base.Channel.listaParaEliminarAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.Reserva>> listarReservasCanceladasAsync() {
+            return base.Channel.listarReservasCanceladasAsync();
+        }
+        
+        public int verificar() {
+            return base.Channel.verificar();
+        }
+        
+        public System.Threading.Tasks.Task<int> verificarAsync() {
+            return base.Channel.verificarAsync();
         }
         
         public bool crearTarjetas(Canchita.PruebasUnitarias.TransaccionWS.Tarjeta tarjeta) {
@@ -1708,14 +1777,6 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
         
         public System.Threading.Tasks.Task<bool> pagarReservaConEfectivoAsync(string nroPago) {
             return base.Channel.pagarReservaConEfectivoAsync(nroPago);
-        }
-        
-        public bool eliminarPago(int idReserva) {
-            return base.Channel.eliminarPago(idReserva);
-        }
-        
-        public System.Threading.Tasks.Task<bool> eliminarPagoAsync(int idReserva) {
-            return base.Channel.eliminarPagoAsync(idReserva);
         }
         
         public bool AgregarSede(Canchita.PruebasUnitarias.TransaccionWS.Sede sede) {
@@ -1822,12 +1883,12 @@ namespace Canchita.PruebasUnitarias.TransaccionWS {
             return base.Channel.listarDetalleXReservaAsync(IdReserva);
         }
         
-        public bool eliminarDetalleReserva(int idReserva) {
-            return base.Channel.eliminarDetalleReserva(idReserva);
+        public System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.ReporteReservasAnio> ReservasxAnio(string anio, int idSede) {
+            return base.Channel.ReservasxAnio(anio, idSede);
         }
         
-        public System.Threading.Tasks.Task<bool> eliminarDetalleReservaAsync(int idReserva) {
-            return base.Channel.eliminarDetalleReservaAsync(idReserva);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Canchita.PruebasUnitarias.TransaccionWS.ReporteReservasAnio>> ReservasxAnioAsync(string anio, int idSede) {
+            return base.Channel.ReservasxAnioAsync(anio, idSede);
         }
     }
 }

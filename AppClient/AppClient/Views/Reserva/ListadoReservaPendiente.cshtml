@@ -1,0 +1,127 @@
+﻿@model IEnumerable<AppClient.CanchitaWS.Reserva>
+
+
+@{
+    ViewBag.Title = "ListadoReservaPendiente";
+    Layout = "~/Views/Shared/_LayoutAdmind.cshtml";
+}
+
+
+<div id="basic-card" class="section">
+    <div class="row">
+        <div class="col s12 m10 l12">
+            <div class="row">
+                <div class="col s12 m8 l12">
+                    <div class="card  white">
+                        <div class="card-content cyan lighten-4">
+                            <h5 class=" center-align grey-text  text-darken-2">Gestor de Reservas</h5>
+                            <div class="row">
+                                <div style="margin:0 auto; width:58px">
+                                    <a class="center-block btn-floating btn-large waves-effect waves-light " id="btnNuevo" href="/Reserva/NuevaReserva" title="Crear una nueva Reserva"><i class="mdi-content-add"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <div id="table-datatables">
+
+                                <div class="row">
+
+                                    <div class="col s12 m8 l12 ">
+                                        <table id="data-table-simple" class="responsive-table display" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        Id
+                                                    </th>
+                                                    <th>
+                                                        Fecha Reserva
+                                                    </th>
+                                                    <th>
+                                                        Sede
+                                                    </th>
+                                                    <th>
+                                                        Campo
+                                                    </th>
+                                                    <th>
+                                                        Usuario
+                                                    </th>
+                                                    <th>
+                                                        Monto
+                                                    </th>
+                                                    <th>
+                                                        Estado
+                                                    </th>
+                                                    <th>DETALLE</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tfoot>
+                                                <tr>
+                                                    <th>
+                                                        Id
+                                                    </th>
+                                                    <th>
+                                                        Fecha Reserva
+                                                    </th>
+                                                    <th>
+                                                        Sede
+                                                    </th>
+                                                    <th>
+                                                        Campo
+                                                    </th>
+                                                    <th>
+                                                        Usuario
+                                                    </th>
+                                                    <th>
+                                                        Monto
+                                                    </th>
+                                                    <th>
+                                                        Estado
+                                                    </th>
+                                                    <th>DETALLE</th>
+                                                </tr>
+                                            </tfoot>
+
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.Id)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.FechaReserva)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.campo.Sede.Descripcion)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.campo.Descripcion)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.usuario.Nombres) &nbsp; @Html.DisplayFor(modelItem => item.usuario.Apellidos)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.Monto)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => item.Estado)
+                                                        </td>
+                                                        <td>
+                                                            <button class="center-block btn-floating  waves-effect waves-light btnDetalle" data-id="@item.Id" title="DetalleRserva"><i class="mdi-image-edit tiny"></i></button>
+                                                        </td>
+
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,25 +12,12 @@ namespace Canchita.PruebasUnitarias
         [TestMethod]
         public void verificar()
         {
-            var listado = proxy.listaParaEliminar();
-            if (listado.Count > 0)
-            {
-                foreach (var item in listado)
-                {
-                    if (item.diferencia >= 2)
-                    {
-                        proxy.eliminarDetalleReserva(item.Id);
-                        proxy.eliminarPago(item.Id);
-                        proxy.eliminarReserva(item.Id);
-                    }
-                }
-                Assert.IsTrue(listado.Count > 0);
-            }
+
+            int filasAfectadas = proxy.verificar();
+            if (filasAfectadas > 0)
+                Assert.IsTrue(filasAfectadas >= 1);
             else
-            {
-                Assert.IsTrue(listado.Count <= 0);
-            }
-           
+                Assert.IsTrue(filasAfectadas == 0);
             
         }
     }

@@ -62,3 +62,4 @@ C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\CanchaLa10\Canchit
 C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache
 C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.dll
 C:\Users\Administrador\Desktop\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.pdb
+C:\Users\Administrador\Documents\GitHub\Servicios-Web---Proyecto-Final\CanchaLa10\Canchita.Service\obj\Debug\Canchita.Service.csprojResolveAssemblyReference.cache

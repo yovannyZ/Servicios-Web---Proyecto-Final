@@ -210,5 +210,60 @@ namespace Canchita.Service.Data
             }
             return lista;
         }
+
+
+        public List<Reserva> listaReservaPendientes()
+        {
+            CampoDAO campoDao = new CampoDAO();
+            UsuarioDAO usuarioDao = new UsuarioDAO();
+            List<Reserva> lista = new List<Reserva>();
+            Reserva reserva = null;
+            string query = "Select * from Reserva where estado='Pendiente'";
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query))
+            {
+                if (lector != null && lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        reserva = new Reserva();
+                        reserva.Id = int.Parse(lector["idReserva"].ToString());
+                        reserva.FechaReserva = DateTime.Parse(lector["fechaReserva"].ToString());
+                        reserva.Monto = double.Parse(lector["monto"].ToString());
+                        reserva.Estado = lector["estado"].ToString();
+                        reserva.campo = campoDao.ObtenerCamposXId(int.Parse(lector["idCampo"].ToString()));
+                        reserva.usuario = usuarioDao.ObtenerUsuarioId(int.Parse(lector["idUsuario"].ToString()));
+                        lista.Add(reserva);
+                    }
+                }
+            }
+            return lista;
+        }
+        public List<Reserva> listaReservaCanceladas()
+        {
+            CampoDAO campoDao = new CampoDAO();
+            UsuarioDAO usuarioDao = new UsuarioDAO();
+            List<Reserva> lista = new List<Reserva>();
+            Reserva reserva = null;
+            string query = "Select * from Reserva where estado='Cancelado'";
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query))
+            {
+                if (lector != null && lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        reserva = new Reserva();
+                        reserva.Id = int.Parse(lector["idReserva"].ToString());
+                        reserva.FechaReserva = DateTime.Parse(lector["fechaReserva"].ToString());
+                        reserva.Monto = double.Parse(lector["monto"].ToString());
+                        reserva.Estado = lector["estado"].ToString();
+                        reserva.campo = campoDao.ObtenerCamposXId(int.Parse(lector["idCampo"].ToString()));
+                        reserva.usuario = usuarioDao.ObtenerUsuarioId(int.Parse(lector["idUsuario"].ToString()));
+                        lista.Add(reserva);
+                    }
+                }
+            }
+            return lista;
+        }
+
     }
 }

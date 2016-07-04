@@ -255,13 +255,34 @@ namespace Canchita.Service
             return ReservaDAO.ListadoReservas();
         }
 
-        public bool eliminarReserva(int idReserva)
+        public int verificar()
         {
-            return ReservaDAO.eliminarReserva(idReserva);
+            int filas = 0;
+            var listado = ReservaDAO.listaParaEliminar();
+            if (listado.Count > 0)
+            {
+                foreach (var item in listado)
+                {
+                    if (item.diferencia >= 2)
+                    {
+                        ReservaDAO.eliminarDetalleReserva(item.Id);
+                        PAGODAO.eliminarPAgo(item.Id);
+                        ReservaDAO.eliminarReserva(item.Id);
+                        filas = filas + 1;
+                    }
+                }
+            }
+            return filas;
         }
-        public List<Reserva> listaParaEliminar()
+
+        public List<Reserva> listarReservasPendientes()
         {
-            return ReservaDAO.listaParaEliminar();
+            return ReservaDAO.listaReservaPendientes();
+        }
+
+        public List<Reserva> listarReservasCanceladas()
+        {
+            return ReservaDAO.listaReservaCanceladas();
         }
 
         #endregion
@@ -318,10 +339,6 @@ namespace Canchita.Service
             return PAGODAO.pagarConEfectivo(nroPago);
         }
 
-        public bool eliminarPago(int idReserva)
-        {
-            return PAGODAO.eliminarPAgo(idReserva);
-        }
 
         #endregion
 
@@ -402,10 +419,7 @@ namespace Canchita.Service
             return DetalleReservaDAO.listarDetalleXReserva(IdReserva);
         }
 
-        public bool eliminarDetalleReserva(int idReserva)
-        {
-            return ReservaDAO.eliminarDetalleReserva(idReserva);
-        }
+ 
         #endregion
 
         #region .REPORTES.

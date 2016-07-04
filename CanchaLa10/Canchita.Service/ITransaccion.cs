@@ -73,10 +73,15 @@ namespace Canchita.Service
 
           [OperationContract]
         List<Reserva> ListarReservas();
+        
         [OperationContract]
-        bool eliminarReserva(int idReserva);
+        List<Reserva> listarReservasPendientes();
         [OperationContract]
-        List<Reserva> listaParaEliminar();
+        List<Reserva> listarReservasCanceladas();
+
+        [OperationContract]
+        int verificar();
+
         #endregion
 
         #region . TARJETA .
@@ -107,9 +112,7 @@ namespace Canchita.Service
         bool reservarPagoEfectivo(Pago pago, int idReserva);
         [OperationContract]
         bool pagarReservaConEfectivo(string nroPago);
-
-        [OperationContract]
-        bool eliminarPago(int idReserva);
+      
         #endregion
 
         #region . SEDE .
@@ -155,8 +158,6 @@ namespace Canchita.Service
          [OperationContract]
         List<DetalleReserva> listarDetalleXReserva(int IdReserva);
 
-         [OperationContract]
-         bool eliminarDetalleReserva(int idReserva);
         #endregion
 
          #region .REPORTES.

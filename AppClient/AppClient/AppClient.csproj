@@ -356,6 +356,8 @@
     <Content Include="Views\Admin\RecuperarAccXEmail.cshtml" />
     <Content Include="Views\Shared\_Recuperaradmin.cshtml" />
     <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Reserva\ListadoReservaPendiente.cshtml" />
+    <Content Include="Views\Reserva\Verificar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

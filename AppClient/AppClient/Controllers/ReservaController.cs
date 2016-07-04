@@ -176,9 +176,26 @@ namespace AppClient.Controllers
         }
 
         public ActionResult ListadoReserva()
-        {
-            var listado = proxy.ListarReservas();
+        {//Reservas Canceladas
+            var listado = proxy.listarReservasCanceladas();
             return View(listado);
+        }
+
+        public ActionResult ListadoReservaPendiente()
+        {
+            var listado = proxy.listarReservasPendientes();
+            return View(listado);
+        }
+
+        public ActionResult Verificar()
+        {
+            int cantidadFilas = proxy.verificar();
+            if (cantidadFilas >= 1)
+                ViewBag.Cantidad = "Se eliminó : " + cantidadFilas + "  Reserva(s) - Excedió tiempo limite.";
+            else
+                ViewBag.Cantidad = "Se encontró : " + cantidadFilas + " reservas con limite de tiempo";
+
+            return View();
         }
 
         public ActionResult DetallexReserva(int IdReserva)
