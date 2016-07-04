@@ -63,6 +63,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\BancoDAO.cs" />
     <Compile Include="Data\CampoDAO.cs" />
     <Compile Include="Data\DBHelper.cs" />
     <Compile Include="Data\DetalleReservaDAO.cs" />

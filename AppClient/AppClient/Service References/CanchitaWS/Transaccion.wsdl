@@ -283,6 +283,12 @@
   <wsdl:message name="ITransaccion_ReservasxAnio_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReservasxAnioResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_retornarMontoAPagar_InputMessage">
+    <wsdl:part name="parameters" element="tns:retornarMontoAPagar" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_retornarMontoAPagar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:retornarMontoAPagarResponse" />
+  </wsdl:message>
   <wsdl:portType name="ITransaccion">
     <wsdl:operation name="AgregarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/AgregarUsuario" message="tns:ITransaccion_AgregarUsuario_InputMessage" />
@@ -467,6 +473,10 @@
     <wsdl:operation name="ReservasxAnio">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ReservasxAnio" message="tns:ITransaccion_ReservasxAnio_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ReservasxAnioResponse" message="tns:ITransaccion_ReservasxAnio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarMontoAPagar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/retornarMontoAPagar" message="tns:ITransaccion_retornarMontoAPagar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/retornarMontoAPagarResponse" message="tns:ITransaccion_retornarMontoAPagar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITransaccion" type="tns:ITransaccion">
@@ -878,6 +888,15 @@
     </wsdl:operation>
     <wsdl:operation name="ReservasxAnio">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/ReservasxAnio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarMontoAPagar">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/retornarMontoAPagar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -16,7 +16,7 @@
 <h2 style="color:green;text-align:center;text-decoration:underline;font-family:'Times New Roman', Times, serif ">Mis Reservas</h2>
 
 <h4 style="font-family:Tahoma;">
-    @Html.ActionLink("Realizar otra Reserva","Index","SedeClient")
+    @Html.ActionLink("Realizar Reserva","Index","SedeClient")
 </h4>
 <table class="table">
     <tr class="row green ">
@@ -28,6 +28,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Monto)
+        </th>
+        <th >           
+            <label style="color:red; font-size:14px;">Número de Pago</label>
         </th>
         <th></th>
     </tr>
@@ -43,12 +46,32 @@
         <td>
             @Html.DisplayFor(modelItem => item.Monto)
         </td>
+        @{
+        if (item.Estado.Equals("Pendiente"))
+        {
+            <td>
+                <label style="color:red; font-size:14px;">P @item.Id</label>
+            </td>
+        }
+        else
+        {
+            <td>
+                <label style="color:green; font-size:14px;">P @item.Id</label>
+            </td>
+        }
+}
+
         <td>
             @Html.ActionLink("- Ver Detalle -", "verDetalleXReserva", new { id = item.Id }) 
 
         </td>
-    </tr>
+    </tr>    
 }
 
 </table>
+
 <p class="center-align green-text">@ViewBag.Mensaje</p>
+<hr />
+<div style="background-color:yellowgreen; margin:auto 0; width:280px; color:white; margin-left: 150px;">
+    <label style="color:white; font-size:16px;">Aviso: Apunte el número de pago en color <b>rojo</b> para cancelar su reserva.</label>
+</div>

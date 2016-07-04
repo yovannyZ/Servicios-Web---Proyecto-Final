@@ -1494,6 +1494,12 @@ namespace AppClient.CanchitaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ReservasxAnio", ReplyAction="http://tempuri.org/ITransaccion/ReservasxAnioResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.ReporteReservasAnio>> ReservasxAnioAsync(string anio, int idSede);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/retornarMontoAPagar", ReplyAction="http://tempuri.org/ITransaccion/retornarMontoAPagarResponse")]
+        double retornarMontoAPagar(string nroPago);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/retornarMontoAPagar", ReplyAction="http://tempuri.org/ITransaccion/retornarMontoAPagarResponse")]
+        System.Threading.Tasks.Task<double> retornarMontoAPagarAsync(string nroPago);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1889,6 +1895,14 @@ namespace AppClient.CanchitaWS {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<AppClient.CanchitaWS.ReporteReservasAnio>> ReservasxAnioAsync(string anio, int idSede) {
             return base.Channel.ReservasxAnioAsync(anio, idSede);
+        }
+        
+        public double retornarMontoAPagar(string nroPago) {
+            return base.Channel.retornarMontoAPagar(nroPago);
+        }
+        
+        public System.Threading.Tasks.Task<double> retornarMontoAPagarAsync(string nroPago) {
+            return base.Channel.retornarMontoAPagarAsync(nroPago);
         }
     }
 }

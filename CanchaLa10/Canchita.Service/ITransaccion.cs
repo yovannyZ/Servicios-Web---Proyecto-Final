@@ -164,5 +164,10 @@ namespace Canchita.Service
          [OperationContract]
          List<ReporteReservasAnio> ReservasxAnio(string anio, int idSede);
          #endregion
+
+        #region .BANCO.
+         [OperationContract]
+         double retornarMontoAPagar(string nroPago);
+        #endregion
     }
 }

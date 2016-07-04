@@ -627,4 +627,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="retornarMontoAPagar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nroPago" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="retornarMontoAPagarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="retornarMontoAPagarResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

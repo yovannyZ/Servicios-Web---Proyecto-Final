@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AppClient.CanchitaWS.Pago>
+
+@{
+    ViewBag.Title = "verMonto";
+    Layout = "~/Views/Shared/_Recuperaradmin.cshtml";
+}
+
+<h2>verMonto</h2>
+
+<hr />
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.monto)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.monto)
+        </td>
+
+        <td>
+            @Html.ActionLink("Pagar Reserva", "pagar", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Cancelar Operación", "cancelar", new { /* id=item.PrimaryKey */ }) |
+           
+        </td>
+    </tr>
+}
+
+</table>

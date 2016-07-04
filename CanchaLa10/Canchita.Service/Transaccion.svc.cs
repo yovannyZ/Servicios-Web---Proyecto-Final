@@ -22,6 +22,19 @@ namespace Canchita.Service
         private TarjetaDAO tarjetaDAO;
         private PagoDAO pagoDAO;
         private ReportesDAO reportesDAO;
+        private BancoDAO bancoDAO;
+
+
+
+        private BancoDAO BancoDAO
+        {
+            get
+            {
+                if (bancoDAO == null)
+                    bancoDAO = new BancoDAO();
+                return bancoDAO;
+            }
+        }
 
 
         private ReportesDAO ReportesDAO
@@ -430,6 +443,15 @@ namespace Canchita.Service
         }
 
         #endregion
-      
+
+        #region .BANCO.
+        public double retornarMontoAPagar(string nroPago)
+        {
+            return BancoDAO.retornarMontoAPagar(nroPago);
+        }
+        #endregion
+
+
+
     }
 }
