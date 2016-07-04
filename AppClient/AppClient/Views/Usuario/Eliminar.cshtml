@@ -4,68 +4,90 @@
     ViewBag.Title = "Eliminar";
     Layout = null;
 }
+<div id="basic-card" class="section">
+    <div class="row">
+        <div class="col s12 m10 l12">
+            <div class="row">
+                <div class="col s12 m8 l12">
+                    <div class="card  white">
+                        <div class="card-content cyan lighten-4">
+                            <h5 class=" center-align grey-text  text-darken-2">¿Estas seguro que deseas eliminar?</h5>
+                        </div>
+                        <div class="card-action">
+                            <div id="table-datatables">
 
-<h2>Eliminar</h2>
+                                <div class="row">
 
-<h3>¿Estas seguro que deseas eliminar?</h3>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombres)
-        </dt>
+                                    <div class="col s12 m12">
+                                        <table id="data-table-simple" class="responsive-table display" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        @Html.DisplayNameFor(model => model.Nombres)
+                                                    </th>
+                                                    <th>
+                                                        @Html.DisplayNameFor(model => model.Apellidos)
+                                                    </th>
+                                                    <th>
+                                                        @Html.DisplayNameFor(model => model.Username)
+                                                    </th>
+                                                    <th>
+                                                        @Html.DisplayNameFor(model => model.Email)
+                                                    </th>
+                                                    <th>
+                                                        Imagen
+                                                    </th>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombres)
-        </dd>
+                                                </tr>
+                                            </thead>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellidos)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Apellidos)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombres)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombres)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoUsuario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TipoUsuario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-
-    </dl>
+                                            <tbody>
+                                             
+                                                    <tr>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => modelItem.Nombres)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => modelItem.Apellidos)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => modelItem.Username)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @Html.DisplayFor(modelItem => modelItem.Email)
+                                                        </td>
+                                                        <td style="font-size:0.8em;">
+                                                            @{ var imagen = string.Empty;
+                                                             if (@Model.Imagen != null)
+                                                             {
+                                                                 var base64 = Convert.ToBase64String(@Model.Imagen);
+                                                                 imagen = string.Format("data:image/jpg;base64,{0}", base64);
+                                                             }
+                                                            }
+                                                            <img width="150" height="80" src="@imagen" alt="No Hay" class="materialboxed" />
+                                                        </td>
+                                                       
+                                                    </tr>
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            <input type="submit" value="Eliminar" class="btn btn-default" /> 
             
         </div>
     }
-</div>
+

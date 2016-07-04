@@ -5,9 +5,7 @@
     Layout = null;
 }
 
-<div class="card-panel grey darken-2 center-align">
-    <h5 class="white-text">Editar Sede</h5>
-</div>
+
 
 
 @using (Html.BeginForm())
@@ -24,15 +22,15 @@
                             <div style="width:70% ; margin:0 auto;">
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <i class="mdi-action-account-circle prefix"></i>
-                                        @Html.TextBoxFor(model => model.Descripcion, new { @required = "required" })
+                                        <i class="mdi-action-room prefix"></i>
+                                        @Html.TextAreaFor(model => model.Descripcion, new { @maxlength = "255", @required = "required", @class = "materialize-textarea", @length = "255" })
                                         @Html.LabelFor(model => model.Descripcion, new { @class = "active" })
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <i class="mdi-action-account-circle prefix"></i>
-                                        @Html.TextBoxFor(model => model.Direccion, new { @required = "required" })
+                                        <i class="mdi-communication-email prefix"></i>
+                                        @Html.TextBoxFor(model => model.Direccion, new { @maxlength = "150", @required = "required", @length = "150" })
                                         @Html.LabelFor(model => model.Direccion, new { @class = "active" })
                                     </div>
                                 </div>

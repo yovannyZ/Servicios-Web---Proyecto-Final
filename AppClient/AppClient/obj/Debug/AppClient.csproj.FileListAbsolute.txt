@@ -116,3 +116,4 @@ C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppCl
 C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\bin\AppClient.pdb
 C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.dll
 C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.pdb
+C:\Users\Yovanny\Documents\GitHub\Servicios-Web---Proyecto-Final\AppClient\AppClient\obj\Debug\AppClient.csprojResolveAssemblyReference.cache

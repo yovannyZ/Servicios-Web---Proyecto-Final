@@ -46,7 +46,7 @@ namespace AppClient.Controllers
             Session.Remove("listaDetalles");
             Session.Remove("DetalleReserva");
             Session.Remove("idCampo");
-            Session.Remove("usuariocliente");
+            Session.Remove("usuarioclient");
             Session.Remove("monto");
             Session.Remove("MontoRecibido");
             Session.Remove("Cambio");

@@ -18,49 +18,46 @@
                                 <div class="col s12">
                                     <div style="width:70% ; margin:0 auto;">
                                         <div class="row">
-                                            <div class="input-field col s12">
-                                                <i class="mdi-action-account-circle prefix"></i>
-                                                @Html.TextBoxFor(model => model.Nombres, new { @required="required" })
+                                            <div class="input-field col m6">
+                                                <i class="mdi-action-face-unlock prefix"></i>
+                                                @Html.TextBoxFor(model => model.Nombres, new { @maxlength = "50", @required = "required" })
                                                 @Html.LabelFor(model => model.Nombres)
+                                            </div>
+                                            <div class="input-field col m6">
+                                                <i class="mdi-action-face-unlock prefix"></i>
+                                                @Html.TextBoxFor(model => model.Apellidos, new { @maxlength = "50", @required = "required" })
+                                                @Html.LabelFor(model => model.Apellidos)
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="mdi-communication-email prefix"></i>
-                                               @Html.TextBoxFor(model => model.Apellidos, new { @required = "required" })
-                                               @Html.LabelFor(model => model.Apellidos)
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <i class="mdi-communication-email prefix"></i>
-                                                @Html.TextBoxFor(model => model.Email, new { @required = "required" })
+                                                <input type="email" id="Email" name="Email" maxlength="150" required/>
                                                 @Html.LabelFor(model => model.Email)
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="input-field col s12">
-                                                <i class="mdi-communication-email prefix"></i>
-                                                @Html.TextBoxFor(model => model.Username, new { @required = "required" })
+                                            <div class="input-field col m6">
+                                                <i class="mdi-image-timer-auto prefix"></i>
+                                                @Html.TextBoxFor(model => model.Username, new { @maxlength = "20", @required = "required" })
                                                 @Html.LabelFor(model => model.Username)
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <i class="mdi-communication-email prefix"></i>
-                                                @Html.TextBoxFor(model => model.Clave, new { @required = "required" })
+                                            <div class="input-field col m6">
+                                                <i class="mdi-action-lock prefix"></i>
+                                                @Html.TextBoxFor(model => model.Clave, new { @maxlength = "20", @required = "required" })
                                                 @Html.LabelFor(model => model.Clave)
                                             </div>
                                         </div>
+                                        
                                         <div class="row">
-                                            <div class="input-field col s12">
+                                            <div class="input-field col m9">
                                                 <select name="TipoUsuario" required>
                                                     <option value="" disabled selected>Seleccione una opcion</option>
                                                     <option value="Administrador">Administrador</option>
                                                     <option value="Cliente">Cliente</option>
                                                 </select>
-                                                <label>Materialize Select</label>
+                                                <label>Tipo Usuario</label>
                                             </div>
 
                                         </div>

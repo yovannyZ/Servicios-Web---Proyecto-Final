@@ -20,8 +20,8 @@
                                     <div style="width:70% ; margin:0 auto;">
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <i class="mdi-action-account-circle prefix"></i>
-                                                @Html.EditorFor(model => model.Descripcion)
+                                                <i class="mdi-action-room prefix"></i>
+                                                @Html.TextAreaFor(model => model.Descripcion, new { @maxlength = "255", @required = "required", @class="materialize-textarea" , @length="255"})
                                                 @Html.LabelFor(model => model.Descripcion)
                                             </div>
                                         </div>
@@ -29,7 +29,7 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="mdi-communication-email prefix"></i>
-                                                @Html.EditorFor(model => model.Direccion)
+                                                @Html.TextBoxFor(model => model.Direccion, new { @maxlength = "150", @required = "required", @length = "150" })
                                                 @Html.LabelFor(model => model.Direccion)
                                             </div>
                                         </div>

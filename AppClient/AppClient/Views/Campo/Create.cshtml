@@ -20,10 +20,10 @@
                                     <div style="width:70% ; margin:0 auto;">
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <i class="mdi-action-account-circle prefix"></i>
-                                                @Html.TextBoxFor(model => model.Descripcion, new { @required="required" })
+                                                <i class="mdi-action-room prefix"></i>
+                                                @Html.TextAreaFor(model => model.Descripcion, new { @maxlength = "255", @required = "required", @class = "materialize-textarea", @length = "255" })
                                                 @Html.LabelFor(model => model.Descripcion)
-                                            </div>
+                                             </div>
                                         </div>
 
                                         <div class="row">

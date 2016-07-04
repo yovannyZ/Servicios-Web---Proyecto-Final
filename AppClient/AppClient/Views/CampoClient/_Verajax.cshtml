@@ -8,36 +8,30 @@
 @using (Html.BeginForm("Disponibilidad", "CampoClient", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
    
-    for (var i = 0; i < Model.Count(); i++)
-    {
-        <table>
-            <tr>
-                <td>
-                    @Html.HiddenFor(it => it[i].Id)
-                    @Html.HiddenFor(it => it[i].HoraInicio)
-                    @Html.HiddenFor(it => it[i].Precio)
-                    @Html.HiddenFor(it => it[i].HoraFin)
-                </td>
+   <div class="row">
+        @for (var i = 0; i < Model.Count(); i++)
+        {
+        <div class="col m4" style="padding:15px;">
+            <div class="borrarHidden">
+                <div class="switch">
+                    <label>
+                        @Html.DisplayFor(it => it[i].HoraInicio)-@Html.DisplayFor(it => it[i].HoraFin)
+                        @Html.CheckBoxFor(it => it[i].Checked, new { @id = @Html.DisplayFor(it => it[i].HoraInicio) })
+                        <span class="lever"></span>
 
-                <td>
-                    <div class="borrarHidden">
-                        <div class="switch">
-                            <label>
-                                @Html.DisplayFor(it => it[i].HoraInicio)-@Html.DisplayFor(it => it[i].HoraFin)
-                                @Html.CheckBoxFor(it => it[i].Checked, new { @id = @Html.DisplayFor(it => it[i].HoraInicio) })
-                                <span class="lever"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
 
-                            </label>
-                        </div>
-
-
-                    </div>
-                </td>
-            </tr>
-        </table>
+        @Html.HiddenFor(it => it[i].Id)
+        @Html.HiddenFor(it => it[i].HoraInicio)
+        @Html.HiddenFor(it => it[i].Precio)
+        @Html.HiddenFor(it => it[i].HoraFin)
 
 
-    }
+        }
+    </div>
 
     <button class="btn waves-effect waves-light" type="submit" name="action">
         Realizar reserva

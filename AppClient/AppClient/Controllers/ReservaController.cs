@@ -47,7 +47,7 @@ namespace AppClient.Controllers
 
             Reserva reserva = new Reserva();
             Campo campo = proxy.ObtenerCamposXId((int)Session["idCampo"]);
-            Usuario usuario = (Usuario)Session["usuariocliente"];
+            Usuario usuario = (Usuario)Session["usuarioclient"];
             reserva.campo = campo;
             reserva.usuario = usuario;
             reserva.FechaReserva = (DateTime)Session["diaReserva"];
@@ -96,7 +96,7 @@ namespace AppClient.Controllers
             Session["idCampo"] = IdCampo;
 
             Usuario usuario = proxy.ObtenerUsuarioId(IdUsuario);
-            Session["usuariocliente"] = usuario;
+            Session["usuarioclient"] = usuario;
 
             var listado = proxy.ListarTarifas(dia, IdCampo);
             return PartialView("_VerHorarios", listado);
@@ -158,7 +158,7 @@ namespace AppClient.Controllers
 
             Reserva reserva = new Reserva();
             Campo campo = proxy.ObtenerCamposXId((int)Session["idCampo"]);
-            Usuario usuario = (Usuario)Session["usuariocliente"];
+            Usuario usuario = (Usuario)Session["usuarioclient"];
             reserva.campo = campo;
             reserva.usuario = usuario;
             reserva.FechaReserva = (DateTime)Session["diaReserva"];

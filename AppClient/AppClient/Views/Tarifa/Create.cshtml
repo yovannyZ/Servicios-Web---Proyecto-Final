@@ -19,24 +19,22 @@
                         <div class="col s12">
                             <div style="width:70% ; margin:0 auto;">
                                 <div class="row">
-                                    <div class="input-field col s12">
-                                        <i class="mdi-action-account-circle prefix"></i>
-                                        @Html.TextBoxFor(model => model.HoraInicio, new { @required="required" })
-                                        @Html.LabelFor(model => model.HoraInicio)
+                                    <div class="input-field col m6">
+                                        <i class="mdi-action-schedule prefix"></i>
+                                        @Html.TextBoxFor(model => model.HoraInicio, new { @maxlength = "5", @required = "required"})
+                                        <label for="HoraInicio">Hora Inicio (ejm: 10:00)</label>
                                     </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <i class="mdi-communication-email prefix"></i>
-                                        @Html.TextBoxFor(model => model.HoraFin, new { @required = "required" })
-                                        @Html.LabelFor(model => model.HoraFin)
+                                    <div class="input-field col m6">
+                                        <i class="mdi-action-alarm-add prefix"></i>
+                                        @Html.TextBoxFor(model => model.HoraFin, new { @maxlength = "5", @required = "required" })
+                                        <label for="HoraFin">Hora Fin (ejm: 11:00)</label>
                                     </div>
+                                
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <i class="mdi-communication-email prefix"></i>
-                                        @Html.TextBoxFor(model => model.Precio, new { @required = "required" })
+                                        <i class="mdi-action-payment prefix"></i>
+                                        @Html.TextBoxFor(model => model.Precio, new { @maxlength = "10", @required = "required"})
                                         @Html.LabelFor(model => model.Precio)
                                     </div>
                                 </div>
