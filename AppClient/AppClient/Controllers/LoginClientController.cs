@@ -28,7 +28,7 @@ namespace AppClient.Controllers
                 Session["usuarioCliente"] = usuLogeado;
                 if (Session["idCampoCliente"] != null)
                 {
-                    return RedirectToAction("VerCalendario", "CampoClient", new { idCampo = (int)Session["idCampoCliente"] });
+                    return RedirectToAction("DetalleReserva", "ReservaClient");
                 }
                 return RedirectToAction("Index", "Home");
             }
@@ -91,7 +91,7 @@ namespace AppClient.Controllers
                Session["usuarioCliente"] = nuevoUsuario;
                if (Session["idCampoCliente"] != null)
                {
-                   return RedirectToAction("VerCalendario", "CampoClient", new { idCampo = (int)Session["idCampoCliente"] });
+                   return RedirectToAction("DetalleReserva", "ReservaClient");
                }
                return RedirectToAction("Index","Home");
            }

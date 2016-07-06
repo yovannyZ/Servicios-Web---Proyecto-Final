@@ -62,6 +62,25 @@ namespace AppClient.Controllers
             Session["diaReservaCliente"] = dia;
             int idCampo = (int)Session["idCampoCliente"];
             var listado = proxy.ListarTarifas(dia, idCampo);
+
+            int horaActual = DateTime.Now.Hour;
+
+            if (diaFormat == DateTime.Now.ToString("yyyy-MM-dd"))
+            {
+                List<Tarifa> lista = new List<Tarifa>();
+                foreach (var tarifa in listado)
+                {
+                    int hora = int.Parse(tarifa.HoraInicio.Substring(0, 2));
+                    if (hora >= horaActual)
+                    {
+                        lista.Add(tarifa);
+                    }
+
+                }
+                return PartialView("_Verajax", lista);
+            }
+           
+
             return PartialView("_Verajax", listado);
         }
        

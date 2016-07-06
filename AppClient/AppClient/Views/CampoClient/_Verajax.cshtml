@@ -5,8 +5,10 @@
     Layout =null;
 }
 
-@using (Html.BeginForm("Disponibilidad", "CampoClient", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@if (@Model.Count > 0)
 {
+    using (Html.BeginForm("Disponibilidad", "CampoClient", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
    
    <div class="row">
         @for (var i = 0; i < Model.Count(); i++)
@@ -38,7 +40,16 @@
         <i class="material-icons right">send</i>
     </button>
 
+    }
 }
+else
+{
+    <div>
+        <p class="red-text center-align">No hay horarios disponibles porfavor escoja otra fecha. Gracias</p>
+    </div>
+}
+
+
 <script>
 
     $(document).ready(function () {
@@ -46,7 +57,7 @@
       
     });
 </script>
-
+ 
 
 
 

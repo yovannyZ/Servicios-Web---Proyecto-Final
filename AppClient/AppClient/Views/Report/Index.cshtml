@@ -38,7 +38,7 @@
             var lista =@Html.Raw(Json.Encode(Model));
 
 
-            var dataarray=[["Element", "Ventas S/.", { role: "style" }]];
+            var dataarray=[["Element", "Ingresos S/.", { role: "style" }]];
             lista.forEach(function cargarCombo2(value,index){
                 dataarray.push([value.Mes, value.Monto, "color: #76A7FA"]);
             });
