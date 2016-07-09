@@ -308,5 +308,40 @@ namespace Canchita.Service.Data
         }
 
 
+        public string mandarMensajeBienvenida(string email, string apellidos, string nombre, string username)
+        {
+            string mensaje = "";
+            System.Net.Mail.MailMessage msj = new System.Net.Mail.MailMessage();
+            msj.To.Add(email);
+            //Asunto
+            msj.Subject = "Bienvenido(a) a Campos Deportivos 'LA 10' ";
+            msj.SubjectEncoding = System.Text.Encoding.UTF8;
+            
+            msj.Body = "<br /> <br /> <h2 style='color:2D3C6B'>Gracias por registrarse a Canchita LA 10 </h2> <br />  <br />  <br />" +
+            "<h4>Estimado: <b style='color:blue'>" + apellidos + " </b>,  <b style='color:blue'>" + nombre + " </b> <br />Ud. se registró con el usuario de :  " +
+            "<b style='color:green'> " + username + " </b> <br /> <b><i>Con tu cuenta podrás ver tus reservas y te estaremos informando de nuestras ofertas. <i/> </b><br /> </br> Atte. Soporte LA 10 </h4>";
+            msj.BodyEncoding = System.Text.Encoding.UTF8;
+            msj.IsBodyHtml = true;
+            msj.From = new System.Net.Mail.MailAddress("campoladiez@gmail.com");
+            //cliente de correo:
+            System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+            cliente.Credentials =
+            new System.Net.NetworkCredential("campoladiez@gmail.com", "@mipassword@123");
+            cliente.Port = 587;
+            cliente.EnableSsl = true;
+            cliente.Host = "smtp.gmail.com";
+            try
+            {
+                cliente.Send(msj);
+                mensaje = "Enviado";
+            }
+            catch (System.Net.Mail.SmtpException ex)
+            {
+                mensaje = "Error";
+            }
+
+            return mensaje;
+        }
+
     }
 }

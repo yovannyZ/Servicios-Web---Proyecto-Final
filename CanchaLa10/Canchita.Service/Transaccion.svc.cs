@@ -198,6 +198,11 @@ namespace Canchita.Service
         {
             return UsuarioDAO.recuperarCuenta(usuario.Email, usuario.Apellidos, usuario.Nombres, usuario.Username, usuario.Clave);
         }
+
+        public string MensajeBienvenida(Usuario usuario)
+        {
+            return UsuarioDAO.mandarMensajeBienvenida(usuario.Email, usuario.Apellidos, usuario.Nombres, usuario.Username);
+        }
        
         #endregion
 
@@ -450,6 +455,9 @@ namespace Canchita.Service
             return BancoDAO.retornarMontoAPagar(nroPago);
         }
         #endregion
+
+
+
 
 
 

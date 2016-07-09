@@ -86,7 +86,9 @@ namespace AppClient.Controllers
            {
                usuario.TipoUsuario = "Cliente";
                usuario.Estado = "Activo";
-               proxy.AgregarUsuario(usuario);
+               bool result=proxy.AgregarUsuario(usuario);
+               if (result)
+               proxy.MensajeBienvenida(usuario);
                Usuario nuevoUsuario = proxy.ValidarUsuario(usuario);
                Session["usuarioCliente"] = nuevoUsuario;
                if (Session["idCampoCliente"] != null)

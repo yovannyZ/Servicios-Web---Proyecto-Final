@@ -1267,6 +1267,12 @@ namespace AppClient.CanchitaWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/mandarCorreo", ReplyAction="http://tempuri.org/ITransaccion/mandarCorreoResponse")]
         System.Threading.Tasks.Task<string> mandarCorreoAsync(AppClient.CanchitaWS.Usuario usuario);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/MensajeBienvenida", ReplyAction="http://tempuri.org/ITransaccion/MensajeBienvenidaResponse")]
+        string MensajeBienvenida(AppClient.CanchitaWS.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/MensajeBienvenida", ReplyAction="http://tempuri.org/ITransaccion/MensajeBienvenidaResponse")]
+        System.Threading.Tasks.Task<string> MensajeBienvenidaAsync(AppClient.CanchitaWS.Usuario usuario);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITransaccion/ListarTarifas", ReplyAction="http://tempuri.org/ITransaccion/ListarTarifasResponse")]
         System.Collections.Generic.List<AppClient.CanchitaWS.Tarifa> ListarTarifas(System.DateTime fechaReserva, int idCampo);
         
@@ -1591,6 +1597,14 @@ namespace AppClient.CanchitaWS {
         
         public System.Threading.Tasks.Task<string> mandarCorreoAsync(AppClient.CanchitaWS.Usuario usuario) {
             return base.Channel.mandarCorreoAsync(usuario);
+        }
+        
+        public string MensajeBienvenida(AppClient.CanchitaWS.Usuario usuario) {
+            return base.Channel.MensajeBienvenida(usuario);
+        }
+        
+        public System.Threading.Tasks.Task<string> MensajeBienvenidaAsync(AppClient.CanchitaWS.Usuario usuario) {
+            return base.Channel.MensajeBienvenidaAsync(usuario);
         }
         
         public System.Collections.Generic.List<AppClient.CanchitaWS.Tarifa> ListarTarifas(System.DateTime fechaReserva, int idCampo) {

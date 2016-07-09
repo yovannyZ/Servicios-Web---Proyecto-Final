@@ -51,7 +51,9 @@ namespace AppClient.Controllers
             {
                 usuario.Imagen = null;
             }
-            proxy.AgregarUsuario(usuario);
+            bool resul=proxy.AgregarUsuario(usuario);
+            if (resul)
+                proxy.MensajeBienvenida(usuario);
             return RedirectToAction("listaUsuario");
         }
 

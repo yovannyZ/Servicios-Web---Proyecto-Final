@@ -55,6 +55,12 @@
   <wsdl:message name="ITransaccion_mandarCorreo_OutputMessage">
     <wsdl:part name="parameters" element="tns:mandarCorreoResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_MensajeBienvenida_InputMessage">
+    <wsdl:part name="parameters" element="tns:MensajeBienvenida" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_MensajeBienvenida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MensajeBienvenidaResponse" />
+  </wsdl:message>
   <wsdl:message name="ITransaccion_ListarTarifas_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarTarifas" />
   </wsdl:message>
@@ -322,6 +328,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/mandarCorreo" message="tns:ITransaccion_mandarCorreo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/mandarCorreoResponse" message="tns:ITransaccion_mandarCorreo_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="MensajeBienvenida">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/MensajeBienvenida" message="tns:ITransaccion_MensajeBienvenida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/MensajeBienvenidaResponse" message="tns:ITransaccion_MensajeBienvenida_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ListarTarifas">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ListarTarifas" message="tns:ITransaccion_ListarTarifas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ListarTarifasResponse" message="tns:ITransaccion_ListarTarifas_OutputMessage" />
@@ -546,6 +556,15 @@
     </wsdl:operation>
     <wsdl:operation name="mandarCorreo">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/mandarCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MensajeBienvenida">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/MensajeBienvenida" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

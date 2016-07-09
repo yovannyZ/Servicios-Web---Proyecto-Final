@@ -37,6 +37,8 @@ namespace Canchita.Service
         [OperationContract]
         string mandarCorreo(Usuario usuario);
 
+        [OperationContract]
+        string MensajeBienvenida(Usuario usuario);
 
         #endregion
 
