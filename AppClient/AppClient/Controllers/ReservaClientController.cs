@@ -14,9 +14,17 @@ namespace AppClient.Controllers
         // GET: /ReservaClient/
         public ActionResult DetalleReserva()
         {
-            var listadoDetalles = (List<DetalleReserva>)Session["listaDetallesCliente"];
+            if (Session["usuarioCliente"] != null)
+            {
+                var listadoDetalles = (List<DetalleReserva>)Session["listaDetallesCliente"];
 
-          return View(listadoDetalles);
+                return View(listadoDetalles);
+            }
+            else
+            {
+                return RedirectToAction("Index","Home");
+            }
+           
         }
 
         public ActionResult EliminarDetalle(int id)
@@ -38,12 +46,13 @@ namespace AppClient.Controllers
             }
 
             Reserva reserva = new Reserva();
-            Campo campo = proxy.ObtenerCamposXId((int)Session["idCampoCliente"]);
+            Campo campo = proxy.ObtenerCamposXId(Convert.ToInt32(Session["idCampoCliente"]));
             Usuario usuario = (Usuario)Session["usuarioCliente"];
             reserva.campo = campo;
             reserva.usuario = usuario;
-            reserva.FechaReserva = (DateTime)Session["diaReservaCliente"];
-            reserva.Estado = "Pendiente";
+            string dia = Session["diaReservaCliente"].ToString();
+            reserva.FechaReserva = Convert.ToDateTime(dia);
+            reserva.Estado = "Cancelado";
             reserva.Monto = monto;
             proxy.AgregarReserva(reserva,listadoDetalles);
 
@@ -52,7 +61,13 @@ namespace AppClient.Controllers
             pago.nroPago = "P" + idUltimaReserva;
             proxy.reservarPagoEfectivo(pago, idUltimaReserva);
 
-            return RedirectToAction("verlistaReservasxCliente");
+            return RedirectToAction("PagoRealizado", new { id = idUltimaReserva });
+        }
+       
+        public ActionResult PagoRealizado(int id)
+        {
+            ViewBag.IdReserva = id;
+            return View();
         }
 
         public ActionResult verlistaReservasxCliente()

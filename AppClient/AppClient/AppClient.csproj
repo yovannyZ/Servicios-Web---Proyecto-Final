@@ -106,7 +106,10 @@
     <Content Include="content\css\page-center.css" />
     <Content Include="content\css\prism.css" />
     <Content Include="content\css\style.css" />
+    <Content Include="content\images\American-Express-icon.png" />
     <Content Include="content\images\avatar.jpg" />
+    <Content Include="content\images\canchita-logo.png" />
+    <Content Include="content\images\Designbolts-Credit-Card-Payment-Master-Card.ico" />
     <Content Include="content\images\favicon\apple-touch-icon-152x152.png" />
     <Content Include="content\images\favicon\favicon-32x32.png" />
     <Content Include="content\images\generic-logo.png" />
@@ -117,6 +120,7 @@
     <Content Include="content\images\signature-scan.png" />
     <Content Include="content\images\style_typography_roboto.png" />
     <Content Include="content\images\user-bg.jpg" />
+    <Content Include="content\images\Visa-icon.png" />
     <Content Include="content\js\jquery-1.11.2.min.js" />
     <None Include="content\js\jquery-2.1.4.intellisense.js" />
     <Content Include="content\js\jquery-2.1.4.js" />
@@ -275,6 +279,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginClientController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ReservasController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ReservaClientController.cs" />
     <Compile Include="Controllers\ReservaController.cs" />
@@ -362,6 +367,10 @@
     <Content Include="Views\Banco\Index.cshtml" />
     <Content Include="Views\Banco\verMonto.cshtml" />
     <Content Include="Views\Banco\pagar.cshtml" />
+    <Content Include="Views\Reservas\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\ReservaClient\PagoRealizado.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "PagoRealizado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div style="width:55%; margin:0 auto; border:2px solid #808080; border-radius:10px;">
+    <p class="green-text darken-3 center-align "><i class="small material-icons">offline_pin</i><b>Gracias por Reservar tu campo deportivo en Cancha la 10</b></p>
+    <p class="white-text center-align" style="background:green;">Tu numero de reserva es <b>@ViewBag.IdReserva</b></p>
+    <p class="center-align orange-text "><b>Muestra tu número de reserva al encargado de la sede para poder verificar tu reserva y puedas disfrutar del juego!!</b></p>
+    <div style="width: 80%; margin: 0 auto; padding: 3px; ">
+        <a class="waves-effect waves-light btn" href="/ReservaClient/verlistaReservasxCliente">Revisa tus Reservas aquí</a>
+        <a class="waves-effect waves-light btn" href="/Reservas">Realiza otra reserva aquí</a>
+
+    </div>
+</div>
+

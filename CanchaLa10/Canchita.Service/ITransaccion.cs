@@ -79,7 +79,7 @@ namespace Canchita.Service
         [OperationContract]
         List<Reserva> listarReservasPendientes();
         [OperationContract]
-        List<Reserva> listarReservasCanceladas();
+        List<Reserva> listarReservasCanceladas(int idSede);
 
         [OperationContract]
         int verificar();
@@ -149,6 +149,8 @@ namespace Canchita.Service
 
         [OperationContract]
         List<Campo> ObtenerCamposXSede(int idSede);
+        [OperationContract]
+        List<Campo> ObtenerCamposXSede2(int idSede);
         [OperationContract]
         Campo ObtenerCamposXId(int idCampo);
         #endregion

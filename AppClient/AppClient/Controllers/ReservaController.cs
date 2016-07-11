@@ -177,7 +177,7 @@ namespace AppClient.Controllers
 
         public ActionResult ListadoReserva()
         {//Reservas Canceladas
-            var listado = proxy.listarReservasCanceladas();
+            var listado = proxy.listarReservasCanceladas(Convert.ToInt32(Session["sedeSelect"]));
             return View(listado);
         }
 

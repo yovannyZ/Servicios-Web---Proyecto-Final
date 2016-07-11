@@ -25,6 +25,7 @@ namespace AppClient.Controllers
             usuario.TipoUsuario = "Administrador";
             ListarSedes();
             Session["sedeSelect"] = combo;
+            Session["sede"] = proxy.ObtenerSedeId(combo);
             Usuario usuLogeado = proxy.ValidarUsuario(usuario);
             if (usuLogeado != null)
             {
@@ -51,6 +52,7 @@ namespace AppClient.Controllers
             Session.Remove("MontoRecibido");
             Session.Remove("Cambio");
             Session.Remove("diaReserva");
+            Session.Remove("sede");
             return RedirectToAction("Index");
         }
 

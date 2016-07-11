@@ -1,0 +1,174 @@
+﻿@model List<AppClient.CanchitaWS.Tarifa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<AppClient.CanchitaWS.Sede> listaSedes = ViewBag.listadoSedes;
+}
+
+<div class="container">
+    @using (Html.BeginForm("Disponibilidad", "CampoClient", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="col s12 m4 input-field">
+                <select id="Sede" name="Sede">
+                    <option value="">Seleccione Sede</option>
+                    @foreach (var sede in listaSedes)
+                    {
+                        <option value="@sede.Id">@sede.Descripcion</option>
+                    }
+                </select>
+            </div>
+
+
+
+            <div class="col s12 m4 input-field">
+                <select id="Campo" name="Campo">
+                    <option>Selecione un campo</option>
+                </select>
+            </div>
+
+            <div class="col s12 m4" >
+                <div class="input-field">
+                    <label for="dia">Seleccione Fecha</label>
+                    <input type="date" id="dia" name="dia" class="datepicker" />
+                    <div id="error" class="error"> Selecciona una fecha</div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col s12 m4 input-field offset-m4">
+                <button type="button" class="btn btn-default " id="enviar">Ver Disponibilidad</button>
+            </div>
+        </div>
+  
+    <div class="col m5 lista">
+        <ul id="lista"></ul>
+    </div>
+    <div class="row">
+        <div class="col m3">
+            <img id="imagen" src="" height="250" width="230" />
+        </div>
+       
+        <div id="listaTarifa">
+            <!--Listado de Horarios disponibles-->
+        </div>
+        <div class="row">
+            <div class="col s12 m4 input-field offset-m4">
+                <button type="submit" class="btn btn-default" id="reserva" >Realizar reserva</button>
+            </div>
+        </div>
+    </div>
+        
+ 
+    }
+</div>
+<script src="~/content/js/jquery-2.1.4.min.js"></script>
+
+   <script type="text/javascript">
+
+   
+     
+       $(document).ready(function () {
+           $("#enviar").css('display', 'none');
+           $("#reserva").css('display', 'none');
+           
+           $("#dia").change(function () {
+               $("#enviar").css('display', 'block');
+           });
+
+           //Funcion que desabilita el campo y dia
+           $("#Campo").attr("disabled", "disabled");
+           
+           $("#dia").attr("disabled", "disabled");
+           //ocultar la imagen
+           $("#imagen").css('display', 'none');
+           //Funcion que obtiene los campos dependiendo de la sede
+           $("#Sede").change(function () {
+               fillCombo("Campo", $("#Sede").val());
+           });
+           //Funcion que habilita el dia
+           $("#Campo").change(function () {
+               $("#dia").removeAttr("disabled");
+           });
+
+           $("#enviar").click(function () {
+               var campo = $("#Campo").val();
+               var dia = $("#dia").val();
+               $("#lista").remove();
+               $(".tarifa").remove();
+             
+               //Mostrar la imagen
+               $.getJSON("@Url.Action("MostrarImagen")" 
+                + "/" + campo,
+                function (data) {
+                    //Poner la imagen en el img
+                    document.getElementById("imagen").src = "data:image/png;base64," + data;
+                    $("#imagen").css('display', 'block')
+                });
+
+               //Mostrar la informacion
+               $.getJSON("@Url.Action("Informacion")" 
+               + "/" + campo,
+               function (data) {
+                   $(".lista").append("<ul id='lista'></ul>")
+                   $("#lista").append("<li><h5 class='teal-text'>" + data.Sede.Descripcion + "</h5></li>");
+                   $("#lista").append("<li>" + data.Sede.Direccion + "</li>");
+                   $("#lista").append("<li>" + data.Descripcion + "</li>");
+                   $("#lista").css('display', 'block');
+               });
+
+               //Mostrar los horarios disponibles
+             
+               $.getJSON("@Url.Action("Tarifa")" 
+              + "?" + "dia=" + dia + "&campo=" + campo,
+              function (data) {
+
+                  $("#listaTarifa").prepend("<div><b class='teal-text'>Seleccione horario(s)</b></div>");
+                  $.each(data, function (i, item) {
+
+                      $("#listaTarifa").append("<div class='tarifa'>" +
+                                            "<div class='col m3' style='padding:15px;'>" +
+                                           "<div class='switch'>" +
+                                           "<label>" + item.HoraInicio + "-" + item.HoraFin +
+                                           "<input type='checkbox' name='["+i+"].Checked' value='true'/>" +
+                                           "<span class='lever'></span>" +
+                                           "(S/." + item.Precio + ")"+
+                                           "</label>" +
+                                           "</div>" +
+                                           "</div>"+
+                                           "</div>"+
+                                           "<input type='hidden' value='" + item.Id + "' name='[" + i + "].Id'/>"+
+                                           "<input type='hidden' value='" + item.HoraInicio + "' name='[" + i + "].HoraInicio'/>" +
+                                           "<input type='hidden' value='" + item.Precio + "' name='[" + i + "].Precio'/>" +
+                                           "<input type='hidden' value='" + item.HoraFin + "' name='[" + i + "].HoraFin'/>")
+                   
+                  });
+                  $("#reserva").css('display', 'block');
+              });
+           });
+          
+       });
+
+        function fillCombo(updateId, value) {
+            $.getJSON("@Url.Action("CamposPorSedes")" 
+                + "/" + value,
+                function(data) {
+                    $("#Campo").empty();
+               
+                    $.each(data, function (i, item) {
+                       
+                        $("#Campo").append("<option value='" 
+                           + item.Id +"'>" + item.Descripcion
+                           + "</option>");
+                    });
+                    //Funcion que habilita el campo
+                    $("#Campo").removeAttr("disabled");
+                    $('select').material_select();
+                });
+        }
+</script>
+
+
+

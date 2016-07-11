@@ -238,13 +238,15 @@ namespace Canchita.Service.Data
             }
             return lista;
         }
-        public List<Reserva> listaReservaCanceladas()
+        public List<Reserva> listaReservaCanceladas(int idSede)
         {
             CampoDAO campoDao = new CampoDAO();
             UsuarioDAO usuarioDao = new UsuarioDAO();
             List<Reserva> lista = new List<Reserva>();
             Reserva reserva = null;
-            string query = "Select * from Reserva where estado='Cancelado'";
+            string query = "  select r.* from reserva r inner join Campo c on r.idCampo=c.idCampo "+
+						  "inner join Sede s on s.idSede=c.idSede "+
+                           "where s.idSede=" + idSede;
             using (SqlDataReader lector = DBHelper.ExecuteDataReader(query))
             {
                 if (lector != null && lector.HasRows)

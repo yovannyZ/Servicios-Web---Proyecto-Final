@@ -1,5 +1,6 @@
 ﻿@{
     AppClient.CanchitaWS.Usuario usuario = (AppClient.CanchitaWS.Usuario)Session["usuario"];
+    AppClient.CanchitaWS.Sede sede = (AppClient.CanchitaWS.Sede)Session["sede"];
 }
 <!DOCTYPE html>
 <html lang="es">
@@ -61,6 +62,7 @@
                         <li class="search-out">
                             <input type="text" class="search-out-text">
                         </li>
+                        <li>@sede.Descripcion</li>
                         <li>
                             <a href="/Admin/CerrarSesion" class="waves-effect waves-block waves-light show-search"><i class="mdi-content-clear"></i></a>
                         </li>
@@ -111,26 +113,44 @@
                     <li class="bold">
                         <a href="/Sede/" class="waves-effect waves-cyan"><i class="mdi-action-language"></i> Gestionar Sedes</a>
                     </li>
+                    <li>
+                        <hr />
+                    </li>
                     <li class="bold">
                         <a href="/Campo/" class="waves-effect waves-cyan"><i class="mdi-communication-email"></i> Gestionar Campos</a>
+                    </li>
+                    <li>
+                        <hr />
                     </li>
                     <li class="bold">
                         <a href="/Reserva/NuevaReserva" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i>Nueva Reserva</a>
                     </li>
-                    <li class="bold">
-                        <a href="/Reserva/ListadoReserva" class="waves-effect waves-cyan"><i class="mdi-action-add-shopping-cart"></i>Ver Reservas Canceladas</a>
+                    <li>
+                        <hr />
                     </li>
+                    <li class="bold">
+                        <a href="/Reserva/ListadoReserva" class="waves-effect waves-cyan"><i class="mdi-action-add-shopping-cart"></i>Ver Reservas</a>
+                    </li>
+                    <!--
                     <li class="bold">
                         <a href="/Reserva/ListadoReservaPendiente" class="waves-effect waves-cyan"><i class="mdi-action-event"></i>Ver Reservas Pendientes</a>
                     </li>
-
+                        -->
+                    <li>
+                        <hr />
+                    </li>
                     <li class="bold">
                         <a href="/Tarifa/" class="waves-effect waves-cyan"><i class="mdi-action-alarm-on"></i>Gestionar Tarifas</a>
+                    </li>
+                    <li>
+                        <hr />
                     </li>
                     <li class="bold">
                         <a href="/Usuario/listaUsuario" class="waves-effect waves-cyan"><i class="mdi-action-account-child"></i>Gestionar Usuarios</a>
                     </li>
-
+                    <li>
+                        <hr />
+                    </li>
                     <li class="bold">
                         <a href="/Report/Index" class="waves-effect waves-cyan"><i class="mdi-action-assessment"></i>Reporte</a>
                     </li>
@@ -138,9 +158,12 @@
                     <li>
                         <hr />
                     </li>
-                    <li class="bold">
+                    <!--
+                        <li class="bold">
                         <a href="/Reserva/Verificar" class="waves-effect waves-cyan"><i class="mdi-av-timer"></i>Verificar Reservas Pendientes</a>
                     </li>
+                    -->
+                    
 
 
                  

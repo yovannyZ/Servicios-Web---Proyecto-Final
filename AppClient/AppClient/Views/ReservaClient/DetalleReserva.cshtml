@@ -12,53 +12,152 @@
 
     @using (Html.BeginForm("CrearReserva", "ReservaClient", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
+        <div class="row">
+            <div class="col m5 " style="border-radius:10px; margin-right:5px;">
+                <div>
+                    <p class="grey-text darken-3"><i class="small material-icons">clear_all</i><b>Detalle Reserva:</b></p>
+                </div>
+                <table class="orange darken-1" style="border-radius:10px;">
+                    <thead style="color:white;">
+                        <tr>
+                            <th>Hora Inicio</th>
+                            <th>Hora Fin</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody style="color:white;">
+                        @for (var i = 0; i < Model.Count(); i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(it => it[i].HoraInicio)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(it => it[i].HoraFin)
+                                </td>
+                                <td>
+                                    S/. @Html.DisplayFor(it => it[i].Precio).00
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Eliminar", "EliminarDetalle", new { id = @Model[i].Tarifa.Id })
+                                </td>
+                            </tr>
+                            {
 
+                                montoTotal = montoTotal + @Model[i].Precio;
+                            }
 
-        <input type="text" id="dia" name="dia" value="@Session["diaReservaCliente"].ToString()" disabled />
+                            @Html.HiddenFor(it => it[i].Tarifa.Id)
+                            @Html.HiddenFor(it => it[i].HoraFin)
+                            @Html.HiddenFor(it => it[i].Precio)
+                            @Html.HiddenFor(it => it[i].HoraFin)
 
-        <table class="striped">
-            <thead>
-                <tr>
-                    <th>Hora Inicio</th>
-                    <th>Hora Fin</th>
-                    <th>Precio</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @for (var i = 0; i < Model.Count(); i++)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(it => it[i].HoraInicio)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(it => it[i].HoraFin)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(it => it[i].Precio)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Eliminar", "EliminarDetalle", new { id = @Model[i].Tarifa.Id })
-                        </td>
-                    </tr>
-                    {
-                        montoTotal = montoTotal + @Model[i].Precio;
-                    }
-
-                    @Html.HiddenFor(it => it[i].Tarifa.Id)
-                    @Html.HiddenFor(it => it[i].HoraFin)
-                    @Html.HiddenFor(it => it[i].Precio)
-                    @Html.HiddenFor(it => it[i].HoraFin)
-
-                }
-            </tbody>
-        </table>
-        <h1>Monto total = @montoTotal</h1>
-        <button class="btn waves-effect waves-light" type="submit" name="action">
-            Realizar reserva
-            <i class="material-icons right">send</i>
-        </button>
-
+                        }
+                        <tr class=" orange darken-4">
+                            <td colspan="4"><b>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; Monto total = S/. @montoTotal.00</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <button class="btn waves-effect waves-light" type="button" name="action" id="siguiente">
+                    Siquiente
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+           
+            <div>
+                <p class="grey-text darken-3"><i class="small material-icons">payment</i><b>Pagar:</b></p>
+            </div>
+            <div class="col m6 " >
+                <div class="col m12 teal" style="border-radius:10px;" id="DisableDiv">
+                    <div class=" input-field col m4" style="color:white;">
+                        <input name="group1" type="radio" id="visa" required checked />
+                        <label for="visa">
+                            <img src="~/content/images/Visa-icon.png" width="40" height="40" />
+                        </label>
+                    </div>
+                    <div class=" input-field col m4" style="color:white;">
+                        <input name="group1" type="radio" id="mastercard" required />
+                        <label for="mastercard">
+                            <img src="~/content/images/Designbolts-Credit-Card-Payment-Master-Card.ico" width="40" height="40" />
+                        </label>
+                    </div>
+                    <div class=" input-field col m4" style="color:white;">
+                        <input name="group1" type="radio" id="american" required />
+                        <label for="american">
+                            <img src="~/content/images/American-Express-icon.png" width="40" height="40" />
+                        </label>
+                    </div>
+                    <div class=" input-field col m12" style="color:white;">
+                        <i class="material-icons prefix" style="color:white;">payment</i>
+                        <input id="icon_prefix" type="text" class="validate" style="color:white;" required>
+                        <label for="icon_prefix" style="color:white;">Número de la tarjeta</label>
+                    </div>
+                    <div class=" input-field col m12" style="color:white;">
+                        <i class="material-icons prefix" style="color:white;">account_circle</i>
+                        <input id="icon_prefix" type="text" class="validate" style="color:white;" required>
+                        <label for="icon_prefix" style="color:white;">Nombres y apellidos del titular</label>
+                    </div>
+                    <div class="col m6">
+                        <label style="color:white;">Mes de expiracion</label>
+                        <select class="browser-default" required>
+                            <option value="" disabled selected>Seleccion una opcion</option>
+                            @for (var i = 1; i <= 12; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col m6">
+                        <label style="color:white;">Año de expiracion</label>
+                        <select class="browser-default" required>
+                            <option value="" disabled selected>Seleccion una opcion</option>
+                            @for (int i = DateTime.Now.Year; i <= 2035; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                    </div>
+                    <div class=" input-field col m12" style="color:white;">
+                        <i class="material-icons prefix" style="color:white;">vpn_key</i>
+                        <input id="icon_prefix" type="text" class="validate" style="color:white;" required>
+                        <label for="icon_prefix" style="color:white;">CVC</label>
+                    </div>
+                    <div class=" input-field col m12" style="color:white;">
+                        <i class="material-icons prefix" style="color:white;">account_circle</i>
+                        <input id="icon_prefix" type="text" class="validate" style="color:white;" required>
+                        <label for="icon_prefix" style="color:white;">Numero de DNI</label>
+                    </div>
+                   
+                </div>
+                <div>
+                    <p class="orange-text"><b>Se cargará en su tarjeta el pago de S/. @montoTotal.00 </b></p>
+                </div>
+                <div class="col m12" style="margin-top:10px;" >
+                    <button class="btn waves-effect waves-light" type="submit" name="action" id="Pagar" style="display:none;">
+                        Pagar
+                        <i class="material-icons right">thumb_up</i>
+                    </button>
+                </div>
+                
+            </div>
+          
+           
+        </div>
+   
     }
+    <input type="button" value="Atras" onclick="history.go(-1)" />
 </div>
+<script src="~/content/js/jquery-2.1.4.min.js"></script>
+<script>
+    $('#DisableDiv').fadeTo('slow', .6);
+    $('#DisableDiv').append('<div id="desabilitar" style=" position: absolute;top:30;left:40;width: 100%;height:80%;z-index:2;opacity:0.4;filter: alpha(opacity = 50)"></div>');
+
+
+    $("#siguiente").click(function () {
+        $('#DisableDiv').fadeTo('slow', 1);
+        $("#desabilitar").remove();
+        $("#Pagar").css("display","block");
+    });
+</script>

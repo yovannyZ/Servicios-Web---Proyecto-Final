@@ -149,6 +149,33 @@ namespace Canchita.Service.Data
 
             return lista;
         }
+        public List<Campo> ObtenerCamposXSede2(int idSede)
+        {
+            List<Campo> lista = new List<Campo>();
+
+
+            string query = "SELECT idCampo,Descripcion FROM Campo where idSede=@pr1 and  Estado='Activo'";
+            SqlParameter[] dbParams = new SqlParameter[]
+             {
+                 DBHelper.MakeParam("@pr1",idSede)
+             };
+            using (SqlDataReader lector = DBHelper.ExecuteDataReader(query, dbParams))
+            {
+                if (lector != null && lector.HasRows)
+                {
+                    Campo campo;
+                    while (lector.Read())
+                    {
+                        campo = new Campo();
+                        campo.Id = Convert.ToInt32(lector["idCampo"]);
+                        campo.Descripcion = Convert.ToString(lector["Descripcion"]);
+                        lista.Add(campo);
+                    }
+                }
+            }
+
+            return lista;
+        }
         public Campo ObtenerCamposXId(int idCampo)
         {
             var sedeDao = new SedeDAO();
@@ -189,6 +216,8 @@ namespace Canchita.Service.Data
 
             return campo;
         }
+       
+      
 
     }
 }

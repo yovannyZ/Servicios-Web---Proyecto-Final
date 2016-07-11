@@ -297,11 +297,12 @@ namespace Canchita.Service
         {
             return ReservaDAO.listaReservaPendientes();
         }
-
-        public List<Reserva> listarReservasCanceladas()
+        public List<Reserva> listarReservasCanceladas(int idSede)
         {
-            return ReservaDAO.listaReservaCanceladas();
+            return ReservaDAO.listaReservaCanceladas(idSede);
         }
+
+      
 
         #endregion
 
@@ -419,6 +420,11 @@ namespace Canchita.Service
         {
             return CampoDAO.ObtenerCamposXSede(idSede);
         }
+
+        public List<Campo> ObtenerCamposXSede2(int idSede)
+        {
+            return CampoDAO.ObtenerCamposXSede2(idSede);
+        }
         public Campo ObtenerCamposXId(int idCampo)
         {
             return CampoDAO.ObtenerCamposXId(idCampo);
@@ -461,5 +467,8 @@ namespace Canchita.Service
 
 
 
+
+
+       
     }
 }

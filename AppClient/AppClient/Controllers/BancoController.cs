@@ -31,7 +31,7 @@ namespace AppClient.Controllers
         public ActionResult verMonto()
         {
            var lista = Session["listt"];
-           int i = 0;
+           
             return View(lista);
         }
 

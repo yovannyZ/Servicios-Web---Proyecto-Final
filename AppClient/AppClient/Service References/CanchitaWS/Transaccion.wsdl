@@ -265,6 +265,12 @@
   <wsdl:message name="ITransaccion_ObtenerCamposXSede_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerCamposXSedeResponse" />
   </wsdl:message>
+  <wsdl:message name="ITransaccion_ObtenerCamposXSede2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCamposXSede2" />
+  </wsdl:message>
+  <wsdl:message name="ITransaccion_ObtenerCamposXSede2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCamposXSede2Response" />
+  </wsdl:message>
   <wsdl:message name="ITransaccion_ObtenerCamposXId_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerCamposXId" />
   </wsdl:message>
@@ -467,6 +473,10 @@
     <wsdl:operation name="ObtenerCamposXSede">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ObtenerCamposXSede" message="tns:ITransaccion_ObtenerCamposXSede_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ObtenerCamposXSedeResponse" message="tns:ITransaccion_ObtenerCamposXSede_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCamposXSede2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ObtenerCamposXSede2" message="tns:ITransaccion_ObtenerCamposXSede2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransaccion/ObtenerCamposXSede2Response" message="tns:ITransaccion_ObtenerCamposXSede2_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerCamposXId">
       <wsdl:input wsaw:Action="http://tempuri.org/ITransaccion/ObtenerCamposXId" message="tns:ITransaccion_ObtenerCamposXId_InputMessage" />
@@ -871,6 +881,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerCamposXSede">
       <soap:operation soapAction="http://tempuri.org/ITransaccion/ObtenerCamposXSede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCamposXSede2">
+      <soap:operation soapAction="http://tempuri.org/ITransaccion/ObtenerCamposXSede2" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -26,7 +26,7 @@ namespace AppClient.Controllers
         }
 
         [HttpPost]
-        public ActionResult Disponibilidad(List<Tarifa> lista)
+        public ActionResult Disponibilidad(List<Tarifa> lista , DateTime dia)
         {
             DetalleReserva dtReserva;
             List<DetalleReserva> listaDetalles = new List<DetalleReserva>();
@@ -44,6 +44,7 @@ namespace AppClient.Controllers
                     listaDetalles.Add(dtReserva);
                 }
             }
+            Session["diaReservaCliente"] = dia;
             Session["montoCliente"] = monto;
             Session["listaDetallesCliente"] = listaDetalles;
             if (Session["usuarioCliente"] != null)
