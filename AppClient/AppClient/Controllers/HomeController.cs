@@ -17,6 +17,15 @@ namespace AppClient.Controllers
             return View();
         }
 
+        public ActionResult verInformacion()
+        {
+            return View();
+        }
+
+        public ActionResult bienvenida()
+        {
+            return View();
+        }
       
 	}
 }

@@ -32,13 +32,16 @@
             <ul class="right hide-on-med-and-down">
                 @if (Session["usuarioCliente"] == null)
                 {
-                    <li><a href="/LoginClient/Registro">Registrate aqui</a></li>
+                    <li><a href="/LoginClient/Registro">Registrate aqui</a></li>                    
                     <li><a href="/LoginClient/Login">Inicia Sesion aqui</a></li>
+                    <li><a class="btnInfo" name="btnInfo" id="btnInfo">Nuestros Servicios</a></li>
+
                 }
                 else
                 {
                     <li><a href="/ReservaClient/verlistaReservasxCliente">Ver mis reservas</a></li>
                     <li><a href="/LoginClient/CerrarSesion">Cerrar Sesion</a></li>
+                    <li><a class="btnInfo" name="btnInfo" id="btnInfo">Nuestros Servicios</a></li>
                 }
               
                 
@@ -53,13 +56,32 @@
     <div>
         @RenderBody()
     </div>
-    
+    <!-- Modal 1 -->
+    <div id="modalInfo" class="modal" style="width:1100px; " >
+        <div class=" modal-content" id="modal-content" style="width:1000px;" >
+            
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        </div>
+    </div>
+@if (Session["usuarioCliente"] == null) { 
+    <!-- Modal 2 -->
+    <div id="modalBienvenida" class="modal" style="width:1100px; ">
+        <div class=" modal-content" id="modal-content" style="width:1000px;">
+
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        </div>
+    </div>}
 
     <script src="~/content/js/jquery-2.1.4.min.js"></script>
     <script src="~/content/js/jquery.unobtrusive-ajax.js"></script>
     <!-- Compiled and minified JavaScript -->
 
     <script src="~/content/js/MaterializeClient.min.js"></script>
+
     
     @RenderSection("script", false)
     <script>
@@ -67,7 +89,7 @@
         $('.datepicker').pickadate({
             selectMonths: true, // Creates a dropdown to control month
             selectYears: 15, // Creates a dropdown of 15 years to control year
-           
+
             monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
             monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
             weekdaysFull: ['Domingo','Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
@@ -78,6 +100,28 @@
             clear: 'Limpiar',
             close: 'Cerrar'
         });
+
+       
+
+            $(function () {
+                $(".btnInfo").click(function () {
+
+                    $("#modalInfo #modal-content").load("/Home/verInformacion", function () {
+                        $("#modalInfo").openModal();
+                    })
+                });
+            })
+       
+            
+           $(document).ready(function () {
+            $("#modalBienvenida #modal-content").load("/Home/bienvenida", function () {
+                $("#modalBienvenida").openModal();
+            })
+           });
+            
+       
+        
+
 
         $(document).ready(function () {
             $('.borrarHidden input[type="hidden"]').remove();
@@ -96,8 +140,8 @@
                 $('.button-collapse').sideNav();
                 $('.parallax').parallax();
 
-            }); 
-        })(jQuery); 
+            });
+        })(jQuery);
 
         $(document).ready(function () {
             $('select').material_select();

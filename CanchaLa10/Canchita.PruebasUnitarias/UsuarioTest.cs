@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Canchita.PruebasUnitarias.TransaccionWS;
 using System.Collections.Generic;
+using System.Net;
+using System.Web.Script.Serialization;
 
 namespace Canchita.PruebasUnitarias
 {
@@ -53,6 +55,18 @@ namespace Canchita.PruebasUnitarias
             Assert.IsTrue(lista.Count > 0);
 
         }
+
+         [TestMethod]
+         public void ListarUsuariosRest()
+         {
+             var webClient = new WebClient();
+             var json = webClient.DownloadString("http://localhost:1557/ServicioRest.svc/Usuarios");
+             var js = new JavaScriptSerializer();
+           //  var usuario = js.Deserialize<Usuario>(json);
+             var lista = js.Deserialize<List<Usuario>>(json);
+             Assert.AreNotEqual(0, lista);
+
+         }
 
          [TestMethod]
          public void ValidarUsuario()

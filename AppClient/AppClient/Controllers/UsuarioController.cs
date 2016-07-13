@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using AppClient.CanchitaWS;
 using System.IO;
+using System.Net;
+using System.Web.Script.Serialization;
 
 namespace AppClient.Controllers
 {
@@ -17,11 +19,14 @@ namespace AppClient.Controllers
 
         public ActionResult listaUsuario()
         {
-
             if (Session["usuario"] != null)
             {
-                var listado = proxy.ListarUsuario();
-                return View(listado);
+                var webClient = new WebClient();
+                var json = webClient.DownloadString("http://localhost:1557/ServicioRest.svc/Usuarios");
+                var js = new JavaScriptSerializer();              
+                var lista = js.Deserialize<List<Usuario>>(json);                
+                  //var listado = proxy.ListarUsuario();
+               return View(lista);
             }
             else
             {

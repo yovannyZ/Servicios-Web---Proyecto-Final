@@ -177,6 +177,8 @@
     <Content Include="content\js\prism.js" />
     <Content Include="content\js\raphael-min.js" />
     <Content Include="Global.asax" />
+    <Content Include="img\benavente.gif" />
+    <Content Include="img\gareth.gif" />
     <Content Include="obj\Debug\AppClient.csprojResolveAssemblyReference.cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
@@ -190,6 +192,7 @@
     <Content Include="obj\Debug\AppClient.pdb" />
     <Content Include="obj\Debug\TempPE\Service References.CanchitaWS.Reference.cs.dll" />
     <Content Include="Scripts\Campo\Campo.js" />
+    <Content Include="Scripts\Home\Info.js" />
     <Content Include="Scripts\Reserva\Reserva.js" />
     <Content Include="Scripts\Sede\Sede.js" />
     <Content Include="Scripts\Tarifa\Tarifa.js" />
@@ -371,6 +374,8 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="Views\ReservaClient\PagoRealizado.cshtml" />
+    <Content Include="Views\Home\verInformacion.cshtml" />
+    <Content Include="Views\Home\bienvenida.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
