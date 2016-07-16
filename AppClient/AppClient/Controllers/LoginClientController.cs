@@ -20,7 +20,8 @@ namespace AppClient.Controllers
         [HttpPost]
         public ActionResult Login(Usuario usuario)
         {
-            usuario.TipoUsuario = "Cliente";
+            string TIPO = "Cliente";
+            usuario.TipoUsuario = TIPO;
             Usuario usuLogeado = proxy.ValidarUsuario(usuario);
 
             if (usuLogeado!=null)
